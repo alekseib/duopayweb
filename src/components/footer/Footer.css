@@ -1,0 +1,32 @@
+.Footer-info {
+    font-size: 15px;
+    text-align: initial;
+    margin-top: 22px;
+    margin-left: 21px;
+    position: relative;
+}
+.Footer-person {
+    margin-bottom: 10px;
+}
+.Footer-item:not(:last-child) {
+    margin-bottom: 5px;
+}
+.Footer-item a i {
+    background-color: #c00000;
+    width: 23px;
+    height: 23px;
+    line-height: 23px;
+    border-radius: 8px;
+    text-align: center;
+    color: #fff;
+    font-size: 13px;
+}
+.Footer-link {
+    position: absolute;
+    content: '';
+    display: block;
+    top: 50%;
+    right: 42px;
+    font-size: 19px;
+    color: #c00000;
+}

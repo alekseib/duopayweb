@@ -91,21 +91,21 @@ button:hover {
 }
 
 
-.offer__time {
+.Frame-header {
   color: #fff;
   text-transform: uppercase;
   font-size: 28px;
 }
 
-.offer__form {
+.EmailPage-form {
   margin-top: 37px;
 }
 
-.offer__title {
+.EmailPage-title {
   margin-bottom: 22px;
 }
 
-.offer__form input {
+.EmailPage-form input {
     border: 1px solid #D3D3D3;
     border-radius: 19px;
     width: 330px;
@@ -114,12 +114,12 @@ button:hover {
     font-size: 16px;
 }
 
-.offer__form input:focus {
+.EmailPage-form input:focus {
   border: 1px solid #FFDB32;
   color: #000;
 }
 
-.offer__form input:not(:last-child) {
+.EmailPage-form input:not(:last-child) {
   margin-bottom: 15px;
 }
 
@@ -179,16 +179,16 @@ label {
   border-bottom: none;
 } 
 
-.offer__text {
+.EmailPage-text {
   margin-top: 12px;
   display: none;
 }
 
-.offer__button {
+.EmailPage--button {
   margin-top: 24px;
 }
 
-.offer__btn {
+.EmailPage-btn {
   color: #fff;
   font-size: 18px;
   font-weight: 700;
@@ -199,16 +199,16 @@ label {
   position: relative;
 }
 
-.offer__btn_back {
+.EmailPage-btn-back {
   background-color: #918c8c;
 }
 
-.offer__btn__further:hover {
+.EmailPage-btn-further:hover {
   background-color:  #e11212;
   color: #fff;
 }
 
-.offer__info {
+.Footer-info {
   font-size: 15px;
   text-align: initial;
   margin-top: 22px;
@@ -216,7 +216,7 @@ label {
   position: relative;
 }
 
-.offer__item a i {
+.Footer-item a i {
   width: 23px;
   height: 23px;
   line-height: 23px;
@@ -226,15 +226,15 @@ label {
   font-size: 13px;
 }
 
-.offer__person {
+.Footer-person {
   margin-bottom: 10px;
 }
 
-.offer__item:not(:last-child) {
+.Footer-item:not(:last-child) {
   margin-bottom: 5px;
 }
 
-.offer__link {
+.Footer-link {
   position: absolute;
   content: '';
   display: block;

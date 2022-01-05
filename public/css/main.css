@@ -98,16 +98,7 @@ button:hover {
 *:focus:-ms-input-placeholder      {color:#FFFFFF;}
 
 
-/*Header*/
 
-
-
-.offer {
-  padding: 24px 5px 32px;
-  position: relative;
-
-  /* background: url(../img/bg.png)no-repeat  center top / cover; */
-}
 
 .offer:before {
   content: '';
@@ -121,9 +112,9 @@ button:hover {
   z-index: 0;
 }
 
-.header {
+.Frame {
   padding-top: 10px;
-} 
+}
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -144,39 +135,14 @@ input[type=number] {
   cursor: pointer;
 }
 
-.offer__time {
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 28px;
-  z-index: 1;
+.offer {
+  padding: 24px 5px 32px;
   position: relative;
+  /* background: url(../img/bg.png)no-repeat  center top / cover; */
 }
 
-.offer__form {
-  margin-top: 37px;
-}
 
-.offer__title {
-  margin-bottom: 22px;
-}
 
-.offer__form input {
-    border: 1px solid #D3D3D3;
-    border-radius: 19px;
-    width: 330px;
-    padding: 9px 35px 10px 30px;
-    margin: 0 auto;
-    font-size: 16px;
-}
-
-.offer__form input:focus {
-  border: 1px solid #FFDB32;
-  color: #000;
-}
-
-.offer__form input:not(:last-child) {
-  margin-bottom: 15px;
-}
 
 label {
   display: flex;
@@ -234,73 +200,6 @@ label {
   border-bottom: none;
 } 
 
-.offer__text {
-  color: #c00000;
-  margin-top: 12px;
-  display: none;
-}
-
-.offer__button {
-  margin-top: 24px;
-}
-
-.offer__btn {
-  color: #fff;
-  font-size: 18px;
-  font-weight: 700;
-  background-color:  #c00000;
-  max-width: 224px;
-  padding: 17px 47px; 
-  border-radius: 137px;
-  position: relative;
-}
-
-.offer__btn_back {
-  background-color: #918c8c;
-}
-
-.offer__btn__further:hover {
-  background-color:  #e11212;
-  color: #fff;
-}
-
-.offer__info {
-  font-size: 15px;
-  text-align: initial;
-  margin-top: 22px;
-  margin-left: 21px;
-  position: relative;
-}
-
-.offer__item a i {
-  background-color: #c00000;
-  width: 23px;
-  height: 23px;
-  line-height: 23px;
-  border-radius: 8px;
-  text-align: center;
-  color: #fff;
-  font-size: 13px;
-}
-
-.offer__person {
-  margin-bottom: 10px;
-}
-
-.offer__item:not(:last-child) {
-  margin-bottom: 5px;
-}
-
-.offer__link {
-  position: absolute;
-  content: '';
-  display: block;
-  top: 50%;
-  right: 42px;
-  font-size: 19px;
-  color: #c00000;
-
-}
 
 
 /*Pay*/
@@ -368,7 +267,7 @@ label {
     border-top: 0;
 }
 
-.calculate .offer__text {
+.calculate .EmailPage-text {
   display: block;
 }
 
@@ -459,7 +358,7 @@ label {
   width: 45px;
 }
 
-.offer__btn__further.no-active {
+.EmailPage-btn-further.no-active {
   pointer-events: none;
   cursor: default;
 }
@@ -482,160 +381,3 @@ label {
   display: block;
 }
 
-/*Media Queries*/ 
-
-@media (max-width: 500px) {
-  .calculate .offer__label {
-    font-size: 16px;
-  }
-  .offer__title {
-    font-size: 18px;
-  }
-  .calculate .offer__label {
-    margin-bottom: 15px;
-    flex-direction: column;
-    align-items: center;
-  }
-  .calculate .offer__label p {
-    margin: 0;
-  }
-  .calculate .offer__value {
-    margin-left: 0;
-    margin-top: 10px;
-  }
-  .calculate .offer__total {
-    font-size: 18px;
-  }
-}
-
-/*// Ultra-Extra small devices (portrait phones, less than 460px)*/
-@media (max-width: 460.98px) {
-
-  /* .offer__title {
-    font-size: 18px;
-  } */
-
-
-
-   /* .offer:before {
-    content: '';
-    display: block;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 4px;
-    height: 93%;
-    background-color: #c00000;
-  }
-
-  .offer:after {
-    content: '';
-    display: block;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 4px;
-    height: 93%;
-    background-color: #c00000;
-  } */
-
-  .radio__text {
-    font-size: 11px;
-  }
-
-  .offer__info {
-    font-size: 12px;
-  }
-
-  .offer__link {
-    font-size: 13px;
-  }
-
-  .offer__btn {
-    font-size: 16px;
-    max-width: 111px;
-    padding: 13px 29px;
-  }
-
-  .offer__time {
-    font-size: 19px;
-  }
-
-  .offer {
-    padding: 20px 0;
-    position: relative;
-  }
-
-
-
-
-}
-
-  /* Ultra-mobile-Extra small devices (portrait phones, less than 397px)*/
-@media (max-width: 397.99px) {
-
-  .offer {
-    padding: 9px 0;
-  }
-
-  .offer__form {
-    margin-top: 18px;
-  }
-
-  .offer__title {
-    font-size: 14px;
-    margin-bottom: 10px;
-  }
-
-  .offer__form input {
-    width: 231px;
-    font-size: 12px;
-  }
-
-  .offer__form input:not(:last-child) {
-    margin-bottom: 10px;
-  }
-
-  .radio__text {
-    font-size: 9px;
-  }
-
-  .fake {
-    width: 13px;
-    height: 13px;
-    border-radius: 5px;
-    margin-right: 5px;
-  }
-
-  .fake::before {
-    width: 13px;
-    height: 13px;
-    line-height: 13px;
-    font-size: 10px;
-    border-radius: 5px;
-  }
-
-  .offer__btn {
-    font-size: 13px;
-    max-width: 85px;
-    padding: 13px 21px;
-  }
-
-  .offer__link {
-    bottom: 4px;
-    right: 0;
-    font-size: 13px;
-  }
-
-  .offer-pay h1 {
-    font-size: 24px;
-  }
-
-  .offer-pay {
-    padding-top: 20px;
-  }
-
-  .offer-pay__title {
-    font-size: 21px;
-  }
-}

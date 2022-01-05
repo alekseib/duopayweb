@@ -1,0 +1,56 @@
+.EmailPage-form {
+    margin-top: 37px;
+}
+
+.EmailPage-title {
+    margin-bottom: 22px;
+}
+
+.EmailPage-form input {
+    border: 1px solid #D3D3D3;
+    border-radius: 19px;
+    width: 330px;
+    padding: 9px 35px 10px 30px;
+    margin: 0 auto;
+    font-size: 16px;
+}
+
+.EmailPage-form input:focus {
+    border: 1px solid #FFDB32;
+    color: #000;
+}
+
+.EmailPage-form input:not(:last-child) {
+    margin-bottom: 15px;
+}
+.EmailPage-text {
+    color: #c00000;
+    margin-top: 12px;
+    display: none;
+}
+.EmailPage--button {
+    margin-top: 24px;
+}
+
+.EmailPage-btn {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    background-color:  #c00000;
+    max-width: 224px;
+    padding: 17px 47px;
+    border-radius: 137px;
+    position: relative;
+}
+
+.EmailPage-btn-back {
+    background-color: #918c8c;
+}
+
+.EmailPage-btn-further:hover {
+    background-color:  #e11212;
+    color: #fff;
+}
+
+
+
