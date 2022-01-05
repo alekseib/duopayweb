@@ -3,7 +3,18 @@ import React from 'react';
 
 function App() {
   return (
-   <div>
+      <header className="header" id="header">
+          <div className="container">
+              <div className="row">
+                  <div className="col text-center">
+                      <div className="offer">
+                          <time className="offer__time">Загловок!!!888</time>
+                          <img src="img/events/ONEGIN1.JPG" alt=""/>
+                          <p/>
+                          <div>Event Info dfjhsdf jsdfj sldfj sldjfsldkfjsdlk</div>
+                          <p/>
+
+                          <div>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
   <div id="pageloader">
@@ -59,6 +70,11 @@ function App() {
         </div>
   </form>
   </div>
+                      </div>
+                      </div>
+                  </div>
+              </div>
+      </header>
   );
 }
 export default App;
