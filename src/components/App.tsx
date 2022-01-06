@@ -4,6 +4,7 @@ import EmailPage from "./emailentering/EmailPage";
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 import Instruments from "./instruments/Instruments";
+import Test1 from "./test1/Test1";
 function App() {
     return (
         <div>
@@ -16,6 +17,7 @@ function App() {
                         <Instruments/>
                     </Route>
                 </Switch>
+                <Test1></Test1>
             </BrowserRouter>
         </div>
     );

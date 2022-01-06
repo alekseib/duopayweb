@@ -4,8 +4,8 @@ import './EmailPage.css';
 import Frame from "../frame/Frame";
 // @ts-ignore
 import { useHistory } from "react-router-dom";
-
 function EmailPage(): JSX.Element {
+    const onSubmit = () => {alert('sss');}
     const history = useHistory();
     function saveEmail(e: React.MouseEvent<HTMLElement>) {
         e.preventDefault();
@@ -36,7 +36,7 @@ function EmailPage(): JSX.Element {
                         <script
                             src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
                         <div className="app-button d-flex justify-content-around">
-                            <button type="submit" className="app-btn app-btn-further next-step-btn" onClick={saveEmail}>
+                            <button type="submit" className="app-btn app-btn-further next-step-btn">
                                 <span>Далее</span>
                             </button>
                         </div>
