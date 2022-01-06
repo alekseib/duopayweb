@@ -1,14 +1,16 @@
 import React from 'react';
 import Footer from "../footer/Footer";
-
 import './EmailPage.css';
 import Frame from "../frame/Frame";
+// @ts-ignore
+import { useHistory } from "react-router-dom";
+
 function EmailPage(): JSX.Element {
+    const history = useHistory();
     function saveEmail(e: React.MouseEvent<HTMLElement>) {
         e.preventDefault();
-        console.log('You clicked submit.');
+        history.push("/payment");
     }
-
     return (
         <Frame>
             <div>
