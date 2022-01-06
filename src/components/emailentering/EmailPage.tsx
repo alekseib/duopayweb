@@ -3,8 +3,12 @@ import Footer from "../footer/Footer";
 
 import './EmailPage.css';
 import Frame from "../frame/Frame";
+function EmailPage(): JSX.Element {
+    function saveEmail(e: React.MouseEvent<HTMLElement>) {
+        e.preventDefault();
+        console.log('You clicked submit.');
+    }
 
-function EmailPage() {
     return (
         <Frame>
             <div>
@@ -30,7 +34,7 @@ function EmailPage() {
                         <script
                             src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
                         <div className="app-button d-flex justify-content-around">
-                            <button type="submit" className="app-btn app-btn-further next-step-btn" >
+                            <button type="submit" className="app-btn app-btn-further next-step-btn" onClick={saveEmail}>
                                 <span>Далее</span>
                             </button>
                         </div>
