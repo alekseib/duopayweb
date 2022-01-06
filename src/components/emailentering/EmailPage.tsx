@@ -30,7 +30,7 @@ function EmailPage() {
                         <script
                             src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
                         <div className="EmailPage--button d-flex justify-content-around">
-                            <button type="submit" className="EmailPage-btn EmailPage-btn-further next-step-btn">
+                            <button type="submit" className="EmailPage-btn EmailPage-btn-further next-step-btn" >
                                 <span>Далее</span>
                             </button>
                         </div>
