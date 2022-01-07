@@ -3,49 +3,151 @@ import Footer from "../footer/Footer";
 import './EmailPage.css';
 import Frame from "../frame/Frame";
 // @ts-ignore
-import { useHistory } from "react-router-dom";
-function EmailPage(): JSX.Element {
-    const onSubmit = () => {alert('sss');}
-    const history = useHistory();
-    function saveEmail(e: React.MouseEvent<HTMLElement>) {
-        e.preventDefault();
-        history.push("/payment");
-    }
-    return (
-        <Frame>
-            <div>
-                <br/>
-                <div>Header</div>
-                <div>
-                    <form className="app-form" method="post" id="myform">
-                        <h2 className="app-title">test3</h2>
-                        <input type="text" placeholder="Имя" name="name" required/>
-                        <input type="email" placeholder="E-mail" name="email" required/>
-                        <label id="radiobox" className="label label_agree">
-                            <input type="radio" className="radio" name="agreeWithConditions" value="true"/>
-                            <span className="fake"></span>
-                            <p className="radio__text">
-                                <a href="https://duoclassico.eu/conditions-ru" className="radio__link">
-                                    Согласен с правилами продажи билетов
-                                </a>
-                            </p>
-                        </label>
-                        <p className="app-text">
-                            Сообщение об ошибке
-                        </p>
-                        <script
-                            src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-                        <div className="app-button d-flex justify-content-around">
-                            <button type="submit" className="app-btn app-btn-further next-step-btn">
-                                <span>Далее</span>
-                            </button>
-                        </div>
-                    </form>
-                </div>
-                <Footer></Footer>
-            </div>
-        </Frame>
-    );
+import { withRouter } from 'react-router-dom';
+
+interface EmailProps {
 }
 
-export default EmailPage;
+interface EmailState {
+    input: any
+    errors: any
+}
+
+class EmailPage extends React.Component<EmailProps, EmailState> {
+
+    constructor(props: EmailProps) {
+        super(props);
+        this.state = {
+            input: {},
+            errors: {}
+        };
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleChange(event: any) {
+        let input = this.state.input;
+        input[event.target.name] = event.target.value;
+
+        this.setState({
+            input
+        });
+    }
+
+    // @ts-ignore
+    handleSubmit(event) {
+        event.preventDefault();
+        if (this.validate()) {
+            //console.log(this.state);
+
+            let input = {};
+            // @ts-ignore
+            input["name"] = "";
+            // @ts-ignore
+            input["email"] = "";
+            // @ts-ignore
+            input["comment"] = "";
+            this.setState({input: input});
+
+            //alert('Demo Form is submited');
+            // @ts-ignore
+            this.props["history"].push("/payment")
+
+        }
+        console.log(this.state);
+    }
+
+    validate() {
+        let input = this.state.input;
+        let errors = {};
+        let isValid = true;
+
+        if (!input["name"]) {
+            isValid = false;
+            // @ts-ignore
+            errors["name"] = "Please enter your name.";
+        }
+
+        if (!input["email"]) {
+            isValid = false;
+            // @ts-ignore
+            errors["email"] = "Please enter your email Address.";
+        }
+
+        if (typeof input["email"] !== "undefined") {
+
+            var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
+            if (!pattern.test(input["email"])) {
+                isValid = false;
+                // @ts-ignore
+                errors["email"] = "Please enter valid email address.";
+            }
+        }
+
+        this.setState({
+            errors: errors
+        });
+
+        return isValid;
+    }
+
+    render() {
+        return (
+            <Frame>
+                <div>
+                    <br/>
+                    <div>Header</div>
+                    <div>
+                        <form className="app-form" method="post" id="myform" onSubmit={this.handleSubmit}>
+                            <h2 className="app-title">test3</h2>
+                            <div>
+                                <input
+                                    type="text"
+                                    name="name"
+                                    value={this.state.input.name}
+                                    onChange={this.handleChange}
+                                    className="form-control"
+                                    placeholder="Имя"
+                                    id="name"/>
+                                <div className="text-danger">{this.state.errors.name}</div>
+                            </div>
+                            <div>
+                                <input
+                                    type="text"
+                                    name="email"
+                                    value={this.state.input.email}
+                                    onChange={this.handleChange}
+                                    className="form-control"
+                                    placeholder="E-mail"
+                                    id="email"/>
+                                <div className="text-danger">{this.state.errors.email}</div>
+                            </div>
+                            <label id="radiobox" className="label label_agree">
+                                <input type="radio" className="radio" name="agreeWithConditions" value="true"/>
+                                <span className="fake"></span>
+                                <p className="radio__text">
+                                    <a href="https://duoclassico.eu/conditions-ru" className="radio__link">
+                                        Согласен с правилами продажи билетов
+                                    </a>
+                                </p>
+                            </label>
+                            <p className="app-text">
+                                Сообщение об ошибке
+                            </p>
+                            <script
+                                src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+                            <div className="app-button d-flex justify-content-around">
+                                <button type="submit" className="app-btn app-btn-further next-step-btn">
+                                    <span>Далее</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <Footer></Footer>
+                </div>
+            </Frame>
+        );
+    }
+}
+
+export default withRouter(EmailPage);

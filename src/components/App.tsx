@@ -17,7 +17,6 @@ function App() {
                         <Instruments/>
                     </Route>
                 </Switch>
-                <Test1></Test1>
             </BrowserRouter>
         </div>
     );
