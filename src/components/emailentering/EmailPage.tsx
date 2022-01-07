@@ -4,6 +4,7 @@ import './EmailPage.css';
 import Frame from "../frame/Frame";
 // @ts-ignore
 import { withRouter } from 'react-router-dom';
+import {appdata} from "../AppData";
 
 interface EmailProps {
 }
@@ -95,6 +96,7 @@ class EmailPage extends React.Component<EmailProps, EmailState> {
         return (
             <Frame>
                 <div>
+                    All query params <div>{appdata.productCode}</div>
                     <br/>
                     <div>Header</div>
                     <div>
