@@ -11,7 +11,8 @@ class CheckoutForm extends React.Component {
             return;
         }
 
-        const {} = await stripe.createPaymentMethod({
+        // eslint-disable-next-line no-unused-vars
+        const {error, paymentMethod} = await stripe.createPaymentMethod({
             type: 'card',
             card: elements.getElement(CardElement),
         });
