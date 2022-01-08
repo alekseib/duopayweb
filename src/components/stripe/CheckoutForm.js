@@ -1,13 +1,13 @@
-import React from 'react';
-import {ElementsConsumer, PaymentElement} from '@stripe/react-stripe-js';
+import {useStripe, useElements, PaymentElement} from '@stripe/react-stripe-js';
 
-class CheckoutForm extends React.Component {
-    handleSubmit = async (event) => {
+export const CheckoutForm = () => {
+    const stripe = useStripe();
+    const elements = useElements();
+
+    const handleSubmit = async (event) => {
         // We don't want to let default form submission happen here,
         // which would refresh the page.
         event.preventDefault();
-
-        const {stripe, elements} = this.props;
 
         if (!stripe || !elements) {
             // Stripe.js has not yet loaded.
@@ -19,7 +19,7 @@ class CheckoutForm extends React.Component {
             //`Elements` instance that was used to create the Payment Element
             elements,
             confirmParams: {
-                return_url: "https://duoclassico.eu",
+                return_url: "https://my-site.com/order/123/complete",
             },
         });
 
@@ -33,22 +33,10 @@ class CheckoutForm extends React.Component {
         }
     };
 
-    render() {
-        return (
-            <form onSubmit={this.handleSubmit}>
-                <PaymentElement />
-                <button disabled={!this.props.stripe}>Submit</button>
-            </form>
-        );
-    }
-}
-
-export default function InjectedCheckoutForm() {
     return (
-        <ElementsConsumer>
-            {({stripe, elements}) => (
-                <CheckoutForm stripe={stripe} elements={elements} />
-            )}
-        </ElementsConsumer>
+        <form onSubmit={handleSubmit}>
+            <PaymentElement />
+            <button disabled={!stripe}>Submit</button>
+        </form>
     )
-}
+};
