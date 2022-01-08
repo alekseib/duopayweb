@@ -22,6 +22,8 @@ class EmailPage extends React.Component<EmailProps, EmailState> {
             input: {},
             errors: {}
         };
+        this.state.input["email"] = appdata.customerEmail;
+        this.state.input["name"] = appdata.customerName;
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -39,21 +41,10 @@ class EmailPage extends React.Component<EmailProps, EmailState> {
     handleSubmit(event) {
         event.preventDefault();
         if (this.validate()) {
-            //console.log(this.state);
-
-            let input = {};
-            // @ts-ignore
-            input["name"] = "";
-            // @ts-ignore
-            input["email"] = "";
-            // @ts-ignore
-            input["comment"] = "";
-            this.setState({input: input});
-
-            //alert('Demo Form is submited');
+            appdata.customerEmail = this.state.input["email"];
+            appdata.customerName = this.state.input["name"];
             // @ts-ignore
             this.props["history"].push("/payment")
-
         }
         console.log(this.state);
     }
@@ -66,13 +57,13 @@ class EmailPage extends React.Component<EmailProps, EmailState> {
         if (!input["name"]) {
             isValid = false;
             // @ts-ignore
-            errors["name"] = "Please enter your name.";
+            errors["name"] = "Пожалуйста введите имя.";
         }
 
         if (!input["email"]) {
             isValid = false;
             // @ts-ignore
-            errors["email"] = "Please enter your email Address.";
+            errors["email"] = "Пожалуйста введите емайл.";
         }
 
         if (typeof input["email"] !== "undefined") {
@@ -96,12 +87,9 @@ class EmailPage extends React.Component<EmailProps, EmailState> {
         return (
             <Frame>
                 <div>
-                    All query params <div>{appdata.productCode}</div>
-                    <br/>
-                    <div>Header</div>
                     <div>
                         <form className="app-form" method="post" id="myform" onSubmit={this.handleSubmit}>
-                            <h2 className="app-title">test3</h2>
+                            <h2 className="app-title">Пожалуйста, введите имя и емайл. На этот емайл мы вышлем вам билет.</h2>
                             <div>
                                 <input
                                     type="text"
@@ -125,7 +113,13 @@ class EmailPage extends React.Component<EmailProps, EmailState> {
                                 <div className="text-danger">{this.state.errors.email}</div>
                             </div>
                             <label id="radiobox" className="label label_agree">
-                                <input type="radio" className="radio" name="agreeWithConditions" value="true"/>
+                                <input
+                                    type="radio"
+                                    name="agreeWithConditions"
+                                    value={this.state.input.agreeWithConditions}
+                                    onChange={this.handleChange}
+                                    className="radio"
+                                    id="agreeWithConditions" checked/>
                                 <span className="fake"></span>
                                 <p className="radio__text">
                                     <a href="https://duoclassico.eu/conditions-ru" className="radio__link">

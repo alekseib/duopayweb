@@ -11,7 +11,7 @@ function Frame(props: { children: ReactNode }) {
                 <div className="row">
                     <div className="col text-center">
                         <div className="offer">
-                            <time className="Frame-header">Загловок!!!888</time>
+                            <time className="Frame-header">{appdata.header}</time>
                             <img src={image} alt=""/>
                             <div>
                                   {props.children}
