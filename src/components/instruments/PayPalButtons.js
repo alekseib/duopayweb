@@ -55,7 +55,6 @@ export default function ReactPayPal() {
     // Default Render
     return (
         <div>
-            {appdata.productName}
             <div ref={paypalRef} />
         </div>
     );

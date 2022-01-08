@@ -3,6 +3,7 @@ import './Instruments.css';
 import Frame from "../frame/Frame";
 import {appdata, load} from "../AppData";
 import ReactPayPal from './PayPalButtons';
+import { Stripe } from '../stripe/Stripe';
 
 function Instruments() {
     load();
@@ -20,6 +21,9 @@ function Instruments() {
                     </li>
                 </ul>
             <div id="smart-button-container">
+                <div className="stripe">
+                    <Stripe></Stripe>
+                </div>
                 <div className="paypal">
                     <ReactPayPal></ReactPayPal>
                 </div>
