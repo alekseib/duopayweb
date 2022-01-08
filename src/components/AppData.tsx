@@ -11,12 +11,19 @@ export const appdata = {
 export function parseParams(params:any)
 {
     appdata.productCode  = params["productCode"];
-    appdata.price  = params["key"].split('A')[1];
-    appdata.price1  = params["key"].split('A')[2];
-    if (appdata.price1 - appdata.price !== 111)
+    try {
+        appdata.price  = params["key"].split('A')[1];
+        appdata.price1  = params["key"].split('A')[2];
+        if (appdata.price1 - appdata.price !== 111)
+        {
+            appdata.errorMessage = "InvalidKey";
+        }
+
+    } catch (e)
     {
         appdata.errorMessage = "InvalidKey";
     }
+
 
     if ("SILVER1" === appdata.productCode)
     {
