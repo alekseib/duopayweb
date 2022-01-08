@@ -3,9 +3,11 @@ import Footer from "../footer/Footer";
 
 import './Instruments.css';
 import Frame from "../frame/Frame";
-import {appdata} from "../AppData";
+import {appdata, load} from "../AppData";
+import {Simulate} from "react-dom/test-utils";
 
 function Instruments() {
+    load();
     return (
         <Frame>
             <div>

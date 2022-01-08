@@ -4,7 +4,7 @@ import './EmailPage.css';
 import Frame from "../frame/Frame";
 // @ts-ignore
 import { withRouter } from 'react-router-dom';
-import {appdata} from "../AppData";
+import {appdata, save} from "../AppData";
 
 interface EmailProps {
 }
@@ -43,6 +43,7 @@ class EmailPage extends React.Component<EmailProps, EmailState> {
         if (this.validate()) {
             appdata.customerEmail = this.state.input["email"];
             appdata.customerName = this.state.input["name"];
+            save()
             // @ts-ignore
             this.props["history"].push("/payment")
         }
