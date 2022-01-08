@@ -1,5 +1,4 @@
 import Frame from "../frame/Frame";
-import ReactPayPal from "../instruments/PayPalButtons";
 import React from "react";
 import Footer from "../footer/Footer";
 import {appdata} from "../AppData";

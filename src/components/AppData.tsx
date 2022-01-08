@@ -1,5 +1,3 @@
-import app from "./App";
-
 export const appdata = {
        "productCode":"",
        "price":0.0,

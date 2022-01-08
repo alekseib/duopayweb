@@ -11,7 +11,7 @@ class CheckoutForm extends React.Component {
             return;
         }
 
-        const {error, paymentMethod} = await stripe.createPaymentMethod({
+        const {} = await stripe.createPaymentMethod({
             type: 'card',
             card: elements.getElement(CardElement),
         });

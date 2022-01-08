@@ -1,7 +1,7 @@
 import React from 'react';
 import './Instruments.css';
 import Frame from "../frame/Frame";
-import {appdata, load} from "../AppData";
+import {load} from "../AppData";
 import ReactPayPal from './PayPalButtons';
 import { Stripe } from '../stripe/Stripe';
 

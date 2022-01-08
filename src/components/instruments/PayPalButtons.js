@@ -6,7 +6,7 @@ import {appdata} from "../AppData";
 
 export default function ReactPayPal() {
     const [paid, setPaid] = React.useState(false);
-    const [error, setError] = React.useState(null);
+    const [error] = React.useState(null);
     const paypalRef = React.useRef();
 
     // To show PayPal buttons once the component loads

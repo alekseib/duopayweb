@@ -5,7 +5,7 @@ import {BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 import queryString from "query-string"
 import Instruments from "./instruments/Instruments";
-import {appdata, parseParams} from "./AppData";
+import {parseParams} from "./AppData";
 import {ThankYouPage} from "./thankyoupage/ThankYouPage";
 
 function Home() {
