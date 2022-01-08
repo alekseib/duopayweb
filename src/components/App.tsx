@@ -6,6 +6,7 @@ import './App.css';
 import queryString from "query-string"
 import Instruments from "./instruments/Instruments";
 import {appdata, parseParams} from "./AppData";
+import {ThankYouPage} from "./thankyoupage/ThankYouPage";
 
 function Home() {
     return (
@@ -21,6 +22,8 @@ function Home() {
         </div>
     );
 }
+
+
 
 function App() {
     const queryParams = queryString.parse(window.location.search)
@@ -42,9 +45,13 @@ function App() {
                     <Route path="/payment">
                         <Instruments/>
                     </Route>
+                    <Route path="/ok">
+                        <ThankYouPage/>
+                    </Route>
                     <Route path="/">
                         <Home/>
                     </Route>
+
                 </Switch>
             </BrowserRouter>
         </div>

@@ -19,12 +19,18 @@ export function load()
     let text = window.localStorage.getItem('state');
     // @ts-ignore
     let state1 = JSON.parse(text);
-    appdata["productCode"] = state1["productCode"];
-    appdata["price"] = state1["price"];
-    appdata["productName"] = state1["productName"];
-    appdata["customerEmail"] = state1["customerEmail"];
-    appdata["customerName"] = state1["customerName"];
-    appdata["header"] = state1["header"];
+    try {
+        appdata["productCode"] = state1["productCode"];
+        appdata["price"] = state1["price"];
+        appdata["productName"] = state1["productName"];
+        appdata["customerEmail"] = state1["customerEmail"];
+        appdata["customerName"] = state1["customerName"];
+        appdata["header"] = state1["header"];
+    }
+    catch (e)
+    {
+
+    }
 }
 
 
@@ -47,32 +53,33 @@ export function parseParams(params:any)
     appdata.header = "Билет " + appdata.price + "€";
     if ("SILVER1" === appdata.productCode)
     {
-        appdata.productName = "Песни и романсы на стихи поэтов серебряного века. Часть 1";
+        appdata.productName = "Серебрянный век. Часть 1 -SILVER1-";
     }
     else
     if ("SILVER2" === appdata.productCode)
     {
-        appdata.productName = "Песни и романсы на стихи поэтов серебряного века. Часть 2";
+        appdata.productName = "Серебрянный век. Часть 2 -SILVER2-";
     }
     else
     if ("SILVER3" === appdata.productCode)
     {
-        appdata.productName = "Песни и романсы на стихи поэтов серебряного века. Часть 3";
+        appdata.productName = "Серебрянный век. Часть 3 -SILVER2-";
     }
     else
     if ("FR" === appdata.productCode)
     {
+        appdata.productName = "Физика и история музыки. -FR-";
         appdata.productName = "Физика и история музыки";
     }
     else
     if ("ONEGIN1" === appdata.productCode)
     {
-        appdata.productName = "Тайны оперы Евгений Онегин. Часть 1";
+        appdata.productName = "Тайны оперы Евгений Онегин. Часть 1 -ONEGIN1-";
     }
     else
     if ("ONEGIN2" === appdata.productCode)
     {
-        appdata.productName = "Тайны оперы Евгений Онегин. Часть 2";
+        appdata.productName = "Тайны оперы Евгений Онегин. Часть 2 -ONEGIN2-";
     }
     if ("" === appdata.productCode)
     {

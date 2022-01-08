@@ -1,21 +1,31 @@
 import React from 'react';
-import Footer from "../footer/Footer";
-
 import './Instruments.css';
 import Frame from "../frame/Frame";
 import {appdata, load} from "../AppData";
-import {Simulate} from "react-dom/test-utils";
+import ReactPayPal from './PayPalButtons';
 
 function Instruments() {
     load();
+    // @ts-ignore
     return (
-        <Frame>
-            <div>
+        <div>
+            <Frame>
+                <h2 className="offer-pay__title">
+                    Выберете способ оплаты
+                </h2>
                 <br/>
-                <div>{appdata.customerEmail}</div>
+                <ul className="offer-pay__list">
+                    <li className="offer-pay__item">
+                        <div id="paypal-button-container" className="paypal"/>
+                    </li>
+                </ul>
+            <div id="smart-button-container">
+                <div className="paypal">
+                    <ReactPayPal></ReactPayPal>
                 </div>
-                <Footer></Footer>
-        </Frame>
+            </div>
+            </Frame>
+        </div>
     );
 }
 

@@ -73,7 +73,7 @@ class EmailPage extends React.Component<EmailProps, EmailState> {
             if (!pattern.test(input["email"])) {
                 isValid = false;
                 // @ts-ignore
-                errors["email"] = "Please enter valid email address.";
+                errors["email"] = "Пожалуйста введите емайл.";
             }
         }
 
