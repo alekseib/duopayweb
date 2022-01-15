@@ -1,3 +1,9 @@
+                                    <a href = "https://www.google.com">
+                                        <img src="https://bank.paysera.com/assets/image/payment_types/giro_pay.png" alt=""/>
+                                    </a>
+
+
+
 Invalid key handling.
 
 https://d1upcx3emxp9ba.cloudfront.net/

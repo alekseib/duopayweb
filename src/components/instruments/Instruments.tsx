@@ -27,7 +27,11 @@ function Instruments() {
                         {
                             // @ts-ignore
                             Object.keys(payseraData["data"]["ee"]).map(function(name, index){
-                            return <li key={ index }>{name} {payseraData["data"]["ee"][name]["url"]}</li>;
+                            return <li key={ index }>
+                                <a href="http://google.com">
+                                    <img src={payseraData["data"]["ee"][name]["url"]}></img>
+                                </a>
+                            </li>;
                         })}
                     </ul>
                 </div>
