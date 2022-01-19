@@ -23,7 +23,7 @@ function Instruments() {
                     Выберете способ оплаты
                 </h2>
                 <div className="App">
-                    <ul>
+                    <ul className="offer-pay__banks">
                         {
                             // @ts-ignore
                             Object.keys(payseraData["data"]["ee"]).map(function(name, index){
