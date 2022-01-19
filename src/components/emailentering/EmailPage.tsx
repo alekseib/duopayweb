@@ -135,7 +135,7 @@ class EmailPage extends React.Component<EmailProps, EmailState> {
                                 src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
                             <div className="app-button d-flex justify-content-around">
                                 <button type="submit" className="app-btn app-btn-further next-step-btn">
-                                    <span>Далее</span>
+                                    <span>Далее1</span>
                                 </button>
                             </div>
                         </form>
