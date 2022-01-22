@@ -1,6 +1,7 @@
+import payseraData from "./paysera.json"
 import './Instruments.css';
 import Frame from "../frame/Frame";
-import {load, payseraData} from "../AppData";
+import {load} from "../AppData";
 import ReactPayPal from './PayPalButtons';
 import {Elements} from '@stripe/react-stripe-js';
 import {loadStripe} from '@stripe/stripe-js';
@@ -9,12 +10,10 @@ const stripePromise = loadStripe('pk_live_Ym4pj7nfoaBPMuFYyUI0nViM006gcwB8eD');
 
 function Instruments() {
     const options = {
-        // passing the client secret obtained from the server
         clientSecret: 'pi_3KFlMXKNGtOWS9rw0kYh6Ni0_secret_a3rKNOqwSXc8qrG2Co9TikQQX'
     };
 
     load();
-    // @ts-ignore
     return (
         <div>
             <Frame>
@@ -24,9 +23,8 @@ function Instruments() {
                 <div className="App">
                     <ul className="offer-pay__banks">
                         {
-                            // @ts-ignore
                             Object.keys(payseraData["data"]["ee"]).map(function(name, index){
-                            return <li key={ index }>
+                                return <li key={ index }>
                                 <a href="http://google.com">
                                     <img src={payseraData["data"]["ee"][name]["url"]} alt=""></img>
                                 </a>

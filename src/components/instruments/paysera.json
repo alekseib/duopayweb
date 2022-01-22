@@ -1,0 +1,985 @@
+{
+  "data": {
+    "de": {
+      "giro_pay": {
+        "country": "de",
+        "bank": "giro_pay",
+        "url": "https://bank.paysera.com/assets/image/payment_types/giro_pay.png"
+      },
+      "de_revolut": {
+        "country": "de",
+        "bank": "de_revolut",
+        "url": "https://bank.paysera.com/assets/image/payment_types/de_revolut.png"
+      },
+      "de_n26": {
+        "country": "de",
+        "bank": "de_n26",
+        "url": "https://bank.paysera.com/assets/image/payment_types/de_n26.png"
+      },
+      "de_ing": {
+        "country": "de",
+        "bank": "de_ing",
+        "url": "https://bank.paysera.com/assets/image/payment_types/de_ing.png"
+      },
+      "safetypay": {
+        "country": "de",
+        "bank": "safetypay",
+        "url": "https://bank.paysera.com/assets/image/payment_types/safetypay.png"
+      },
+      "de_trustly": {
+        "country": "de",
+        "bank": "de_trustly",
+        "url": "https://bank.paysera.com/assets/image/payment_types/de_trustly.png"
+      },
+      "de_unicredit": {
+        "country": "de",
+        "bank": "de_unicredit",
+        "url": "https://bank.paysera.com/assets/image/payment_types/de_unicredit.png"
+      },
+      "de_abn_amro": {
+        "country": "de",
+        "bank": "de_abn_amro",
+        "url": "https://bank.paysera.com/assets/image/payment_types/de_abn_amro.png"
+      }
+    },
+    "no": {},
+    "other": {},
+    "be": {
+      "be_ing": {
+        "country": "be",
+        "bank": "be_ing",
+        "url": "https://bank.paysera.com/assets/image/payment_types/be_ing.png"
+      },
+      "be_n26": {
+        "country": "be",
+        "bank": "be_n26",
+        "url": "https://bank.paysera.com/assets/image/payment_types/be_n26.png"
+      },
+      "be_trustly": {
+        "country": "be",
+        "bank": "be_trustly",
+        "url": "https://bank.paysera.com/assets/image/payment_types/be_trustly.png"
+      },
+      "be_abn_amro": {
+        "country": "be",
+        "bank": "be_abn_amro",
+        "url": "https://bank.paysera.com/assets/image/payment_types/be_abn_amro.png"
+      },
+      "be_triodos": {
+        "country": "be",
+        "bank": "be_triodos",
+        "url": "https://bank.paysera.com/assets/image/payment_types/be_triodos.png"
+      },
+      "be_revolut": {
+        "country": "be",
+        "bank": "be_revolut",
+        "url": "https://bank.paysera.com/assets/image/payment_types/be_revolut.png"
+      }
+    },
+    "fi": {
+      "fi_revolut": {
+        "country": "fi",
+        "bank": "fi_revolut",
+        "url": "https://bank.paysera.com/assets/image/payment_types/fi_revolut.png"
+      },
+      "fi_n26": {
+        "country": "fi",
+        "bank": "fi_n26",
+        "url": "https://bank.paysera.com/assets/image/payment_types/fi_n26.png"
+      },
+      "fi_handelsbanken": {
+        "country": "fi",
+        "bank": "fi_handelsbanken",
+        "url": "https://bank.paysera.com/assets/image/payment_types/fi_handelsbanken.png"
+      },
+      "fi_nordea": {
+        "country": "fi",
+        "bank": "fi_nordea",
+        "url": "https://bank.paysera.com/assets/image/payment_types/fi_nordea.png"
+      },
+      "fi_trustly": {
+        "country": "fi",
+        "bank": "fi_trustly",
+        "url": "https://bank.paysera.com/assets/image/payment_types/fi_trustly.png"
+      }
+    },
+    "pt": {
+      "pt_revolut": {
+        "country": "pt",
+        "bank": "pt_revolut",
+        "url": "https://bank.paysera.com/assets/image/payment_types/pt_revolut.png"
+      },
+      "pt_n26": {
+        "country": "pt",
+        "bank": "pt_n26",
+        "url": "https://bank.paysera.com/assets/image/payment_types/pt_n26.png"
+      },
+      "pt_ing": {
+        "country": "pt",
+        "bank": "pt_ing",
+        "url": "https://bank.paysera.com/assets/image/payment_types/pt_ing.png"
+      }
+    },
+    "bg": {
+      "bg_procreditbank": {
+        "country": "bg",
+        "bank": "bg_procreditbank",
+        "url": "https://bank.paysera.com/assets/image/payment_types/bg_procreditbank.png"
+      },
+      "bghand": {
+        "country": "bg",
+        "bank": "bghand",
+        "url": "https://bank.paysera.com/assets/image/payment_types/bghand.png"
+      },
+      "dsk_bg": {
+        "country": "bg",
+        "bank": "dsk_bg",
+        "url": "https://bank.paysera.com/assets/image/payment_types/dsk_bg.png"
+      },
+      "bg_tbibank": {
+        "country": "bg",
+        "bank": "bg_tbibank",
+        "url": "https://bank.paysera.com/assets/image/payment_types/bg_tbibank.png"
+      },
+      "bg_dbank": {
+        "country": "bg",
+        "bank": "bg_dbank",
+        "url": "https://bank.paysera.com/assets/image/payment_types/bg_dbank.png"
+      },
+      "bg_fibank": {
+        "country": "bg",
+        "bank": "bg_fibank",
+        "url": "https://bank.paysera.com/assets/image/payment_types/bg_fibank.png"
+      },
+      "bg_ubb": {
+        "country": "bg",
+        "bank": "bg_ubb",
+        "url": "https://bank.paysera.com/assets/image/payment_types/bg_ubb.png"
+      },
+      "bg_bbr": {
+        "country": "bg",
+        "bank": "bg_bbr",
+        "url": "https://bank.paysera.com/assets/image/payment_types/bg_bbr.png"
+      },
+      "bg_allianz": {
+        "country": "bg",
+        "bank": "bg_allianz",
+        "url": "https://bank.paysera.com/assets/image/payment_types/bg_allianz.png"
+      },
+      "bg_tokudabank": {
+        "country": "bg",
+        "bank": "bg_tokudabank",
+        "url": "https://bank.paysera.com/assets/image/payment_types/bg_tokudabank.png"
+      },
+      "bg_ibank": {
+        "country": "bg",
+        "bank": "bg_ibank",
+        "url": "https://bank.paysera.com/assets/image/payment_types/bg_ibank.png"
+      },
+      "bg_revolut": {
+        "country": "bg",
+        "bank": "bg_revolut",
+        "url": "https://bank.paysera.com/assets/image/payment_types/bg_revolut.png"
+      },
+      "bg_unicredit": {
+        "country": "bg",
+        "bank": "bg_unicredit",
+        "url": "https://bank.paysera.com/assets/image/payment_types/bg_unicredit.png"
+      },
+      "bg_ziraatbank": {
+        "country": "bg",
+        "bank": "bg_ziraatbank",
+        "url": "https://bank.paysera.com/assets/image/payment_types/bg_ziraatbank.png"
+      },
+      "bg_raiffeisen": {
+        "country": "bg",
+        "bank": "bg_raiffeisen",
+        "url": "https://bank.paysera.com/assets/image/payment_types/bg_raiffeisen.png"
+      },
+      "bg_postbank": {
+        "country": "bg",
+        "bank": "bg_postbank",
+        "url": "https://bank.paysera.com/assets/image/payment_types/bg_postbank.png"
+      },
+      "bg_bacb": {
+        "country": "bg",
+        "bank": "bg_bacb",
+        "url": "https://bank.paysera.com/assets/image/payment_types/bg_bacb.png"
+      },
+      "bg_ing": {
+        "country": "bg",
+        "bank": "bg_ing",
+        "url": "https://bank.paysera.com/assets/image/payment_types/bg_ing.png"
+      }
+    },
+    "dk": {},
+    "lt": {
+      "nord": {
+        "country": "lt",
+        "bank": "nord",
+        "url": "https://bank.paysera.com/assets/image/payment_types/nord.png"
+      },
+      "lt_n26": {
+        "country": "lt",
+        "bank": "lt_n26",
+        "url": "https://bank.paysera.com/assets/image/payment_types/lt_n26.png"
+      },
+      "mb": {
+        "country": "lt",
+        "bank": "mb",
+        "url": "https://bank.paysera.com/assets/image/payment_types/mb.png"
+      },
+      "vb2": {
+        "country": "lt",
+        "bank": "vb2",
+        "url": "https://bank.paysera.com/assets/image/payment_types/vb2.png"
+      },
+      "lku": {
+        "country": "lt",
+        "bank": "lku",
+        "url": "https://bank.paysera.com/assets/image/payment_types/lku.png"
+      },
+      "lt_revolut": {
+        "country": "lt",
+        "bank": "lt_revolut",
+        "url": "https://bank.paysera.com/assets/image/payment_types/lt_revolut.png"
+      },
+      "hanza": {
+        "country": "lt",
+        "bank": "hanza",
+        "url": "https://bank.paysera.com/assets/image/payment_types/hanza.png"
+      },
+      "parex": {
+        "country": "lt",
+        "bank": "parex",
+        "url": "https://bank.paysera.com/assets/image/payment_types/parex.png"
+      },
+      "sb": {
+        "country": "lt",
+        "bank": "sb",
+        "url": "https://bank.paysera.com/assets/image/payment_types/sb.png"
+      }
+    },
+    "lu": {
+      "lu_n26": {
+        "country": "lu",
+        "bank": "lu_n26",
+        "url": "https://bank.paysera.com/assets/image/payment_types/lu_n26.png"
+      },
+      "lu_ing": {
+        "country": "lu",
+        "bank": "lu_ing",
+        "url": "https://bank.paysera.com/assets/image/payment_types/lu_ing.png"
+      },
+      "lu_revolut": {
+        "country": "lu",
+        "bank": "lu_revolut",
+        "url": "https://bank.paysera.com/assets/image/payment_types/lu_revolut.png"
+      }
+    },
+    "hr": {},
+    "lv": {
+      "hanzalv": {
+        "country": "lv",
+        "bank": "hanzalv",
+        "url": "https://bank.paysera.com/assets/image/payment_types/hanzalv.png"
+      },
+      "lv_revolut": {
+        "country": "lv",
+        "bank": "lv_revolut",
+        "url": "https://bank.paysera.com/assets/image/payment_types/lv_revolut.png"
+      },
+      "lv_dnb": {
+        "country": "lv",
+        "bank": "lv_dnb",
+        "url": "https://bank.paysera.com/assets/image/payment_types/lv_dnb.png"
+      },
+      "parexlv": {
+        "country": "lv",
+        "bank": "parexlv",
+        "url": "https://bank.paysera.com/assets/image/payment_types/parexlv.png"
+      },
+      "seblv": {
+        "country": "lv",
+        "bank": "seblv",
+        "url": "https://bank.paysera.com/assets/image/payment_types/seblv.png"
+      },
+      "lv_n26": {
+        "country": "lv",
+        "bank": "lv_n26",
+        "url": "https://bank.paysera.com/assets/image/payment_types/lv_n26.png"
+      }
+    },
+    "fr": {
+      "fr_revolut": {
+        "country": "fr",
+        "bank": "fr_revolut",
+        "url": "https://bank.paysera.com/assets/image/payment_types/fr_revolut.png"
+      },
+      "fr_n26": {
+        "country": "fr",
+        "bank": "fr_n26",
+        "url": "https://bank.paysera.com/assets/image/payment_types/fr_n26.png"
+      },
+      "fr_ing": {
+        "country": "fr",
+        "bank": "fr_ing",
+        "url": "https://bank.paysera.com/assets/image/payment_types/fr_ing.png"
+      }
+    },
+    "hu": {},
+    "se": {},
+    "si": {
+      "si_revolut": {
+        "country": "si",
+        "bank": "si_revolut",
+        "url": "https://bank.paysera.com/assets/image/payment_types/si_revolut.png"
+      },
+      "si_unicredit": {
+        "country": "si",
+        "bank": "si_unicredit",
+        "url": "https://bank.paysera.com/assets/image/payment_types/si_unicredit.png"
+      },
+      "si_n26": {
+        "country": "si",
+        "bank": "si_n26",
+        "url": "https://bank.paysera.com/assets/image/payment_types/si_n26.png"
+      },
+      "si_intesa_sanpaolo": {
+        "country": "si",
+        "bank": "si_intesa_sanpaolo",
+        "url": "https://bank.paysera.com/assets/image/payment_types/si_intesa_sanpaolo.png"
+      }
+    },
+    "by": {},
+    "sk": {
+      "sk_revolut": {
+        "country": "sk",
+        "bank": "sk_revolut",
+        "url": "https://bank.paysera.com/assets/image/payment_types/sk_revolut.png"
+      },
+      "sk_n26": {
+        "country": "sk",
+        "bank": "sk_n26",
+        "url": "https://bank.paysera.com/assets/image/payment_types/sk_n26.png"
+      },
+      "sk_ing": {
+        "country": "sk",
+        "bank": "sk_ing",
+        "url": "https://bank.paysera.com/assets/image/payment_types/sk_ing.png"
+      },
+      "sk_trustly": {
+        "country": "sk",
+        "bank": "sk_trustly",
+        "url": "https://bank.paysera.com/assets/image/payment_types/sk_trustly.png"
+      }
+    },
+    "gb": {},
+    "ie": {
+      "ie_n26": {
+        "country": "ie",
+        "bank": "ie_n26",
+        "url": "https://bank.paysera.com/assets/image/payment_types/ie_n26.png"
+      },
+      "ie_ing": {
+        "country": "ie",
+        "bank": "ie_ing",
+        "url": "https://bank.paysera.com/assets/image/payment_types/ie_ing.png"
+      },
+      "ie_revolut": {
+        "country": "ie",
+        "bank": "ie_revolut",
+        "url": "https://bank.paysera.com/assets/image/payment_types/ie_revolut.png"
+      }
+    },
+    "ca": {},
+    "us": {},
+    "ee": {
+      "nordeaee": {
+        "country": "ee",
+        "bank": "nordeaee",
+        "url": "https://bank.paysera.com/assets/image/payment_types/nordeaee.png"
+      },
+      "sebee": {
+        "country": "ee",
+        "bank": "sebee",
+        "url": "https://bank.paysera.com/assets/image/payment_types/sebee.png"
+      },
+      "ee_n26": {
+        "country": "ee",
+        "bank": "ee_n26",
+        "url": "https://bank.paysera.com/assets/image/payment_types/ee_n26.png"
+      },
+      "hanzaee": {
+        "country": "ee",
+        "bank": "hanzaee",
+        "url": "https://bank.paysera.com/assets/image/payment_types/hanzaee.png"
+      },
+      "lhv_ee": {
+        "country": "ee",
+        "bank": "lhv_ee",
+        "url": "https://bank.paysera.com/assets/image/payment_types/lhv_ee.png"
+      },
+      "ee_revolut": {
+        "country": "ee",
+        "bank": "ee_revolut",
+        "url": "https://bank.paysera.com/assets/image/payment_types/ee_revolut.png"
+      },
+      "citadele_ee": {
+        "country": "ee",
+        "bank": "citadele_ee",
+        "url": "https://bank.paysera.com/assets/image/payment_types/citadele_ee.png"
+      }
+    },
+    "mt": {
+      "mt_n26": {
+        "country": "mt",
+        "bank": "mt_n26",
+        "url": "https://bank.paysera.com/assets/image/payment_types/mt_n26.png"
+      },
+      "mt_revolut": {
+        "country": "mt",
+        "bank": "mt_revolut",
+        "url": "https://bank.paysera.com/assets/image/payment_types/mt_revolut.png"
+      }
+    },
+    "gr": {
+      "gr_revolut": {
+        "country": "gr",
+        "bank": "gr_revolut",
+        "url": "https://bank.paysera.com/assets/image/payment_types/gr_revolut.png"
+      },
+      "gr_n26": {
+        "country": "gr",
+        "bank": "gr_n26",
+        "url": "https://bank.paysera.com/assets/image/payment_types/gr_n26.png"
+      }
+    },
+    "it": {
+      "it_n26": {
+        "country": "it",
+        "bank": "it_n26",
+        "url": "https://bank.paysera.com/assets/image/payment_types/it_n26.png"
+      },
+      "it_ing": {
+        "country": "it",
+        "bank": "it_ing",
+        "url": "https://bank.paysera.com/assets/image/payment_types/it_ing.png"
+      },
+      "it_revolut": {
+        "country": "it",
+        "bank": "it_revolut",
+        "url": "https://bank.paysera.com/assets/image/payment_types/it_revolut.png"
+      }
+    },
+    "es": {
+      "es_cajarural": {
+        "country": "es",
+        "bank": "es_cajarural",
+        "url": "https://bank.paysera.com/assets/image/payment_types/es_cajarural.png"
+      },
+      "es_wizink": {
+        "country": "es",
+        "bank": "es_wizink",
+        "url": "https://bank.paysera.com/assets/image/payment_types/es_wizink.png"
+      },
+      "es_grupocajamar": {
+        "country": "es",
+        "bank": "es_grupocajamar",
+        "url": "https://bank.paysera.com/assets/image/payment_types/es_grupocajamar.png"
+      },
+      "es_bancomediolanum": {
+        "country": "es",
+        "bank": "es_bancomediolanum",
+        "url": "https://bank.paysera.com/assets/image/payment_types/es_bancomediolanum.png"
+      },
+      "es_selfbank": {
+        "country": "es",
+        "bank": "es_selfbank",
+        "url": "https://bank.paysera.com/assets/image/payment_types/es_selfbank.png"
+      },
+      "es_caixabank": {
+        "country": "es",
+        "bank": "es_caixabank",
+        "url": "https://bank.paysera.com/assets/image/payment_types/es_caixabank.png"
+      },
+      "es_ing": {
+        "country": "es",
+        "bank": "es_ing",
+        "url": "https://bank.paysera.com/assets/image/payment_types/es_ing.png"
+      },
+      "es_cajasur": {
+        "country": "es",
+        "bank": "es_cajasur",
+        "url": "https://bank.paysera.com/assets/image/payment_types/es_cajasur.png"
+      },
+      "safetypay": {
+        "country": "es",
+        "bank": "safetypay",
+        "url": "https://bank.paysera.com/assets/image/payment_types/safetypay.png"
+      },
+      "es_revolut": {
+        "country": "es",
+        "bank": "es_revolut",
+        "url": "https://bank.paysera.com/assets/image/payment_types/es_revolut.png"
+      },
+      "es_bankinter": {
+        "country": "es",
+        "bank": "es_bankinter",
+        "url": "https://bank.paysera.com/assets/image/payment_types/es_bankinter.png"
+      },
+      "es_bancosantander": {
+        "country": "es",
+        "bank": "es_bancosantander",
+        "url": "https://bank.paysera.com/assets/image/payment_types/es_bancosantander.png"
+      },
+      "es_unicajabanco": {
+        "country": "es",
+        "bank": "es_unicajabanco",
+        "url": "https://bank.paysera.com/assets/image/payment_types/es_unicajabanco.png"
+      },
+      "es_trustly": {
+        "country": "es",
+        "bank": "es_trustly",
+        "url": "https://bank.paysera.com/assets/image/payment_types/es_trustly.png"
+      },
+      "es_evobanco": {
+        "country": "es",
+        "bank": "es_evobanco",
+        "url": "https://bank.paysera.com/assets/image/payment_types/es_evobanco.png"
+      },
+      "es_bankoa": {
+        "country": "es",
+        "bank": "es_bankoa",
+        "url": "https://bank.paysera.com/assets/image/payment_types/es_bankoa.png"
+      },
+      "es_bancopichincha": {
+        "country": "es",
+        "bank": "es_bancopichincha",
+        "url": "https://bank.paysera.com/assets/image/payment_types/es_bancopichincha.png"
+      },
+      "es_andbank": {
+        "country": "es",
+        "bank": "es_andbank",
+        "url": "https://bank.paysera.com/assets/image/payment_types/es_andbank.png"
+      },
+      "es_ibercaja": {
+        "country": "es",
+        "bank": "es_ibercaja",
+        "url": "https://bank.paysera.com/assets/image/payment_types/es_ibercaja.png"
+      },
+      "es_bbva": {
+        "country": "es",
+        "bank": "es_bbva",
+        "url": "https://bank.paysera.com/assets/image/payment_types/es_bbva.png"
+      },
+      "es_kutxabank": {
+        "country": "es",
+        "bank": "es_kutxabank",
+        "url": "https://bank.paysera.com/assets/image/payment_types/es_kutxabank.png"
+      },
+      "es_renta4banco": {
+        "country": "es",
+        "bank": "es_renta4banco",
+        "url": "https://bank.paysera.com/assets/image/payment_types/es_renta4banco.png"
+      },
+      "es_fiarebancaetica": {
+        "country": "es",
+        "bank": "es_fiarebancaetica",
+        "url": "https://bank.paysera.com/assets/image/payment_types/es_fiarebancaetica.png"
+      },
+      "es_laboralkutxa": {
+        "country": "es",
+        "bank": "es_laboralkutxa",
+        "url": "https://bank.paysera.com/assets/image/payment_types/es_laboralkutxa.png"
+      },
+      "es_colonya": {
+        "country": "es",
+        "bank": "es_colonya",
+        "url": "https://bank.paysera.com/assets/image/payment_types/es_colonya.png"
+      },
+      "es_inversis": {
+        "country": "es",
+        "bank": "es_inversis",
+        "url": "https://bank.paysera.com/assets/image/payment_types/es_inversis.png"
+      },
+      "es_openbank": {
+        "country": "es",
+        "bank": "es_openbank",
+        "url": "https://bank.paysera.com/assets/image/payment_types/es_openbank.png"
+      },
+      "es_eurocajarural": {
+        "country": "es",
+        "bank": "es_eurocajarural",
+        "url": "https://bank.paysera.com/assets/image/payment_types/es_eurocajarural.png"
+      },
+      "es_n26": {
+        "country": "es",
+        "bank": "es_n26",
+        "url": "https://bank.paysera.com/assets/image/payment_types/es_n26.png"
+      },
+      "es_bancodesabadell": {
+        "country": "es",
+        "bank": "es_bancodesabadell",
+        "url": "https://bank.paysera.com/assets/image/payment_types/es_bancodesabadell.png"
+      },
+      "es_cajaarquitectos": {
+        "country": "es",
+        "bank": "es_cajaarquitectos",
+        "url": "https://bank.paysera.com/assets/image/payment_types/es_cajaarquitectos.png"
+      }
+    },
+    "at": {
+      "at_unicredit": {
+        "country": "at",
+        "bank": "at_unicredit",
+        "url": "https://bank.paysera.com/assets/image/payment_types/at_unicredit.png"
+      },
+      "at_n26": {
+        "country": "at",
+        "bank": "at_n26",
+        "url": "https://bank.paysera.com/assets/image/payment_types/at_n26.png"
+      },
+      "at_ing": {
+        "country": "at",
+        "bank": "at_ing",
+        "url": "https://bank.paysera.com/assets/image/payment_types/at_ing.png"
+      },
+      "safetypay": {
+        "country": "at",
+        "bank": "safetypay",
+        "url": "https://bank.paysera.com/assets/image/payment_types/safetypay.png"
+      },
+      "at_erste_group": {
+        "country": "at",
+        "bank": "at_erste_group",
+        "url": "https://bank.paysera.com/assets/image/payment_types/at_erste_group.png"
+      },
+      "at_revolut": {
+        "country": "at",
+        "bank": "at_revolut",
+        "url": "https://bank.paysera.com/assets/image/payment_types/at_revolut.png"
+      },
+      "at_trustly": {
+        "country": "at",
+        "bank": "at_trustly",
+        "url": "https://bank.paysera.com/assets/image/payment_types/at_trustly.png"
+      }
+    },
+    "xk": {
+      "xk_bankaekonomike": {
+        "country": "xk",
+        "bank": "xk_bankaekonomike",
+        "url": "https://bank.paysera.com/assets/image/payment_types/xk_bankaekonomike.png"
+      },
+      "xk_isbank": {
+        "country": "xk",
+        "bank": "xk_isbank",
+        "url": "https://bank.paysera.com/assets/image/payment_types/xk_isbank.png"
+      },
+      "xk_komercialnabank": {
+        "country": "xk",
+        "bank": "xk_komercialnabank",
+        "url": "https://bank.paysera.com/assets/image/payment_types/xk_komercialnabank.png"
+      },
+      "xk_nlbbank": {
+        "country": "xk",
+        "bank": "xk_nlbbank",
+        "url": "https://bank.paysera.com/assets/image/payment_types/xk_nlbbank.png"
+      },
+      "xk_tebbank": {
+        "country": "xk",
+        "bank": "xk_tebbank",
+        "url": "https://bank.paysera.com/assets/image/payment_types/xk_tebbank.png"
+      },
+      "xk_procreditbank": {
+        "country": "xk",
+        "bank": "xk_procreditbank",
+        "url": "https://bank.paysera.com/assets/image/payment_types/xk_procreditbank.png"
+      },
+      "xk_bktbank": {
+        "country": "xk",
+        "bank": "xk_bktbank",
+        "url": "https://bank.paysera.com/assets/image/payment_types/xk_bktbank.png"
+      },
+      "xk_raiffeisenbank": {
+        "country": "xk",
+        "bank": "xk_raiffeisenbank",
+        "url": "https://bank.paysera.com/assets/image/payment_types/xk_raiffeisenbank.png"
+      },
+      "xk_ziraatbank": {
+        "country": "xk",
+        "bank": "xk_ziraatbank",
+        "url": "https://bank.paysera.com/assets/image/payment_types/xk_ziraatbank.png"
+      },
+      "xk_bpb": {
+        "country": "xk",
+        "bank": "xk_bpb",
+        "url": "https://bank.paysera.com/assets/image/payment_types/xk_bpb.png"
+      }
+    },
+    "cz": {},
+    "pl": {
+      "pl_bz_wbk": {
+        "country": "pl",
+        "bank": "pl_bz_wbk",
+        "url": "https://bank.paysera.com/assets/image/payment_types/pl_bz_wbk.png"
+      },
+      "pl_pbs": {
+        "country": "pl",
+        "bank": "pl_pbs",
+        "url": "https://bank.paysera.com/assets/image/payment_types/pl_pbs.png"
+      },
+      "pl_toyota": {
+        "country": "pl",
+        "bank": "pl_toyota",
+        "url": "https://bank.paysera.com/assets/image/payment_types/pl_toyota.png"
+      },
+      "pl_nest": {
+        "country": "pl",
+        "bank": "pl_nest",
+        "url": "https://bank.paysera.com/assets/image/payment_types/pl_nest.png"
+      },
+      "pl_citi_handlowy": {
+        "country": "pl",
+        "bank": "pl_citi_handlowy",
+        "url": "https://bank.paysera.com/assets/image/payment_types/pl_citi_handlowy.png"
+      },
+      "pl_mbank": {
+        "country": "pl",
+        "bank": "pl_mbank",
+        "url": "https://bank.paysera.com/assets/image/payment_types/pl_mbank.png"
+      },
+      "pl_plus": {
+        "country": "pl",
+        "bank": "pl_plus",
+        "url": "https://bank.paysera.com/assets/image/payment_types/pl_plus.png"
+      },
+      "pl_zabka": {
+        "country": "pl",
+        "bank": "pl_zabka",
+        "url": "https://bank.paysera.com/assets/image/payment_types/pl_zabka.png"
+      },
+      "pl_millennium": {
+        "country": "pl",
+        "bank": "pl_millennium",
+        "url": "https://bank.paysera.com/assets/image/payment_types/pl_millennium.png"
+      },
+      "pl_volkswagen": {
+        "country": "pl",
+        "bank": "pl_volkswagen",
+        "url": "https://bank.paysera.com/assets/image/payment_types/pl_volkswagen.png"
+      },
+      "pl_pekao": {
+        "country": "pl",
+        "bank": "pl_pekao",
+        "url": "https://bank.paysera.com/assets/image/payment_types/pl_pekao.png"
+      },
+      "pl_eurobank": {
+        "country": "pl",
+        "bank": "pl_eurobank",
+        "url": "https://bank.paysera.com/assets/image/payment_types/pl_eurobank.png"
+      },
+      "pl_blik": {
+        "country": "pl",
+        "bank": "pl_blik",
+        "url": "https://bank.paysera.com/assets/image/payment_types/pl_blik.png"
+      },
+      "pl_ing": {
+        "country": "pl",
+        "bank": "pl_ing",
+        "url": "https://bank.paysera.com/assets/image/payment_types/pl_ing.png"
+      },
+      "pl_getin": {
+        "country": "pl",
+        "bank": "pl_getin",
+        "url": "https://bank.paysera.com/assets/image/payment_types/pl_getin.png"
+      },
+      "pl_dnb": {
+        "country": "pl",
+        "bank": "pl_dnb",
+        "url": "https://bank.paysera.com/assets/image/payment_types/pl_dnb.png"
+      },
+      "pl_deutsche": {
+        "country": "pl",
+        "bank": "pl_deutsche",
+        "url": "https://bank.paysera.com/assets/image/payment_types/pl_deutsche.png"
+      },
+      "pl_raiffeisen": {
+        "country": "pl",
+        "bank": "pl_raiffeisen",
+        "url": "https://bank.paysera.com/assets/image/payment_types/pl_raiffeisen.png"
+      },
+      "pl_idea": {
+        "country": "pl",
+        "bank": "pl_idea",
+        "url": "https://bank.paysera.com/assets/image/payment_types/pl_idea.png"
+      },
+      "pl_pko": {
+        "country": "pl",
+        "bank": "pl_pko",
+        "url": "https://bank.paysera.com/assets/image/payment_types/pl_pko.png"
+      },
+      "pl_paribas": {
+        "country": "pl",
+        "bank": "pl_paribas",
+        "url": "https://bank.paysera.com/assets/image/payment_types/pl_paribas.png"
+      },
+      "pl_trustly": {
+        "country": "pl",
+        "bank": "pl_trustly",
+        "url": "https://bank.paysera.com/assets/image/payment_types/pl_trustly.png"
+      },
+      "pl_inteligo": {
+        "country": "pl",
+        "bank": "pl_inteligo",
+        "url": "https://bank.paysera.com/assets/image/payment_types/pl_inteligo.png"
+      },
+      "pl_noble": {
+        "country": "pl",
+        "bank": "pl_noble",
+        "url": "https://bank.paysera.com/assets/image/payment_types/pl_noble.png"
+      },
+      "pl_alior": {
+        "country": "pl",
+        "bank": "pl_alior",
+        "url": "https://bank.paysera.com/assets/image/payment_types/pl_alior.png"
+      },
+      "pl_sgb": {
+        "country": "pl",
+        "bank": "pl_sgb",
+        "url": "https://bank.paysera.com/assets/image/payment_types/pl_sgb.png"
+      },
+      "pl_pocztowy24": {
+        "country": "pl",
+        "bank": "pl_pocztowy24",
+        "url": "https://bank.paysera.com/assets/image/payment_types/pl_pocztowy24.png"
+      },
+      "pl_skycash": {
+        "country": "pl",
+        "bank": "pl_skycash",
+        "url": "https://bank.paysera.com/assets/image/payment_types/pl_skycash.png"
+      },
+      "pl_credit_agricole": {
+        "country": "pl",
+        "bank": "pl_credit_agricole",
+        "url": "https://bank.paysera.com/assets/image/payment_types/pl_credit_agricole.png"
+      },
+      "pl_bos": {
+        "country": "pl",
+        "bank": "pl_bos",
+        "url": "https://bank.paysera.com/assets/image/payment_types/pl_bos.png"
+      },
+      "pl_tmobile": {
+        "country": "pl",
+        "bank": "pl_tmobile",
+        "url": "https://bank.paysera.com/assets/image/payment_types/pl_tmobile.png"
+      }
+    },
+    "ro": {
+      "ro_alphabank": {
+        "country": "ro",
+        "bank": "ro_alphabank",
+        "url": "https://bank.paysera.com/assets/image/payment_types/ro_alphabank.png"
+      },
+      "ro_ing": {
+        "country": "ro",
+        "bank": "ro_ing",
+        "url": "https://bank.paysera.com/assets/image/payment_types/ro_ing.png"
+      },
+      "ro_unicredit": {
+        "country": "ro",
+        "bank": "ro_unicredit",
+        "url": "https://bank.paysera.com/assets/image/payment_types/ro_unicredit.png"
+      },
+      "ro_raiffeisen": {
+        "country": "ro",
+        "bank": "ro_raiffeisen",
+        "url": "https://bank.paysera.com/assets/image/payment_types/ro_raiffeisen.png"
+      },
+      "ro_libra": {
+        "country": "ro",
+        "bank": "ro_libra",
+        "url": "https://bank.paysera.com/assets/image/payment_types/ro_libra.png"
+      },
+      "ro_transilvania": {
+        "country": "ro",
+        "bank": "ro_transilvania",
+        "url": "https://bank.paysera.com/assets/image/payment_types/ro_transilvania.png"
+      },
+      "ro_bcr": {
+        "country": "ro",
+        "bank": "ro_bcr",
+        "url": "https://bank.paysera.com/assets/image/payment_types/ro_bcr.png"
+      },
+      "ro_revolut": {
+        "country": "ro",
+        "bank": "ro_revolut",
+        "url": "https://bank.paysera.com/assets/image/payment_types/ro_revolut.png"
+      },
+      "ro_intesa_sanpaolo": {
+        "country": "ro",
+        "bank": "ro_intesa_sanpaolo",
+        "url": "https://bank.paysera.com/assets/image/payment_types/ro_intesa_sanpaolo.png"
+      }
+    },
+    "nl": {
+      "nl_revolut": {
+        "country": "nl",
+        "bank": "nl_revolut",
+        "url": "https://bank.paysera.com/assets/image/payment_types/nl_revolut.png"
+      },
+      "nl_snsbank": {
+        "country": "nl",
+        "bank": "nl_snsbank",
+        "url": "https://bank.paysera.com/assets/image/payment_types/nl_snsbank.png"
+      },
+      "nl_n26": {
+        "country": "nl",
+        "bank": "nl_n26",
+        "url": "https://bank.paysera.com/assets/image/payment_types/nl_n26.png"
+      },
+      "nl_ing": {
+        "country": "nl",
+        "bank": "nl_ing",
+        "url": "https://bank.paysera.com/assets/image/payment_types/nl_ing.png"
+      },
+      "nl_rabobank": {
+        "country": "nl",
+        "bank": "nl_rabobank",
+        "url": "https://bank.paysera.com/assets/image/payment_types/nl_rabobank.png"
+      },
+      "nl_asnbank": {
+        "country": "nl",
+        "bank": "nl_asnbank",
+        "url": "https://bank.paysera.com/assets/image/payment_types/nl_asnbank.png"
+      },
+      "safetypay": {
+        "country": "nl",
+        "bank": "safetypay",
+        "url": "https://bank.paysera.com/assets/image/payment_types/safetypay.png"
+      },
+      "nl_triodos": {
+        "country": "nl",
+        "bank": "nl_triodos",
+        "url": "https://bank.paysera.com/assets/image/payment_types/nl_triodos.png"
+      },
+      "nl_trustly": {
+        "country": "nl",
+        "bank": "nl_trustly",
+        "url": "https://bank.paysera.com/assets/image/payment_types/nl_trustly.png"
+      },
+      "nl_abn_amro": {
+        "country": "nl",
+        "bank": "nl_abn_amro",
+        "url": "https://bank.paysera.com/assets/image/payment_types/nl_abn_amro.png"
+      },
+      "nl_regiobank": {
+        "country": "nl",
+        "bank": "nl_regiobank",
+        "url": "https://bank.paysera.com/assets/image/payment_types/nl_regiobank.png"
+      }
+    },
+    "tr": {}
+  }
+}
