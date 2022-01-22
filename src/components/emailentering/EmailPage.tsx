@@ -5,6 +5,7 @@ import Frame from "../frame/Frame";
 // @ts-ignore
 import { withRouter } from 'react-router-dom';
 import {appdata, save} from "../AppData";
+import axios from "axios";
 
 interface EmailProps {
 }
@@ -26,6 +27,7 @@ class EmailPage extends React.Component<EmailProps, EmailState> {
         this.state.input["name"] = appdata.customerName;
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        axios.get('https://api.duoclassico.eu/functions/hello')
     }
 
     handleChange(event: any) {
@@ -44,10 +46,19 @@ class EmailPage extends React.Component<EmailProps, EmailState> {
             appdata.customerEmail = this.state.input["email"];
             appdata.customerName = this.state.input["name"];
             save()
-            // @ts-ignore
-            this.props["history"].push("/payment")
+            this.saveLead()
         }
         console.log(this.state);
+    }
+    saveLead() {
+        axios.post('https://api.duoclassico.eu/functions/lead', appdata)
+            .then(response => {
+                // @ts-ignore
+                appdata.country = response.data["country"];
+                save();
+                // @ts-ignore
+                this.props["history"].push("/payment")
+            })
     }
 
     validate() {

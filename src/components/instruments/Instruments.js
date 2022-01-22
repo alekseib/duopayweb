@@ -1,19 +1,24 @@
-import payseraData from "./paysera.json"
 import './Instruments.css';
 import Frame from "../frame/Frame";
-import {load} from "../AppData";
-import ReactPayPal from './PayPalButtons';
-import {Elements} from '@stripe/react-stripe-js';
-import {loadStripe} from '@stripe/stripe-js';
-import { CheckoutForm } from '../stripe/CheckoutForm';
-const stripePromise = loadStripe('pk_live_Ym4pj7nfoaBPMuFYyUI0nViM006gcwB8eD');
+import {appdata, load, save} from "../AppData";
+import {CountryDropdown} from "react-country-region-selector";
+import {useState} from "react";
 
+function useForceUpdate(){
+    const [value, setValue] = useState(0); // integer state
+    return () => setValue(value => value + 1); // update the state to force render
+}
 function Instruments() {
+    const forceUpdate = useForceUpdate();
     const options = {
         clientSecret: 'pi_3KFlMXKNGtOWS9rw0kYh6Ni0_secret_a3rKNOqwSXc8qrG2Co9TikQQX'
     };
-
     load();
+    function selectCountry(val) {
+        appdata.country = val;
+        save();
+        forceUpdate();
+    }
     return (
         <div>
             <Frame>
@@ -21,17 +26,12 @@ function Instruments() {
                     Выберете способ оплаты
                 </h2>
                 <div className="App">
-                    <ul className="offer-pay__banks">
-                        {
-                            Object.keys(payseraData["data"]["ee"]).map(function(name, index){
-                                return <li key={ index }>
-                                <a href="http://google.com">
-                                    <img src={payseraData["data"]["ee"][name]["url"]} alt=""></img>
-                                </a>
-                            </li>;
-                        })}
-                    </ul>
+                    AppDataCountry{appdata.country}---
                 </div>
+                <CountryDropdown
+                    valueType = "short"
+                    value={appdata.country}
+                    onChange={(val) => selectCountry(val)} />
 
                 <br/>
                 <ul className="offer-pay__list">
@@ -41,12 +41,8 @@ function Instruments() {
                 </ul>
                 <div id="smart-button-container">
                     <div className="stripe">
-                        <Elements stripe={stripePromise} options={options} >
-                            <CheckoutForm/>
-                        </Elements>
                     </div>
                     <div className="paypal">
-                        <ReactPayPal></ReactPayPal>
                     </div>
                 </div>
             </Frame>

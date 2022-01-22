@@ -6,7 +6,8 @@ export const appdata = {
        "errorMessage":"",
        "header":"",
        "customerEmail":"",
-       "customerName":""
+       "customerName":"",
+       "country":""
 }
 export function save()
 {
