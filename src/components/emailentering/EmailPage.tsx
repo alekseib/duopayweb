@@ -6,6 +6,7 @@ import Frame from "../frame/Frame";
 import { withRouter } from 'react-router-dom';
 import {appdata, save} from "../AppData";
 import axios from "axios";
+import {Spinner} from "react-bootstrap";
 
 interface EmailProps {
 }
@@ -14,7 +15,7 @@ interface EmailState {
     input: any
     errors: any
 }
-
+let busy = false;
 class EmailPage extends React.Component<EmailProps, EmailState> {
 
     constructor(props: EmailProps) {
@@ -51,11 +52,14 @@ class EmailPage extends React.Component<EmailProps, EmailState> {
         console.log(this.state);
     }
     saveLead() {
+        if (busy) return;
+        busy = true;
         axios.post('https://api.duoclassico.eu/functions/lead', appdata)
             .then(response => {
                 // @ts-ignore
                 appdata.country = response.data["country"];
                 save();
+                busy = false;
                 // @ts-ignore
                 this.props["history"].push("/payment")
             })
@@ -146,7 +150,13 @@ class EmailPage extends React.Component<EmailProps, EmailState> {
                                 src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
                             <div className="app-button d-flex justify-content-around">
                                 <button type="submit" className="app-btn app-btn-further next-step-btn">
-                                    <span>Далее1</span>
+                                    {busy?<Spinner
+                                        as="span"
+                                        variant="light"
+                                        size="sm"
+                                        role="status"
+                                        aria-hidden="true"
+                                        animation="border"/>:<span>Далее</span>}
                                 </button>
                             </div>
                         </form>
