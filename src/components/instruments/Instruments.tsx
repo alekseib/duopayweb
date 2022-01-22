@@ -1,4 +1,3 @@
-import React,{useState,useEffect} from 'react';
 import './Instruments.css';
 import Frame from "../frame/Frame";
 import {load, payseraData} from "../AppData";
@@ -29,7 +28,7 @@ function Instruments() {
                             Object.keys(payseraData["data"]["ee"]).map(function(name, index){
                             return <li key={ index }>
                                 <a href="http://google.com">
-                                    <img src={payseraData["data"]["ee"][name]["url"]}></img>
+                                    <img src={payseraData["data"]["ee"][name]["url"]} alt=""></img>
                                 </a>
                             </li>;
                         })}
