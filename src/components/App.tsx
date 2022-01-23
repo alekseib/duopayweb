@@ -7,6 +7,7 @@ import queryString from "query-string"
 import Instruments from "./instruments/Instruments";
 import {parseParams} from "./AppData";
 import {ThankYouPage} from "./thankyoupage/ThankYouPage";
+import HelloPage from "./eee/HelloPage";
 
 function Home() {
     return (
@@ -24,7 +25,6 @@ function Home() {
 }
 
 
-
 function App() {
     const queryParams = queryString.parse(window.location.search)
     // @ts-ignore
@@ -39,6 +39,9 @@ function App() {
 
             <BrowserRouter>
                 <Switch>
+                    <Route path="/hello">
+                        <HelloPage />
+                    </Route>
                     <Route path="/start">
                         <EmailPage />
                     </Route>
