@@ -159,7 +159,7 @@ class EmailPage extends React.Component<EmailProps, EmailState> {
                                         animation="border"/>:<span>Далее</span>}
                                 </button>
 
-                                Hello!!!
+                                Hello!!! In Red
                             </div>
                         </form>
                     </div>
