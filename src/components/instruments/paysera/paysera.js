@@ -1,5 +1,5 @@
 import payseraData from "../../instrumentsOld/paysera.json";
-import {appdata, save} from "../../AppData";
+import {appdata} from "../../AppData";
 import axios from "axios";
 
 export function Paysera() {
@@ -19,7 +19,7 @@ export function Paysera() {
                     (payseraData["data"][appdata.country.toLowerCase()] !== undefined)?
                     Object.keys(payseraData["data"][appdata.country.toLowerCase()]).map(function(name, index){
                         return <li key={ index }>
-                                <img src={payseraData["data"][appdata.country.toLowerCase()][name]["url"]} alt="" onClick={()=>paysera(name)}></img>
+                                <img src={payseraData["data"][appdata.country.toLowerCase()][name]["url"]} alt="" onClick={()=>paysera(name)}/>
                         </li>
                     }):<div>Paysera</div>
                 }
