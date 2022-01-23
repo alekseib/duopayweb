@@ -32,6 +32,7 @@ export function Instruments() {
                 <div className="App">
                 </div>
                 <br/>
+
                 <Paysera/>
             </Frame>
         </div>
