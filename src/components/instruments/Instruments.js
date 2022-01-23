@@ -6,6 +6,7 @@ import {useState} from "react";
 import {Paysera} from "./paysera/paysera";
 
 function useForceUpdate(){
+    // eslint-disable-next-line no-unused-vars
     const [value, setValue] = useState(0); // integer state
     return () => setValue(value => value + 1); // update the state to force render
 }
