@@ -158,6 +158,8 @@ class EmailPage extends React.Component<EmailProps, EmailState> {
                                         aria-hidden="true"
                                         animation="border"/>:<span>Далее</span>}
                                 </button>
+
+                                Hello!!! In Red
                             </div>
                         </form>
                     </div>
