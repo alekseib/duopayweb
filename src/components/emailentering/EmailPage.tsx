@@ -105,7 +105,7 @@ class EmailPage extends React.Component<EmailProps, EmailState> {
                 <div>
                     <div>
                         <form className="app-form" method="post" id="myform" onSubmit={this.handleSubmit}>
-                            <h2 className="app-title">Пожалуйста, введите имя и емайл. На этот емайл мы вышлем вам билет.</h2>
+                            <h2 className="app-title">Hello from Masha. Пожалуйста, введите имя и емайл. На этот емайл мы вышлем вам билет.</h2>
                             <div>
                                 <input
                                     type="text"
