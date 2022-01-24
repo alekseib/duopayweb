@@ -1,15 +1,15 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import {appdata} from "../AppData";
+import {appdata} from "../../AppData";
 
 
 
-export default function ReactPayPal() {
+export default function PayPalButtons() {
     const [paid, setPaid] = React.useState(false);
     const [error] = React.useState(null);
     const paypalRef = React.useRef();
 
-    // To show PayPal buttons once the component loads
+    // To show PayPalButtons buttons once the component loads
     React.useEffect(() => {
         window.paypal
             .Buttons({

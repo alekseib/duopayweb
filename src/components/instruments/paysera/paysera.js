@@ -21,7 +21,7 @@ export function Paysera() {
                         return <li key={ index }>
                                 <img src={payseraData["data"][appdata.country.toLowerCase()][name]["url"]} alt="" onClick={()=>paysera(name)}/>
                         </li>
-                    }):<div>Paysera</div>
+                    }):<div> </div>
                 }
             </ul>
         </div>

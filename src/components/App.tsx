@@ -8,6 +8,7 @@ import Instruments from "./instruments/Instruments";
 import {parseParams} from "./AppData";
 import {ThankYouPage} from "./thankyoupage/ThankYouPage";
 import HelloPage from "./eee/HelloPage";
+import PayPal from "./instruments/paypal/PayPal";
 
 function Home() {
     return (
@@ -47,6 +48,9 @@ function App() {
                     </Route>
                     <Route path="/payment">
                         <Instruments/>
+                    </Route>
+                    <Route path="/paypal">
+                        <PayPal/>
                     </Route>
                     <Route path="/ok">
                         <ThankYouPage/>

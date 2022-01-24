@@ -158,8 +158,6 @@ class EmailPage extends React.Component<EmailProps, EmailState> {
                                         aria-hidden="true"
                                         animation="border"/>:<span>Далее</span>}
                                 </button>
-
-                                Hello!!! In Red Alex
                             </div>
                         </form>
                     </div>
@@ -171,3 +169,4 @@ class EmailPage extends React.Component<EmailProps, EmailState> {
 }
 
 export default withRouter(EmailPage);
+
