@@ -406,7 +406,6 @@ label {
 .app-text {
     color: #c00000;
     margin-top: 12px;
-    display: none;
 }
 .app-button {
     margin-top: 24px;
@@ -422,6 +421,18 @@ label {
     border-radius: 137px;
     position: relative;
 }
+
+.app-btn1 {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    background-color:  #fff;
+    max-width: 350px;
+    padding: 17px 47px;
+    border-radius: 137px;
+    position: relative;
+}
+
 
 .app-btn-back {
     background-color: #918c8c;

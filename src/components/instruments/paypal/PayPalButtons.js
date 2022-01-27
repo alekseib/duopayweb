@@ -1,6 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import {appdata} from "../../AppData";
+import {appdata, load} from "../../AppData";
 
 
 
@@ -11,6 +11,7 @@ export default function PayPalButtons() {
 
     // To show PayPalButtons buttons once the component loads
     React.useEffect(() => {
+        load();
         window.paypal
             .Buttons({
                 createOrder: (data, actions) => {
@@ -18,7 +19,7 @@ export default function PayPalButtons() {
                         intent: "CAPTURE",
                         purchase_units: [
                             {
-                                description: appdata.productName,
+                                description: appdata.description,
                                 amount: {
                                     currency_code: "EUR",
                                     value: appdata.price,

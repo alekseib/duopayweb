@@ -3,7 +3,7 @@ import Footer from "../footer/Footer";
 import './EmailPage.css';
 import Frame from "../frame/Frame";
 // @ts-ignore
-import { withRouter } from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 import {appdata, save} from "../AppData";
 import axios from "axios";
 import {Spinner} from "react-bootstrap";
@@ -14,15 +14,19 @@ interface EmailProps {
 interface EmailState {
     input: any
     errors: any
+    error: string
 }
+
 let busy = false;
+
 class EmailPage extends React.Component<EmailProps, EmailState> {
 
     constructor(props: EmailProps) {
         super(props);
         this.state = {
             input: {},
-            errors: {}
+            errors: {},
+            error: ""
         };
         this.state.input["email"] = appdata.customerEmail;
         this.state.input["name"] = appdata.customerName;
@@ -51,18 +55,31 @@ class EmailPage extends React.Component<EmailProps, EmailState> {
         }
         console.log(this.state);
     }
+
     saveLead() {
+        this.setState({ error: ""});
         if (busy) return;
         busy = true;
         axios.post('https://api.duoclassico.eu/functions/lead', appdata)
             .then(response => {
+                if (response.status != 200) {
+                    this.setState({ error: response.statusText});
+                    return;
+                }
                 // @ts-ignore
                 appdata.country = response.data["country"];
                 save();
-                busy = false;
                 // @ts-ignore
                 this.props["history"].push("/payment")
+
             })
+            .catch((error) => {
+                this.setState({ error: error.message});
+                return Promise.reject(error)
+            })
+            .finally(() => {
+                busy = false;
+            });
     }
 
     validate() {
@@ -100,12 +117,14 @@ class EmailPage extends React.Component<EmailProps, EmailState> {
     }
 
     render() {
+        console.log("render() method");
         return (
             <Frame>
                 <div>
                     <div>
                         <form className="app-form" method="post" id="myform" onSubmit={this.handleSubmit}>
-                            <h2 className="app-title">Пожалуйста, введите имя и емайл. На этот емайл мы вышлем вам билет.</h2>
+                            <h2 className="app-title">Пожалуйста, введите имя и емайл. На этот емайл мы вышлем вам
+                                билет.</h2>
                             <div>
                                 <input
                                     type="text"
@@ -144,19 +163,17 @@ class EmailPage extends React.Component<EmailProps, EmailState> {
                                 </p>
                             </label>
                             <p className="app-text">
-                                Сообщение об ошибке
+                                {this.state.error}
                             </p>
-                            <script
-                                src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
                             <div className="app-button d-flex justify-content-around">
                                 <button type="submit" className="app-btn app-btn-further next-step-btn">
-                                    {busy?<Spinner
+                                    {busy ? <Spinner
                                         as="span"
                                         variant="light"
                                         size="sm"
                                         role="status"
                                         aria-hidden="true"
-                                        animation="border"/>:<span>Далее</span>}
+                                        animation="border"/> : <span>Далее</span>}
                                 </button>
                             </div>
                         </form>

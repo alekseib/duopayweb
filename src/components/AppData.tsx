@@ -7,7 +7,11 @@ export const appdata = {
        "header":"",
        "customerEmail":"",
        "customerName":"",
-       "country":""
+       "country":"",
+       "paymentMethod":"",
+       "paymentInstrument":"",
+       "orderId":"",
+       "description":""
 }
 export function save()
 {
@@ -25,6 +29,9 @@ export function load()
         appdata["customerEmail"] = state1["customerEmail"];
         appdata["customerName"] = state1["customerName"];
         appdata["header"] = state1["header"];
+        appdata["country"] = state1["country"];
+        appdata["description"] = state1["description"];
+
     }
     catch (e)
     {
@@ -52,33 +59,32 @@ export function parseParams(params:any)
     appdata.header = "Билет " + appdata.price + "€";
     if ("SILVER1" === appdata.productCode)
     {
-        appdata.productName = "Серебрянный век. Часть 1 -SILVER1-";
+        appdata.productName = "Серебрянный век. Часть 1 ";
     }
     else
     if ("SILVER2" === appdata.productCode)
     {
-        appdata.productName = "Серебрянный век. Часть 2 -SILVER2-";
+        appdata.productName = "Серебрянный век. Часть 2 ";
     }
     else
     if ("SILVER3" === appdata.productCode)
     {
-        appdata.productName = "Серебрянный век. Часть 3 -SILVER2-";
+        appdata.productName = "Серебрянный век. Часть 3 ";
     }
     else
     if ("FR" === appdata.productCode)
     {
-        appdata.productName = "Физика и история музыки. -FR-";
-        appdata.productName = "Физика и история музыки";
+        appdata.productName = "Физика и история музыки. ";
     }
     else
     if ("ONEGIN1" === appdata.productCode)
     {
-        appdata.productName = "Тайны оперы Евгений Онегин. Часть 1 -ONEGIN1-";
+        appdata.productName = "Тайны оперы Евгений Онегин. Часть 1 ";
     }
     else
     if ("ONEGIN2" === appdata.productCode)
     {
-        appdata.productName = "Тайны оперы Евгений Онегин. Часть 2 -ONEGIN2-";
+        appdata.productName = "Тайны оперы Евгений Онегин. Часть 2 ";
     }
     if ("" === appdata.productCode)
     {

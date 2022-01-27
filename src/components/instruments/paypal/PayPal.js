@@ -7,7 +7,7 @@ export function PayPal() {
             <Frame>
                 <br/>
                 <h2 className="offer-pay__title">
-                    Выберете вариант оплаты
+                    Выберете вариант оплаты в PayPal
                 </h2>
                 <br/>
                 <br/>
