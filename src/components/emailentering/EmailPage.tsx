@@ -62,7 +62,7 @@ class EmailPage extends React.Component<EmailProps, EmailState> {
         busy = true;
         axios.post('https://api.duoclassico.eu/functions/lead', appdata)
             .then(response => {
-                if (response.status != 200) {
+                if (response.status !== 200) {
                     this.setState({ error: response.statusText});
                     return;
                 }

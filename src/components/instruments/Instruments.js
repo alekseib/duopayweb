@@ -33,7 +33,7 @@ export function Instruments() {
         appdata.paymentInstrument = "PayPal";
         axios.post('https://api.duoclassico.eu/functions/init', appdata)
             .then(response => {
-                if (response.status != 200) {
+                if (response.status !== 200) {
                     errorMessage = response.statusText;
                     forceUpdate();
                     return;
