@@ -59,7 +59,7 @@ export function Instruments() {
         busy2 = true;
         forceUpdate();
         appdata.paymentMethod = "STRIPE";
-        appdata.paymentInstrument = "googlepay";
+        appdata.paymentInstrument = "card";
         axios.post('https://api.duoclassico.eu/functions/init', appdata)
             .then(response => {
                 if (response.status !== 200) {
