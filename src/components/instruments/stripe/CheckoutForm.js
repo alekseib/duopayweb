@@ -1,5 +1,4 @@
 import {useStripe, useElements, PaymentElement} from '@stripe/react-stripe-js';
-import {Spinner} from "react-bootstrap";
 import React from "react";
 
 
