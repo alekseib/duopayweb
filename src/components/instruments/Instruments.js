@@ -15,6 +15,7 @@ function useForceUpdate(){
 }
 let busy1 = false
 let busy2 = false
+let busy3 = false
 let errorMessage = "";
 export function Instruments() {
     const history = useHistory();
@@ -82,6 +83,35 @@ export function Instruments() {
                 forceUpdate();
             });
     }
+    function selectGoogleApple() {
+        errorMessage = "";
+        if (busy3) return;
+        busy3 = true;
+        forceUpdate();
+        appdata.paymentMethod = "STRIPE";
+        appdata.paymentInstrument = "card";
+        axios.post('https://api.duoclassico.eu/functions/init', appdata)
+            .then(response => {
+                if (response.status !== 200) {
+                    errorMessage = response.statusText;
+                    forceUpdate();
+                    return;
+                }
+                // @ts-ignore
+                appdata.orderId = response.data["orderId"];
+                appdata.redirectData = response.data["redirectData"];
+                save();
+                history.push("/stripe");
+            })
+            .catch((error) => {
+                errorMessage = error.message;
+                return Promise.reject(error)
+            })
+            .finally(() => {
+                busy3 = false;
+                forceUpdate();
+            });
+    }
 
     return (
         <div>
@@ -112,8 +142,6 @@ export function Instruments() {
                             animation="border"/> : <span><img src="img/Cards.png" alt=""/></span>}
                     </button>
                 </div>
-
-
                 <div className="app-button d-flex justify-content-around">
                     <button  onClick={()=>selectPayPal()} className="app-btn1">
                         {busy1 ? <Spinner
@@ -125,6 +153,18 @@ export function Instruments() {
                             animation="border"/> : <span><img src="img/PayPal.png" alt=""/></span>}
                     </button>
                 </div>
+                <div className="app-button d-flex justify-content-around">
+                    <button  onClick={()=>selectGoogleApple()} className="app-btn2">
+                        {busy3 ? <Spinner
+                            as="span"
+                            variant="dark"
+                            size="sm"
+                            role="status"
+                            aria-hidden="true"
+                            animation="border"/> : <span><img src="img/GoogleApple.png" alt=""/></span>}
+                    </button>
+                </div>
+
             </Frame>
         </div>
     );
