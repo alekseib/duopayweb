@@ -165,6 +165,7 @@ class EmailPage extends React.Component<EmailProps, EmailState> {
                             <p className="app-text">
                                 {this.state.error}
                             </p>
+
                             <div className="app-button d-flex justify-content-around">
                                 <button type="submit" className="app-btn app-btn-further next-step-btn">
                                     {busy ? <Spinner
