@@ -1,0 +1,8 @@
+echo "{"
+echo "  \"buildDate\": \""$(date "+%Y-%m-%d %H:%M:%S %z")"\","
+echo "  \"branch\": \""$(git rev-parse --abbrev-ref HEAD)"\","
+echo "  \"lastCommitHash\": \""$(git log -1 --pretty=format:%h)"\","
+echo "  \"lastCommitAuthor\": \""$(git log -1 --pretty=format:%ae)"\","
+echo "  \"lastCommitDate\": \""$(git log -1 --pretty=format:%ad --date=iso)"\","
+echo "  \"lastCommitComment\": \""$(git log -1 --pretty=format:%s)"\""
+echo "}"
