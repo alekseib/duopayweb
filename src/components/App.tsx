@@ -5,7 +5,7 @@ import {BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 import queryString from "query-string"
 import Instruments from "./instruments/Instruments";
-import {parseParams} from "./AppData";
+import {appdata, parseParams} from "./AppData";
 import {ThankYouPage} from "./thankyoupage/ThankYouPage";
 import HelloPage from "./eee/HelloPage";
 import PayPal from "./instruments/paypal/PayPal";
@@ -26,22 +26,25 @@ function Home() {
     );
 }
 
+function Tilda() {
+    window.open("https://duoclassico.eu", "_self")
+    return null;
+}
+
 function App() {
     const queryParams = queryString.parse(window.location.search)
     // @ts-ignore
     parseParams(queryParams)
+    if ("InvalidKey" === appdata.errorMessage) {
+        console.log(appdata.errorMessage)
+        window.open("https://duoclassico.eu/systemerror", "_self")
+    }
     return (
         <div>
-            {/*<div>*/}
-            {/*    <div>{appdata.errorMessage}</div>*/}
-            {/*    <div>{appdata.price}</div>*/}
-            {/*    <div>{appdata.name}</div>*/}
-            {/*</div>*/}
-
             <BrowserRouter>
                 <Switch>
-                    <Route path="/hello">
-                        <HelloPage />
+                    <Route path="/home">
+                        <Home />
                     </Route>
                     <Route path="/start">
                         <EmailPage />
@@ -59,7 +62,7 @@ function App() {
                         <ThankYouPage/>
                     </Route>
                     <Route path="/">
-                        <Home/>
+                        <Tilda/>
                     </Route>
                 </Switch>
             </BrowserRouter>

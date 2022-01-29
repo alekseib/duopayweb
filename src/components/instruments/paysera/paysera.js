@@ -1,4 +1,4 @@
-import payseraData from "../../instrumentsOld/paysera.json";
+import payseraData from "./paysera.json";
 import {appdata} from "../../AppData";
 import axios from "axios";
 

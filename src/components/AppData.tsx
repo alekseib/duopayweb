@@ -51,12 +51,13 @@ export function parseParams(params:any)
         appdata.price1  = params["key"].split('A')[2] /100;
         if (appdata.price1 - appdata.price - 1.11 > 0.0000001)
         {
+            console.log("Errorr!!!")
             appdata.errorMessage = "InvalidKey";
         }
 
     } catch (e)
     {
-        appdata.errorMessage = "InvalidKey";
+        appdata.errorMessage = "ParsingError";
     }
     appdata.header = "Билет " + appdata.price + "€";
     if ("SILVER1" === appdata.productCode)

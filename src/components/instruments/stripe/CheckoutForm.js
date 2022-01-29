@@ -1,6 +1,6 @@
 import {useStripe, useElements, PaymentElement} from '@stripe/react-stripe-js';
 import React from "react";
-
+import './Stripe.css';
 
 export const CheckoutForm = () => {
     const stripe = useStripe();
@@ -21,7 +21,7 @@ export const CheckoutForm = () => {
             //`Elements` instance that was used to create the Payment Element
             elements,
             confirmParams: {
-                return_url: "http://localhost:3000/ok",
+                return_url: "https://pay.duoclassico.eu/ok",
             },
         });
 
@@ -40,7 +40,7 @@ export const CheckoutForm = () => {
             <PaymentElement />
             <div className="app-button d-flex justify-content-around">
                 <button disabled={!stripe} className="app-btn app-btn-further next-step-btn">
-                    <span>Оплатить</span>
+                    <span>Продолжить</span>
                 </button>
             </div>
         </form>

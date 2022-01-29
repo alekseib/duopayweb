@@ -149,3 +149,35 @@ label>span {
 .dark-mode .group {
     background: #666;
 }
+.bank-logo {
+    max-width: 120px;
+    padding: 8px;
+}
+
+.app-btn1 {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    background-color:  #fcf;
+    max-width: 350px;
+    border-radius: 137px;
+    position: relative;
+}
+.app-btn2 {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    background-color:  #fcf;
+    max-width: 190px;
+    border-radius: 137px;
+    position: relative;
+}
+.app-btn3 {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    background-color:  #fcf;
+    max-width: 200px;
+    border-radius: 137px;
+    position: relative;
+}

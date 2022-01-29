@@ -1,0 +1,120 @@
+{
+  "FI": [
+    {
+      "bic": "OKOYFIHH",
+      "name": "OP",
+      "logo_url": "https://public.montonio.com/images/aspsps_logos/op.png"
+    },
+    {
+      "bic": "DABAFIHH",
+      "name": "Danske Bank",
+      "logo_url": "https://public.montonio.com/images/aspsps_logos/danske.png"
+    },
+    {
+      "bic": "RVUALT2V",
+      "name": "Revolut",
+      "logo_url": "https://public.montonio.com/images/aspsps_logos/revolut.png"
+    }
+  ],
+  "LV": [
+    {
+      "bic": "HABALV22",
+      "name": "Swedbank Latvija",
+      "logo_url": "https://public.montonio.com/images/aspsps_logos/swedbank.png"
+    },
+    {
+      "bic": "UNLALV2X",
+      "name": "SEB Latvija",
+      "logo_url": "https://public.montonio.com/images/aspsps_logos/seb.png"
+    },
+    {
+      "bic": "PARXLV22",
+      "name": "Citadele Latvija",
+      "logo_url": "https://public.montonio.com/images/aspsps_logos/citadele.png"
+    },
+    {
+      "bic": "RIKOLV2X",
+      "name": "Luminor Latvija",
+      "logo_url": "https://public.montonio.com/images/aspsps_logos/luminor.png"
+    },
+    {
+      "bic": "RVUALT2V",
+      "name": "Revolut",
+      "logo_url": "https://public.montonio.com/images/aspsps_logos/revolut.png"
+    }
+  ],
+  "EE": [
+    {
+      "bic": "HABAEE2X",
+      "name": "Swedbank Eesti",
+      "logo_url": "https://public.montonio.com/images/aspsps_logos/swedbank.png"
+    },
+    {
+      "bic": "EEUHEE2X",
+      "name": "SEB Eesti",
+      "logo_url": "https://public.montonio.com/images/aspsps_logos/seb.png"
+    },
+    {
+      "bic": "LHVBEE22",
+      "name": "LHV",
+      "logo_url": "https://public.montonio.com/images/aspsps_logos/lhv.png"
+    },
+    {
+      "bic": "RIKOEE22",
+      "name": "Luminor Eesti",
+      "logo_url": "https://public.montonio.com/images/aspsps_logos/luminor.png"
+    },
+    {
+      "bic": "EKRDEE22",
+      "name": "Coop Pank",
+      "logo_url": "https://public.montonio.com/images/aspsps_logos/coop.png"
+    },
+    {
+      "bic": "PARXEE22",
+      "name": "Citadele Eesti",
+      "logo_url": "https://public.montonio.com/images/aspsps_logos/citadele.png"
+    },
+    {
+      "bic": "RVUALT2V",
+      "name": "Revolut",
+      "logo_url": "https://public.montonio.com/images/aspsps_logos/revolut.png"
+    }
+  ],
+  "LT": [
+    {
+      "bic": "HABALT22",
+      "name": "Swedbank Lietuva",
+      "logo_url": "https://public.montonio.com/images/aspsps_logos/swedbank.png"
+    },
+    {
+      "bic": "CBVILT2X",
+      "name": "SEB Lietuva",
+      "logo_url": "https://public.montonio.com/images/aspsps_logos/seb.png"
+    },
+    {
+      "bic": "AGBLLT2X",
+      "name": "Luminor Lietuva",
+      "logo_url": "https://public.montonio.com/images/aspsps_logos/luminor.png"
+    },
+    {
+      "bic": "CBSBLT26",
+      "name": "Šiaulių bankas",
+      "logo_url": "https://public.montonio.com/images/aspsps_logos/siauliu.png"
+    },
+    {
+      "bic": "MDBALT22",
+      "name": "Medicinos bankas",
+      "logo_url": "https://public.montonio.com/images/aspsps_logos/medicinos.png"
+    },
+    {
+      "bic": "INDULT2X",
+      "name": "Citadele Lietuva",
+      "logo_url": "https://public.montonio.com/images/aspsps_logos/citadele.png"
+    },
+    {
+      "bic": "RVUALT2V",
+      "name": "Revolut",
+      "logo_url": "https://public.montonio.com/images/aspsps_logos/revolut.png"
+    }
+  ]
+}
