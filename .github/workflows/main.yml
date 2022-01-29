@@ -26,7 +26,7 @@ jobs:
         uses: docker://rewindio/github-action-cloudfront-invalidate
         env:
           DISTRIBUTION_ID: E1V30J1B2ROCET
-          PATH_TO_INVALIDATE: /myfolder/myfile.png
+          PATH_TO_INVALIDATE: /*
           AWS_REGION: eu-west-1
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
