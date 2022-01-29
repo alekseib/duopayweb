@@ -9,6 +9,7 @@ import {parseParams} from "./AppData";
 import {ThankYouPage} from "./thankyoupage/ThankYouPage";
 import HelloPage from "./eee/HelloPage";
 import PayPal from "./instruments/paypal/PayPal";
+import Stripe from "./instruments/stripe/Stripe";
 
 function Home() {
     return (
@@ -24,7 +25,6 @@ function Home() {
         </div>
     );
 }
-
 
 function App() {
     const queryParams = queryString.parse(window.location.search)
@@ -51,6 +51,9 @@ function App() {
                     </Route>
                     <Route path="/paypal">
                         <PayPal/>
+                    </Route>
+                    <Route path="/stripe">
+                        <Stripe/>
                     </Route>
                     <Route path="/ok">
                         <ThankYouPage/>

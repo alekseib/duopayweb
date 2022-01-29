@@ -1,4 +1,6 @@
 import {useStripe, useElements, PaymentElement} from '@stripe/react-stripe-js';
+import {Spinner} from "react-bootstrap";
+import React from "react";
 
 
 export const CheckoutForm = () => {
@@ -20,7 +22,7 @@ export const CheckoutForm = () => {
             //`Elements` instance that was used to create the Payment Element
             elements,
             confirmParams: {
-                return_url: "https://my-site.com/order/123/complete",
+                return_url: "http://localhost:3000/ok",
             },
         });
 
@@ -37,7 +39,11 @@ export const CheckoutForm = () => {
     return (
         <form onSubmit={handleSubmit}>
             <PaymentElement />
-            <button disabled={!stripe}>Submit</button>
+            <div className="app-button d-flex justify-content-around">
+                <button disabled={!stripe} className="app-btn app-btn-further next-step-btn">
+                    <span>Оплатить</span>
+                </button>
+            </div>
         </form>
     )
 };

@@ -19,7 +19,7 @@ export default function PayPalButtons() {
                         intent: "CAPTURE",
                         purchase_units: [
                             {
-                                description: appdata.description,
+                                description: appdata.description + "#" + appdata.orderId + "#",
                                 amount: {
                                     currency_code: "EUR",
                                     value: appdata.price,

@@ -13,7 +13,8 @@ function useForceUpdate(){
     const [value, setValue] = useState(0); // integer state
     return () => setValue(value => value + 1); // update the state to force render
 }
-let busy = false
+let busy1 = false
+let busy2 = false
 let errorMessage = "";
 export function Instruments() {
     const history = useHistory();
@@ -26,8 +27,8 @@ export function Instruments() {
     }
     function selectPayPal() {
         errorMessage = "";
-        if (busy) return;
-        busy = true;
+        if (busy1) return;
+        busy1 = true;
         forceUpdate();
         appdata.paymentMethod = "PAYPAL";
         appdata.paymentInstrument = "PayPal";
@@ -40,7 +41,6 @@ export function Instruments() {
                 }
                 // @ts-ignore
                 appdata.orderId = response.data["orderId"];
-                appdata.description = appdata.productName + "#" + appdata.orderId + "#";
                 save();
                 history.push("/paypal");
             })
@@ -49,7 +49,36 @@ export function Instruments() {
                 return Promise.reject(error)
             })
             .finally(() => {
-                busy = false;
+                busy1 = false;
+                forceUpdate();
+            });
+    }
+    function selectStripe() {
+        errorMessage = "";
+        if (busy2) return;
+        busy2 = true;
+        forceUpdate();
+        appdata.paymentMethod = "STRIPE";
+        appdata.paymentInstrument = "card";
+        axios.post('https://api.duoclassico.eu/functions/init', appdata)
+            .then(response => {
+                if (response.status !== 200) {
+                    errorMessage = response.statusText;
+                    forceUpdate();
+                    return;
+                }
+                // @ts-ignore
+                appdata.orderId = response.data["orderId"];
+                appdata.redirectData = response.data["redirectData"];
+                save();
+                history.push("/stripe");
+            })
+            .catch((error) => {
+                errorMessage = error.message;
+                return Promise.reject(error)
+            })
+            .finally(() => {
+                busy2 = false;
                 forceUpdate();
             });
     }
@@ -73,8 +102,21 @@ export function Instruments() {
                     {errorMessage}
                 </p>
                 <div className="app-button d-flex justify-content-around">
+                    <button  onClick={()=>selectStripe()} className="app-btn2">
+                        {busy2 ? <Spinner
+                            as="span"
+                            variant="dark"
+                            size="sm"
+                            role="status"
+                            aria-hidden="true"
+                            animation="border"/> : <span><img src="img/Cards.png" alt=""/></span>}
+                    </button>
+                </div>
+
+
+                <div className="app-button d-flex justify-content-around">
                     <button  onClick={()=>selectPayPal()} className="app-btn1">
-                        {busy ? <Spinner
+                        {busy1 ? <Spinner
                             as="span"
                             variant="dark"
                             size="sm"

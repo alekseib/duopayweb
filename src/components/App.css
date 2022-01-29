@@ -427,11 +427,22 @@ label {
     font-size: 18px;
     font-weight: 700;
     background-color:  #fff;
-    max-width: 350px;
+    max-width: 400px;
     padding: 17px 47px;
     border-radius: 137px;
     position: relative;
 }
+.app-btn2 {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    background-color:  #fff;
+    max-width: 500px;
+    padding: 17px 47px;
+    border-radius: 137px;
+    position: relative;
+}
+
 
 
 .app-btn-back {

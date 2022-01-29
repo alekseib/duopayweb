@@ -11,7 +11,8 @@ export const appdata = {
        "paymentMethod":"",
        "paymentInstrument":"",
        "orderId":"",
-       "description":""
+       "description":"",
+       "redirectData":""
 }
 export function save()
 {
@@ -31,6 +32,7 @@ export function load()
         appdata["header"] = state1["header"];
         appdata["country"] = state1["country"];
         appdata["description"] = state1["description"];
+        appdata["redirectData"] = state1["redirectData"];
 
     }
     catch (e)
@@ -90,6 +92,7 @@ export function parseParams(params:any)
     {
         appdata.errorMessage = "InvalidEventCode";
     }
+    appdata.description = appdata.productName;
     if ("" === appdata.errorMessage)
         save();
     else
