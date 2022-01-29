@@ -122,7 +122,7 @@ export function Instruments() {
                             size="sm"
                             role="status"
                             aria-hidden="true"
-                            animation="border"/> : <span><img src="img/PayPal.PNG" alt=""/></span>}
+                            animation="border"/> : <span><img src="img/PayPal.png" alt=""/></span>}
                     </button>
                 </div>
             </Frame>
