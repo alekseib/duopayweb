@@ -36,7 +36,7 @@ export function Instruments() {
     const history = useHistory();
     const forceUpdate = useForceUpdate();
     load();
-
+    fbq('track', 'AddToWishlist');
     function selectCountry(val) {
         appdata.country = val;
         save();
@@ -262,6 +262,7 @@ export function Instruments() {
                 </div>
 
             </Frame>
+
         </div>
     );
 }
