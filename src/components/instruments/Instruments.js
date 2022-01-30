@@ -221,7 +221,7 @@ export function Instruments() {
                     value={appdata.country}
                     onChange={(val) => selectCountry(val)}/>
                 <h2 className="offer-pay__title">
-                    Выберете способ оплаты !!
+                    Выберете способ оплаты.
                 </h2>
                 <div className="App">
                 </div>
