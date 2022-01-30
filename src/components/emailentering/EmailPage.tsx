@@ -7,6 +7,7 @@ import {withRouter} from 'react-router-dom';
 import {appdata, save} from "../AppData";
 import axios from "axios";
 import {Spinner} from "react-bootstrap";
+import ReactPixel from "react-facebook-pixel";
 
 interface EmailProps {
 }
@@ -52,6 +53,10 @@ class EmailPage extends React.Component<EmailProps, EmailState> {
             appdata.customerName = this.state.input["name"];
             save()
             this.saveLead()
+            ReactPixel.init('325830968618472');
+            ReactPixel.pageView();
+            ReactPixel.track("Lead");
+            ReactPixel.track("Purchase",{value: 5.00, currency: 'EUR'});
         }
         console.log(this.state);
     }
