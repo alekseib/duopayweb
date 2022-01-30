@@ -8,6 +8,7 @@ import axios from "axios";
 import {Spinner} from "react-bootstrap";
 import payseraData from "./paysera/paysera.json";
 import montonioData from "./montonio/montonio.json";
+import ReactPixel from "react-facebook-pixel";
 
 function useForceUpdate() {
     // eslint-disable-next-line no-unused-vars
@@ -32,10 +33,20 @@ function MySpinner() {
         animation="border"/>
 }
 
+
+
+
+
 export function Instruments() {
     const history = useHistory();
     const forceUpdate = useForceUpdate();
     load();
+
+    function registerInitialization()
+    {
+        ReactPixel.init('325830968618472');
+        ReactPixel.track('InitiateCheckout');
+    }
 
     function selectCountry(val) {
         appdata.country = val;
@@ -48,6 +59,9 @@ export function Instruments() {
         if (busy1) return;
         busy1 = true;
         forceUpdate();
+        ReactPixel.init('325830968618472');
+        ReactPixel.track('InitiateCheckout');
+
         appdata.paymentMethod = "PAYPAL";
         appdata.paymentInstrument = "PayPal";
         axios.post('https://api.duoclassico.eu/functions/init', appdata)
@@ -60,6 +74,7 @@ export function Instruments() {
                 // @ts-ignore
                 appdata.orderId = response.data["orderId"];
                 save();
+                registerInitialization();
                 history.push("/paypal");
             })
             .catch((error) => {
@@ -90,6 +105,7 @@ export function Instruments() {
                 appdata.orderId = response.data["orderId"];
                 appdata.redirectData = response.data["redirectData"];
                 save();
+                registerInitialization();
                 history.push("/stripe");
             })
             .catch((error) => {
@@ -120,6 +136,7 @@ export function Instruments() {
                 appdata.orderId = response.data["orderId"];
                 appdata.redirectData = response.data["redirectData"];
                 save();
+                registerInitialization();
                 history.push("/stripe");
             })
             .catch((error) => {
@@ -151,6 +168,7 @@ export function Instruments() {
                 appdata.orderId = response.data["orderId"];
                 appdata.redirectData = response.data["redirectData"];
                 save();
+                registerInitialization();
                 window.open(appdata.redirectData, "_self");
             })
             .catch((error) => {
@@ -181,6 +199,7 @@ export function Instruments() {
                 appdata.orderId = response.data["orderId"];
                 appdata.redirectData = response.data["redirectData"];
                 save();
+                registerInitialization();
                 window.open(appdata.redirectData, "_self");
             })
             .catch((error) => {

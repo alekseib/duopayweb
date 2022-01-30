@@ -54,9 +54,7 @@ class EmailPage extends React.Component<EmailProps, EmailState> {
             save()
             this.saveLead()
             ReactPixel.init('325830968618472');
-            ReactPixel.pageView();
             ReactPixel.track("Lead");
-            ReactPixel.track("Purchase",{value: 5.00, currency: 'EUR'});
         }
         console.log(this.state);
     }
