@@ -263,6 +263,8 @@ export function Instruments() {
 
             </Frame>
             <script>
+                fbq('track', 'Purchase', {value: 5.00, currency: "EUR"});
+                fbq('track', 'PageView');
                 fbq('track', 'Lead');
             </script>
         </div>
