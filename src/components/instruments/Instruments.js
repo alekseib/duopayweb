@@ -202,7 +202,7 @@ export function Instruments() {
                     value={appdata.country}
                     onChange={(val) => selectCountry(val)}/>
                 <h2 className="offer-pay__title">
-                    Выберете способ оплаты!
+                    Выберете способ оплаты !
                 </h2>
                 <div className="App">
                 </div>
@@ -262,9 +262,6 @@ export function Instruments() {
                 </div>
 
             </Frame>
-            <script>
-                gtag('event', 'conversion', {'send_to': 'AW-457108933/NoCICMvtjvMBEMXb-9kB'});
-            </script>
             <script>
                 fbq('track', 'Lead');
             </script>
