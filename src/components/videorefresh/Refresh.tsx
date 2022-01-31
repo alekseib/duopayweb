@@ -1,7 +1,6 @@
-import React from 'react';
-import Footer from "../footer/Footer";
-import './EmailPage.css';
 import Frame from "../frame/Frame";
+import Footer from "../footer/Footer";
+import React from "react";
 // @ts-ignore
 import { withRouter } from 'react-router-dom';
 import {appdata, save} from "../AppData";
@@ -11,12 +10,12 @@ import {Spinner} from "react-bootstrap";
 interface EmailProps {
 }
 
-interface EmailState {
+interface EmaleState {
     input: any
     errors: any
 }
 let busy = false;
-class EmailPage extends React.Component<EmailProps, EmailState> {
+class Refresh extends React.Component<EmailProps, EmaleState> {
 
     constructor(props: EmailProps) {
         super(props);
@@ -37,9 +36,8 @@ class EmailPage extends React.Component<EmailProps, EmailState> {
 
         this.setState({
             input
-        });
+        })
     }
-
     // @ts-ignore
     handleSubmit(event) {
         event.preventDefault();
@@ -47,11 +45,12 @@ class EmailPage extends React.Component<EmailProps, EmailState> {
             appdata.customerEmail = this.state.input["email"];
             appdata.customerName = this.state.input["name"];
             save()
-            this.saveLead()
+            this.refreshTicket()
         }
         console.log(this.state);
     }
-    saveLead() {
+
+    refreshTicket() {
         if (busy) return;
         busy = true;
         axios.post('https://api.duoclassico.eu/functions/lead', appdata)
@@ -61,10 +60,9 @@ class EmailPage extends React.Component<EmailProps, EmailState> {
                 save();
                 busy = false;
                 // @ts-ignore
-                this.props["history"].push("/payment")
+                this.props["history"].push("/refreshThankYou")
             })
     }
-
     validate() {
         let input = this.state.input;
         let errors = {};
@@ -99,13 +97,14 @@ class EmailPage extends React.Component<EmailProps, EmailState> {
         return isValid;
     }
 
+
     render() {
         return (
             <Frame>
                 <div>
                     <div>
                         <form className="app-form" method="post" id="myform" onSubmit={this.handleSubmit}>
-                            <h2 className="app-title">Пожалуйста, введите имя и емайл. На этот емайл мы вышлем вам билет.</h2>
+                            <h2 className="app-title">Пожалуйста, введити ваше имя и емайл. На этот емайл мы вышлем вам новую ссылку записи.</h2>
                             <div>
                                 <input
                                     type="text"
@@ -128,24 +127,6 @@ class EmailPage extends React.Component<EmailProps, EmailState> {
                                     id="email"/>
                                 <div className="text-danger">{this.state.errors.email}</div>
                             </div>
-                            <label id="radiobox" className="label label_agree">
-                                <input
-                                    type="radio"
-                                    name="agreeWithConditions"
-                                    value={this.state.input.agreeWithConditions}
-                                    onChange={this.handleChange}
-                                    className="radio"
-                                    id="agreeWithConditions" checked/>
-                                <span className="fake"/>
-                                <p className="radio__text">
-                                    <a href="https://duoclassico.eu/conditions-ru" className="radio__link">
-                                        Согласен с правилами продажи билетов
-                                    </a>
-                                </p>
-                            </label>
-                            <p className="app-text">
-                                Сообщение об ошибке
-                            </p>
                             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"/>
                             <div className="app-button d-flex justify-content-around">
                                 <button type="submit" className="app-btn app-btn-further next-step-btn">
@@ -160,11 +141,10 @@ class EmailPage extends React.Component<EmailProps, EmailState> {
                             </div>
                         </form>
                     </div>
-                    <Footer/>
                 </div>
+                <Footer/>
             </Frame>
-        );
+        )
     }
 }
-
-export default withRouter(EmailPage);
+export default withRouter(Refresh);

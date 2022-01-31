@@ -8,6 +8,8 @@ import Instruments from "./instruments/Instruments";
 import {parseParams} from "./AppData";
 import {ThankYouPage} from "./thankyoupage/ThankYouPage";
 import HelloPage from "./eee/HelloPage";
+import Refresh from "./videorefresh/Refresh";
+import {ThankYouPageForRefresh} from "./thankyoupage/ThankYouPageForRefresh";
 
 function Home() {
     return (
@@ -19,6 +21,7 @@ function Home() {
                 <li><a href="/start?productCode=FR&key=7D748A500A611A399">FR</a></li>
                 <li><a href="/start?productCode=ONEGIN1&key=7D748A500A611A399">ONEGIN1</a></li>
                 <li><a href="/start?productCode=ONEGIN2&key=7D748A500A611A399">ONEGIN2</a></li>
+                <li><a href="/refresh?productCode=SILVER1&order=278239814920384">REFRESH</a></li>
             </ul>
         </div>
     );
@@ -45,8 +48,14 @@ function App() {
                     <Route path="/start">
                         <EmailPage />
                     </Route>
+                    <Route path="/refresh">
+                        <Refresh/>
+                    </Route>
                     <Route path="/payment">
                         <Instruments/>
+                    </Route>
+                    <Route path="/refreshThankYou">
+                        <ThankYouPageForRefresh/>
                     </Route>
                     <Route path="/ok">
                         <ThankYouPage/>
