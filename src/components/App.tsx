@@ -9,6 +9,8 @@ import {appdata, parseParams} from "./AppData";
 import {ThankYouPage} from "./thankyoupage/ThankYouPage";
 import PayPal from "./instruments/paypal/PayPal";
 import Stripe from "./instruments/stripe/Stripe";
+import Refresh from "./videorefresh/Refresh";
+import {ThankYouPageForRefresh} from "./thankyoupage/ThankYouPageForRefresh";
 
 function Home() {
     return (
@@ -20,6 +22,7 @@ function Home() {
                 <li><a href="/start?productCode=FR&key=7D748A500A611A399">FR</a></li>
                 <li><a href="/start?productCode=ONEGIN1&key=7D748A500A611A399">ONEGIN1</a></li>
                 <li><a href="/start?productCode=ONEGIN2&key=7D748A500A611A399">ONEGIN2</a></li>
+                <li><a href="/refresh?productCode=ONEGIN2&order=768568987759399">REFRESH</a></li>
             </ul>
         </div>
     );
@@ -59,6 +62,12 @@ function App() {
                     </Route>
                     <Route path="/ok">
                         <ThankYouPage/>
+                    </Route>
+                    <Route path="/refresh">
+                        <Refresh/>
+                    </Route>
+                    <Route path="/refreshthankyou">
+                        <ThankYouPageForRefresh/>
                     </Route>
                     <Route path="/">
                         <Tilda/>
