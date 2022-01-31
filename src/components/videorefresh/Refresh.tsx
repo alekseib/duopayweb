@@ -104,7 +104,7 @@ class Refresh extends React.Component<EmailProps, EmaleState> {
                 <div>
                     <div>
                         <form className="app-form" method="post" id="myform" onSubmit={this.handleSubmit}>
-                            <h2 className="app-title">Пожалуйста, введити ваше имя и емайл. На этот емайл мы вышлем вам новую ссылку записи.</h2>
+                            <h2 className="app-title">Пожалуйста, введити ваше имя и емайл. На этот емайл мы вышлем вам новую ссылку а запись.</h2>
                             <div>
                                 <input
                                     type="text"

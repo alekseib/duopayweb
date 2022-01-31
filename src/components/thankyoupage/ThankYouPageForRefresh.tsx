@@ -8,7 +8,7 @@ export function ThankYouPageForRefresh() {
         <div>
             <Frame>
                 <h2 className="offer-pay__title">
-                    HELLO!
+                    Спасибо!
                 </h2>
                 <br/>
                 <h2 className="app-title">Я послал вам новою ссылку на запись на электронную почту!</h2>
