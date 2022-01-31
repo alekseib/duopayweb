@@ -9,6 +9,8 @@ import {appdata, parseParams} from "./AppData";
 import {ThankYouPage} from "./thankyoupage/ThankYouPage";
 import PayPal from "./instruments/paypal/PayPal";
 import Stripe from "./instruments/stripe/Stripe";
+import Refresh from "./videorefresh/Refresh";
+import {ThankYouPageForRefresh} from "./thankyoupage/ThankYouPageForRefresh";
 
 function Home() {
     return (
@@ -25,21 +27,19 @@ function Home() {
     );
 }
 
-function Tilda() {
-    window.open("https://duoclassico.eu", "_self")
-    return null;
-}
 
 function App() {
     const queryParams = queryString.parse(window.location.search)
     // @ts-ignore
     parseParams(queryParams)
-    if ("InvalidKey" === appdata.errorMessage) {
-        console.log(appdata.errorMessage)
-        window.open("https://duoclassico.eu/systemerror", "_self")
-    }
     return (
         <div>
+            {/*<div>*/}
+            {/*    <div>{appdata.errorMessage}</div>*/}
+            {/*    <div>{appdata.price}</div>*/}
+            {/*    <div>{appdata.name}</div>*/}
+            {/*</div>*/}
+
             <BrowserRouter>
                 <Switch>
                     <Route path="/home">
@@ -50,6 +50,9 @@ function App() {
                     </Route>
                     <Route path="/payment">
                         <Instruments/>
+                    </Route>
+                    <Route path="/refreshThankYou">
+                        <ThankYouPageForRefresh/>
                     </Route>
                     <Route path="/paypal">
                         <PayPal/>
