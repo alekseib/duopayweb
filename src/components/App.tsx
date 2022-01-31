@@ -5,7 +5,7 @@ import {BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 import queryString from "query-string"
 import Instruments from "./instruments/Instruments";
-import {appdata, parseParams} from "./AppData";
+import {parseParams} from "./AppData";
 import {ThankYouPage} from "./thankyoupage/ThankYouPage";
 import PayPal from "./instruments/paypal/PayPal";
 import Stripe from "./instruments/stripe/Stripe";
@@ -26,6 +26,7 @@ function Home() {
         </div>
     );
 }
+
 
 
 function App() {
@@ -51,20 +52,11 @@ function App() {
                     <Route path="/payment">
                         <Instruments/>
                     </Route>
-                    <Route path="/refreshThankYou">
-                        <ThankYouPageForRefresh/>
-                    </Route>
-                    <Route path="/paypal">
-                        <PayPal/>
-                    </Route>
-                    <Route path="/stripe">
-                        <Stripe/>
-                    </Route>
                     <Route path="/ok">
                         <ThankYouPage/>
                     </Route>
                     <Route path="/">
-                        <Tilda/>
+                        <Home/>
                     </Route>
                 </Switch>
             </BrowserRouter>
