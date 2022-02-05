@@ -1,7 +1,7 @@
-import Frame from "../frame/Frame";
+import Frame from "../common/Frame";
 import React from "react";
-import Footer from "../footer/Footer";
-import {appdata} from "../AppData";
+import Footer from "../common/Footer";
+import {appdata} from "../model/AppData";
 
 export function ThankYouPageForRefresh() {
     return (

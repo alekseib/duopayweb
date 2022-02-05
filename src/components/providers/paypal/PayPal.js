@@ -1,4 +1,4 @@
-import Frame from "../../frame/Frame";
+import Frame from "../../common/Frame";
 import PayPalButtons from "./PayPalButtons";
 
 export function PayPal() {

@@ -1,10 +1,10 @@
 import React from 'react';
-import Footer from "../footer/Footer";
+import Footer from "../common/Footer";
 import './EmailPage.css';
-import Frame from "../frame/Frame";
+import Frame from "../common/Frame";
 // @ts-ignore
 import {withRouter} from 'react-router-dom';
-import {appdata, save} from "../AppData";
+import {appdata, save} from "../model/AppData";
 import axios from "axios";
 import {Spinner} from "react-bootstrap";
 import ReactPixel from "react-facebook-pixel";

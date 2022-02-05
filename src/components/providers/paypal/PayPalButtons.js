@@ -1,6 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import {appdata, load} from "../../AppData";
+import {appdata, load} from "../../model/AppData";
 
 
 

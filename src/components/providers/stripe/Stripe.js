@@ -1,7 +1,7 @@
-import Frame from "../../frame/Frame";
+import Frame from "../../common/Frame";
 import {Elements} from "@stripe/react-stripe-js";
 import {loadStripe} from "@stripe/stripe-js";
-import {appdata, load} from "../../AppData";
+import {appdata, load} from "../../model/AppData";
 import {CheckoutForm} from "./CheckoutForm";
 import './Stripe.css';
 const stripePromise = loadStripe('pk_live_Ym4pj7nfoaBPMuFYyUI0nViM006gcwB8eD');

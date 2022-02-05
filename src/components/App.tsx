@@ -1,16 +1,17 @@
 import React from 'react';
-import EmailPage from "./emailentering/EmailPage";
+import EmailPage from "./lead/EmailPage";
 // @ts-ignore
 import {BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 import queryString from "query-string"
 import Instruments from "./instruments/Instruments";
-import {appdata, parseParams} from "./AppData";
-import {ThankYouPage} from "./thankyoupage/ThankYouPage";
-import PayPal from "./instruments/paypal/PayPal";
-import Stripe from "./instruments/stripe/Stripe";
-import Refresh from "./videorefresh/Refresh";
-import {ThankYouPageForRefresh} from "./thankyoupage/ThankYouPageForRefresh";
+import {appdata, parseParams} from "./model/AppData";
+import {ThankYouPage} from "./instruments/ThankYouPage";
+import PayPal from "./providers/paypal/PayPal";
+import Stripe from "./providers/stripe/Stripe";
+import Refresh from "./refresh/Refresh";
+import {ThankYouPageForRefresh} from "./refresh/ThankYouPageForRefresh";
+
 
 function Home() {
     return (

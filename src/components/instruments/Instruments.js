@@ -1,13 +1,13 @@
 import './Instruments.css';
-import Frame from "../frame/Frame";
-import {appdata, load, save} from "../AppData";
+import Frame from "../common/Frame";
+import {appdata, load, save} from "../model/AppData";
 import {CountryDropdown} from "react-country-region-selector";
 import React, {useState} from "react";
 import {useHistory} from "react-router-dom";
 import axios from "axios";
 import {Spinner} from "react-bootstrap";
-import payseraData from "./paysera/paysera.json";
-import montonioData from "./montonio/montonio.json";
+import payseraData from "../providers/paysera/paysera.json";
+import montonioData from "../providers/montonio/montonio.json";
 import ReactPixel from "react-facebook-pixel";
 
 function useForceUpdate() {

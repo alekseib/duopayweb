@@ -1,5 +1,5 @@
 import payseraData from "./paysera.json";
-import {appdata} from "../../AppData";
+import {appdata} from "../../model/AppData";
 import axios from "axios";
 
 export function Paysera() {
