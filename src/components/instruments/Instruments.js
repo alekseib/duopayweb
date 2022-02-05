@@ -9,6 +9,7 @@ import {Spinner} from "react-bootstrap";
 import payseraData from "../providers/paysera/paysera.json";
 import montonioData from "../providers/montonio/montonio.json";
 import ReactPixel from "react-facebook-pixel";
+import {MySpinner} from "../common/MySpinner";
 
 function useForceUpdate() {
     // eslint-disable-next-line no-unused-vars
@@ -22,19 +23,6 @@ let busy3 = false
 let errorMessage = "";
 let busyMontonio = false;
 let busyPaysera = false;
-
-function MySpinner() {
-    return <Spinner
-        as="span"
-        variant="dark"
-        size="sm"
-        role="status"
-        aria-hidden="true"
-        animation="border"/>
-}
-
-
-
 
 
 export function Instruments() {

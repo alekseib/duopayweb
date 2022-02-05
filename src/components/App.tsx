@@ -1,16 +1,17 @@
 import React from 'react';
-import EmailPage from "./lead/EmailPage";
+import EmailPage from "./lead/Lead";
 // @ts-ignore
 import {BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 import queryString from "query-string"
 import Instruments from "./instruments/Instruments";
-import {appdata, parseParams} from "./model/AppData";
+import {appdata} from "./model/AppData";
 import {ThankYouPage} from "./instruments/ThankYouPage";
 import PayPal from "./providers/paypal/PayPal";
 import Stripe from "./providers/stripe/Stripe";
 import Refresh from "./refresh/Refresh";
 import {ThankYouPageForRefresh} from "./refresh/ThankYouPageForRefresh";
+import {parseParams} from "./model/Setup";
 
 
 function Home() {
@@ -36,7 +37,6 @@ function Tilda() {
 
 function App() {
     const queryParams = queryString.parse(window.location.search)
-    // @ts-ignore
     parseParams(queryParams)
     if ("InvalidKey" === appdata.errorMessage) {
         console.log(appdata.errorMessage)
