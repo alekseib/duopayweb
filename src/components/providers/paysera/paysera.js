@@ -11,7 +11,7 @@ export default function Paysera(props) {
                             return <li key={index}>
                                 <img
                                     src={payseraData["data"][appdata.country.toLowerCase()][name]["url"]}
-                                    alt="" onClick={() => props.onClick(name)}
+                                    alt="" onClick={() => props.action(name)}
                                     className="bank-logo"/>
                             </li>
                         }) : <div/>

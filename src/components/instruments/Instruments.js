@@ -5,23 +5,18 @@ import {CountryDropdown} from "react-country-region-selector";
 import React, {useState} from "react";
 import {useHistory} from "react-router-dom";
 import axios from "axios";
-import montonioData from "../providers/montonio/montonio.json";
 import ReactPixel from "react-facebook-pixel";
 import {MySpinner} from "../common/MySpinner";
 import Paysera from "../providers/paysera/paysera";
+import Montonio from "../providers/montonio/montonio";
 
 function useForceUpdate() {
-    // eslint-disable-next-line no-unused-vars
     const [value, setValue] = useState(0); // integer state
     return () => setValue(value => value + 1); // update the state to force render
 }
 let errorMessage = "";
 let busy = "";
 
-export function aaa()
-{
-
-}
 
 export function Instruments() {
     const history = useHistory();
@@ -42,7 +37,6 @@ export function Instruments() {
         forceUpdate();
         ReactPixel.init('325830968618472');
         ReactPixel.track('InitiateCheckout');
-
         appdata.paymentMethod = paymentMethod;
         appdata.paymentInstrument = instrument;
         axios.post('https://api.duoclassico.eu/functions/init', appdata)
@@ -65,7 +59,7 @@ export function Instruments() {
                 }
             })
             .catch((error) => {
-                errorMessage = error.message;
+
                 return Promise.reject(error)
             })
             .finally(() => {
@@ -91,22 +85,10 @@ export function Instruments() {
                     {errorMessage}
                 </p>
                 {appdata.customerEmail === "paysera@duoclassico.eu" || !"EE,LV,LT".includes(appdata.country) ?
-                    (busy === "PAYSERA") ? <MySpinner></MySpinner> : <Paysera onClick = {(name) => selectInstrument("PAYSERA",name,"REDIRECT", "PAYSERA")}></Paysera>
+                    (busy === "PAYSERA") ? <MySpinner/> : <Paysera action = {(par1) => selectInstrument("PAYSERA", par1, "REDIRECT", "PAYSERA")}/>
                     :
-                    busy === "MONTONIO"? <MySpinner></MySpinner> :
-                        <div className="App">
-                            <ul className="offer-pay__banks">
-                                {
-                                    (montonioData[appdata.country] !== undefined) ?
-                                    montonioData[appdata.country].map((data) => {
-                                        return <li key={data.bic}>
-                                            <img src={data.logo_url} className="bank-logo"
-                                                 alt="" onClick={() => selectInstrument("MONTONIO",data.bic,"REDIRECT", "MONTONIO")}/>
-                                        </li>
-                                    }) : <div></div>
-                                }
-                            </ul>
-                        </div>
+                    busy === "MONTONIO"? <MySpinner/> : <Montonio action = {(par1) => selectInstrument("MONTONIO", par1, "REDIRECT", "MONTONIO")}/>
+
                 }
                 <div className="app-button d-flex justify-content-around">
                     <button onClick={() => selectInstrument("STRIPE", "card", "/stripe", "STRIPE")} className="app-btn1">
