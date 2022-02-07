@@ -5,10 +5,10 @@ import {CountryDropdown} from "react-country-region-selector";
 import React, {useState} from "react";
 import {useHistory} from "react-router-dom";
 import axios from "axios";
-import payseraData from "../providers/paysera/paysera.json";
 import montonioData from "../providers/montonio/montonio.json";
 import ReactPixel from "react-facebook-pixel";
 import {MySpinner} from "../common/MySpinner";
+import Paysera from "../providers/paysera/paysera";
 
 function useForceUpdate() {
     // eslint-disable-next-line no-unused-vars
@@ -18,17 +18,16 @@ function useForceUpdate() {
 let errorMessage = "";
 let busy = "";
 
+export function aaa()
+{
+
+}
 
 export function Instruments() {
     const history = useHistory();
     const forceUpdate = useForceUpdate();
     load();
 
-    function registerInitialization()
-    {
-        ReactPixel.init('325830968618472');
-        ReactPixel.track('InitiateCheckout');
-    }
 
     function selectCountry(val) {
         appdata.country = val;
@@ -57,7 +56,6 @@ export function Instruments() {
                 appdata.orderId = response.data["orderId"];
                 appdata.redirectData = response.data["redirectData"];
                 save();
-                registerInitialization();
                 if (nextPage === "REDIRECT")
                 {
                     window.open(appdata.redirectData, "_self");
@@ -93,24 +91,7 @@ export function Instruments() {
                     {errorMessage}
                 </p>
                 {appdata.customerEmail === "paysera@duoclassico.eu" || !"EE,LV,LT".includes(appdata.country) ?
-                    (busy === "PAYSERA") ? <MySpinner></MySpinner> :
-                        <div>
-                            <div className="App">
-                                <ul className="offer-pay__banks">
-                                    {
-                                        (payseraData["data"][appdata.country.toLowerCase()] !== undefined) ?
-                                            Object.keys(payseraData["data"][appdata.country.toLowerCase()]).map(function (name, index) {
-                                                return <li key={index}>
-                                                    <img
-                                                        src={payseraData["data"][appdata.country.toLowerCase()][name]["url"]}
-                                                        alt="" onClick={() => selectInstrument("PAYSERA",name,"REDIRECT", "PAYSERA")}
-                                                        className="bank-logo"/>
-                                                </li>
-                                            }) : <div></div>
-                                    }
-                                </ul>
-                            </div>
-                        </div>
+                    (busy === "PAYSERA") ? <MySpinner></MySpinner> : <Paysera onClick = {(name) => selectInstrument("PAYSERA",name,"REDIRECT", "PAYSERA")}></Paysera>
                     :
                     busy === "MONTONIO"? <MySpinner></MySpinner> :
                         <div className="App">
