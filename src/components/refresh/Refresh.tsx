@@ -1,9 +1,9 @@
-import Frame from "../frame/Frame";
-import Footer from "../footer/Footer";
+import Frame from "../common/Frame";
+import Footer from "../common/Footer";
 import React from "react";
 // @ts-ignore
 import { withRouter } from 'react-router-dom';
-import {appdata, save} from "../AppData";
+import {appdata, save} from "../model/AppData";
 import axios from "axios";
 import {Spinner} from "react-bootstrap";
 

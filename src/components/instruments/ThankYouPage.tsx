@@ -1,12 +1,12 @@
-import Frame from "../frame/Frame";
+import Frame from "../common/Frame";
 import React from "react";
-import Footer from "../footer/Footer";
-import {appdata} from "../AppData";
+import Footer from "../common/Footer";
+import {appdata} from "../model/AppData";
 import ReactPixel from "react-facebook-pixel";
 
 export function ThankYouPage() {
     ReactPixel.init('325830968618472');
-    ReactPixel.track( 'Purchase', {value: appdata.price, currency: 'EUR'});
+    ReactPixel.track( 'Purchase', {value: appdata.amount, currency: 'EUR'});
     return (
         <div>
             <Frame>

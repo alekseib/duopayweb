@@ -1,21 +1,25 @@
 import React from 'react';
-import EmailPage from "./emailentering/EmailPage";
+import EmailPage from "./lead/Lead";
 // @ts-ignore
 import {BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 import queryString from "query-string"
 import Instruments from "./instruments/Instruments";
-import {appdata, parseParams} from "./AppData";
-import {ThankYouPage} from "./thankyoupage/ThankYouPage";
-import PayPal from "./instruments/paypal/PayPal";
-import Stripe from "./instruments/stripe/Stripe";
-import Refresh from "./videorefresh/Refresh";
-import {ThankYouPageForRefresh} from "./thankyoupage/ThankYouPageForRefresh";
+import {appdata} from "./model/AppData";
+import {ThankYouPage} from "./instruments/ThankYouPage";
+import PayPal from "./providers/paypal/PayPal";
+import Stripe from "./providers/stripe/Stripe";
+import Refresh from "./refresh/Refresh";
+import {ThankYouPageForRefresh} from "./refresh/ThankYouPageForRefresh";
+import {parseParams} from "./model/Setup";
+import Amounts from "./amounts/Amounts";
+
 
 function Home() {
     return (
         <div>
             <ul>
+                <li><a href="/amt?productCode=NOVIKOV2022&key=7D748A1500A1600A399B1200B1300B8233456">NOVIKOV2022</a></li>
                 <li><a href="/start?productCode=SILVER1&key=7D748A500A611A399">SILVER1</a></li>
                 <li><a href="/start?productCode=SILVER2&key=7D748A500A611A399">SILVER2</a></li>
                 <li><a href="/start?productCode=SILVER3&key=7D748A500A611A399">SILVER3</a></li>
@@ -35,9 +39,12 @@ function Tilda() {
 
 function App() {
     const queryParams = queryString.parse(window.location.search)
-    // @ts-ignore
     parseParams(queryParams)
     if ("InvalidKey" === appdata.errorMessage) {
+        console.log(appdata.errorMessage)
+        window.open("https://duoclassico.eu/systemerror", "_self")
+    }
+    if ("InvalidEventCode" === appdata.errorMessage) {
         console.log(appdata.errorMessage)
         window.open("https://duoclassico.eu/systemerror", "_self")
     }
@@ -47,6 +54,9 @@ function App() {
                 <Switch>
                     <Route path="/home">
                         <Home />
+                    </Route>
+                    <Route path="/amt">
+                        <Amounts />
                     </Route>
                     <Route path="/start">
                         <EmailPage />

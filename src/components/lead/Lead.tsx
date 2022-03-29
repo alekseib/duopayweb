@@ -1,18 +1,20 @@
 import React from 'react';
-import Footer from "../footer/Footer";
-import './EmailPage.css';
-import Frame from "../frame/Frame";
+import Footer from "../common/Footer";
+import './Lead.css';
+import Frame from "../common/Frame";
 // @ts-ignore
 import {withRouter} from 'react-router-dom';
-import {appdata, save} from "../AppData";
+import {appdata, save} from "../model/AppData";
 import axios from "axios";
-import {Spinner} from "react-bootstrap";
 import ReactPixel from "react-facebook-pixel";
+import {MySpinner} from "../common/MySpinner";
+import {calcHeader} from "../model/Setup";
 
-interface EmailProps {
+interface LeadProps {
+
 }
 
-interface EmailState {
+interface LeadState {
     input: any
     errors: any
     error: string
@@ -20,9 +22,9 @@ interface EmailState {
 
 let busy = false;
 
-class EmailPage extends React.Component<EmailProps, EmailState> {
+class Lead extends React.Component<LeadProps, LeadState> {
 
-    constructor(props: EmailProps) {
+    constructor(props: LeadProps) {
         super(props);
         this.state = {
             input: {},
@@ -34,6 +36,8 @@ class EmailPage extends React.Component<EmailProps, EmailState> {
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         axios.get('https://api.duoclassico.eu/functions/hello')
+        calcHeader();
+
     }
 
     handleChange(event: any) {
@@ -120,14 +124,16 @@ class EmailPage extends React.Component<EmailProps, EmailState> {
     }
 
     render() {
-        console.log("render() method");
         return (
             <Frame>
                 <div>
                     <div>
-                        <form className="app-form" method="post" id="myform" onSubmit={this.handleSubmit}>
-                            <h2 className="app-title">Пожалуйста, введите имя и емайл. На этот емайл мы вышлем вам
-                                билет.</h2>
+                        <form className="app-form" method="post" id="lead_form" onSubmit={this.handleSubmit}>
+                            <h2 className="app-title">
+                                Пожалуйста, введите имя и емайл.
+                                <br/>
+                                На этот емайл мы вышлем вам билет.
+                            </h2>
                             <div>
                                 <input
                                     type="text"
@@ -158,12 +164,14 @@ class EmailPage extends React.Component<EmailProps, EmailState> {
                                     onChange={this.handleChange}
                                     className="radio"
                                     id="agreeWithConditions" checked/>
-                                <span className="fake"></span>
+
+                                <span className="fake"/>
                                 <p className="radio__text">
                                     <a href="https://duoclassico.eu/conditions-ru" className="radio__link">
                                         Согласен с правилами продажи билетов
                                     </a>
                                 </p>
+                                <div className="text-danger">{this.state.errors.agreeWithConditions}</div>
                             </label>
                             <p className="app-text">
                                 {this.state.error}
@@ -171,23 +179,17 @@ class EmailPage extends React.Component<EmailProps, EmailState> {
 
                             <div className="app-button d-flex justify-content-around">
                                 <button type="submit" className="app-btn app-btn-further next-step-btn">
-                                    {busy ? <Spinner
-                                        as="span"
-                                        variant="light"
-                                        size="sm"
-                                        role="status"
-                                        aria-hidden="true"
-                                        animation="border"/> : <span>Далее</span>}
+                                    {busy ? <MySpinner/> : <span>Далее</span>}
                                 </button>
                             </div>
                         </form>
                     </div>
-                    <Footer></Footer>
+                    <Footer/>
                 </div>
             </Frame>
         );
     }
 }
 
-export default withRouter(EmailPage);
+export default withRouter(Lead);
 

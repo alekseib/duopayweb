@@ -1,6 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import {appdata, load} from "../../AppData";
+import {appdata, load} from "../../model/AppData";
 
 
 
@@ -22,7 +22,7 @@ export default function PayPalButtons() {
                                 description: appdata.description + "#" + appdata.orderId + "#",
                                 amount: {
                                     currency_code: "EUR",
-                                    value: appdata.price,
+                                    value: appdata.amount,
                                 },
                             },
                         ],

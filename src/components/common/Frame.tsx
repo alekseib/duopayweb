@@ -1,7 +1,7 @@
 import React, {ReactNode} from 'react';
 
 import './Frame.css';
-import {appdata} from "../AppData";
+import {appdata} from "../model/AppData";
 
 function Frame(props: { children: ReactNode }) {
     let image = "img/events/" + appdata.productCode + ".JPG";
