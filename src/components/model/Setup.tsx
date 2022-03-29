@@ -1,5 +1,4 @@
 import {appdata, load, save} from "./AppData";
-import app from "../App";
 
 export function calcHeader()
 {

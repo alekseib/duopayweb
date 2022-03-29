@@ -6,9 +6,6 @@ import Frame from "../common/Frame";
 import {withRouter} from 'react-router-dom';
 import {appdata, save} from "../model/AppData";
 import axios from "axios";
-import ReactPixel from "react-facebook-pixel";
-import {MySpinner} from "../common/MySpinner";
-import app from "../App";
 
 interface AmountsProps {
 
@@ -41,13 +38,13 @@ class Amounts extends React.Component<AmountsProps, AmountsState> {
         if ("Full" === field) {
             appdata.countFull = appdata.countFull + change;
             if (appdata.countFull < 0 )
-                appdata. countFull = 0;
+                appdata.countFull = 0;
         }
 
         else {
             appdata.countReduced = appdata.countReduced + change;
             if (appdata.countReduced < 0 )
-                appdata. countReduced = 0;
+                appdata.countReduced = 0;
 
         }
         this.calculate();
