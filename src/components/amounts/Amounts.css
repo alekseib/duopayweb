@@ -1,0 +1,103 @@
+table {
+    width: 100%;
+}
+td {
+    width: 50%;
+    font-size: 20px;
+}
+
+.calculate .app-text {
+    display: block;
+}
+
+.calculate .offer__value {
+    max-width: 150px;
+    width: 100%;
+    margin-top: -30px;
+}
+.calculate .delimiter {
+    margin-top: 60px;
+}
+
+
+.calculate .offer__value input {
+    width: 100%;
+    border-radius: 0;
+    padding: 5px;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    max-width: 50px;
+    width: 100%;
+}
+
+.calculate .offer__value {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+}
+
+.calculate .offer__change {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.calculate .offer__change span {
+    width: 65px;
+    height: 45px;
+    background: #c00000;
+    border-radius: 50%;
+    border: 1px solid #c00000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+.calculate .offer__label-wrap {
+}
+
+.calculate .offer__label {
+    margin-bottom: 5px;
+    align-items: center;
+}
+
+.calculate .offer__label p {
+    margin-left: auto;
+}
+
+.calculate .offer__label .offer__full-price,.calculate .offer__label .offer__preferential-price {
+    display: inline-block;
+    width: 40px;
+}
+
+.calculate .offer__total {
+    text-align: right;
+    padding: 0 20px;
+    padding-right: 20%;
+}
+
+.calculate .offer__total {
+    margin-top: 15px;
+}
+
+.calculate .offer__total-item_all span {
+    display: inline-block;
+    width: 60px;
+}
+
+.calculate .offer__total-item_sum span {
+    display: inline-block;
+    width: 45px;
+}
+.offer__total-item_sum
+{
+    font-size: 20px;
+}
+
+

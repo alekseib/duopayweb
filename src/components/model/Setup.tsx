@@ -47,9 +47,16 @@ export function parseParams(params:any)
     {
         appdata.productName = "Тайны оперы Евгений Онегин. Часть 2 ";
     }
-    if ("" === appdata.productCode)
+    else
+    if ("NOVIKOV2022" === appdata.productCode)
     {
+        appdata.productName = "Вячеслав Новиков. Франц Шуберт";
+    }
+    else
         appdata.errorMessage = "InvalidEventCode";
+    if ("" === appdata.productCode || undefined === appdata.productCode)
+    {
+        appdata.errorMessage = "EmptyEventCode";
     }
     appdata.description = appdata.productName;
     if ("" === appdata.errorMessage)
