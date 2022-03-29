@@ -6,7 +6,7 @@ import ReactPixel from "react-facebook-pixel";
 
 export function ThankYouPage() {
     ReactPixel.init('325830968618472');
-    ReactPixel.track( 'Purchase', {value: appdata.price, currency: 'EUR'});
+    ReactPixel.track( 'Purchase', {value: appdata.amount, currency: 'EUR'});
     return (
         <div>
             <Frame>

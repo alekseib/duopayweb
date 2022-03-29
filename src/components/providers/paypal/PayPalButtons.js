@@ -22,7 +22,7 @@ export default function PayPalButtons() {
                                 description: appdata.description + "#" + appdata.orderId + "#",
                                 amount: {
                                     currency_code: "EUR",
-                                    value: appdata.price,
+                                    value: appdata.amount,
                                 },
                             },
                         ],

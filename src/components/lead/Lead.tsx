@@ -8,6 +8,7 @@ import {appdata, save} from "../model/AppData";
 import axios from "axios";
 import ReactPixel from "react-facebook-pixel";
 import {MySpinner} from "../common/MySpinner";
+import {calcHeader} from "../model/Setup";
 
 interface LeadProps {
 
@@ -35,6 +36,8 @@ class Lead extends React.Component<LeadProps, LeadState> {
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         axios.get('https://api.duoclassico.eu/functions/hello')
+        calcHeader();
+
     }
 
     handleChange(event: any) {

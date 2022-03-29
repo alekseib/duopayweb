@@ -1,8 +1,17 @@
 export const appdata = {
+       "eventType":"",
        "productCode":"",
-       "price":0.0,
+       "priceHeader":"",
+       "priceReducedHeader":"",
+       "priceFull":0.0,
+       "priceReduced":0.0,
        "price1":0.0,
+       "price1Reduced":0.0,
        "productName":"",
+       "amount":0.0,
+       "count":0,
+       "countFull":0,
+       "countReduced":0,
        "errorMessage":"",
        "header":"",
        "customerEmail":"",
@@ -13,6 +22,7 @@ export const appdata = {
        "orderId":"",
        "description":"",
        "redirectData":""
+
 }
 export function save()
 {
@@ -25,7 +35,12 @@ export function load()
     let state1 = JSON.parse(text);
     try {
         appdata["productCode"] = state1["productCode"];
-        appdata["price"] = state1["price"];
+        appdata["priceFull"] = state1["priceFull"];
+        appdata["priceReduced"] = state1["priceReduced"];
+        appdata["count"] = state1["count"];
+        appdata["amount"] = state1["amount"];
+        appdata["countFull"] = state1["countFull"];
+        appdata["countReduced"] = state1["countReduced"];
         appdata["productName"] = state1["productName"];
         appdata["customerEmail"] = state1["customerEmail"];
         appdata["customerName"] = state1["customerName"];

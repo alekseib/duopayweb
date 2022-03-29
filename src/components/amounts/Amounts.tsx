@@ -8,6 +8,7 @@ import {appdata, save} from "../model/AppData";
 import axios from "axios";
 import ReactPixel from "react-facebook-pixel";
 import {MySpinner} from "../common/MySpinner";
+import app from "../App";
 
 interface AmountsProps {
 
@@ -18,8 +19,6 @@ interface AmountsState {
     errors: any
     error: string
 }
-
-let busy = false;
 
 class Amounts extends React.Component<AmountsProps, AmountsState> {
 
@@ -35,8 +34,36 @@ class Amounts extends React.Component<AmountsProps, AmountsState> {
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         axios.get('https://api.duoclassico.eu/functions/hello')
+        appdata.header = "";
+        this.calculate();
+    }
+    changeCount(field: string, change: number) {
+        if ("Full" === field) {
+            appdata.countFull = appdata.countFull + change;
+            if (appdata.countFull < 0 )
+                appdata. countFull = 0;
+        }
+
+        else {
+            appdata.countReduced = appdata.countReduced + change;
+            if (appdata.countReduced < 0 )
+                appdata. countReduced = 0;
+
+        }
+        this.calculate();
+        let input = this.state.input;
+        this.setState({
+            input,
+            error:""
+        });
     }
 
+    calculate()
+    {
+        appdata.count = appdata.countFull + appdata.countReduced;
+        appdata.amount = appdata.countFull * appdata.priceFull + appdata.countReduced * appdata.priceReduced;
+
+    }
     handleChange(event: any) {
         let input = this.state.input;
         input[event.target.name] = event.target.value;
@@ -50,74 +77,21 @@ class Amounts extends React.Component<AmountsProps, AmountsState> {
     handleSubmit(event) {
         event.preventDefault();
         if (this.validate()) {
-            appdata.customerEmail = this.state.input["email"];
-            appdata.customerName = this.state.input["name"];
-            save()
-            this.saveLead()
-            ReactPixel.init('325830968618472');
-            ReactPixel.track("Lead");
+            save();
+            // @ts-ignore
+            this.props["history"].push("/start");
         }
-        console.log(this.state);
-    }
-
-    saveLead() {
-        this.setState({ error: ""});
-        if (busy) return;
-        busy = true;
-        axios.post('https://api.duoclassico.eu/functions/lead', appdata)
-            .then(response => {
-                if (response.status !== 200) {
-                    this.setState({ error: response.statusText});
-                    return;
-                }
-                // @ts-ignore
-                appdata.country = response.data["country"];
-                save();
-                // @ts-ignore
-                this.props["history"].push("/payment")
-
-            })
-            .catch((error) => {
-                this.setState({ error: error.message});
-                return Promise.reject(error)
-            })
-            .finally(() => {
-                busy = false;
-            });
     }
 
     validate() {
-        let input = this.state.input;
-        let errors = {};
-        let isValid = true;
-
-        if (!input["name"]) {
-            isValid = false;
-            // @ts-ignore
-            errors["name"] = "Пожалуйста введите имя.AAA";
+        this.calculate();
+        if (appdata.count === 0) {
+            this.setState({
+                error: "Пожалуйста выберите хотя бы один билет!"
+            });
+            return false;
         }
-
-        if (!input["email"]) {
-            isValid = false;
-            // @ts-ignore
-            errors["email"] = "Пожалуйста введите емайл.";
-        }
-
-        if (typeof input["email"] !== "undefined") {
-
-            var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
-            if (!pattern.test(input["email"])) {
-                isValid = false;
-                // @ts-ignore
-                errors["email"] = "Пожалуйста введите емайл.";
-            }
-        }
-
-        this.setState({
-            errors: errors
-        });
-
-        return isValid;
+        return true;
     }
 
     render() {
@@ -129,19 +103,17 @@ class Amounts extends React.Component<AmountsProps, AmountsState> {
                             <h2 className="app-title">
                                 Пожалуйста, выберите количество билетов.
                             </h2>
-                            <p className="app-text">
-                                {this.state.error}
-                            </p>
                             <div className="offer__label-wrap">
                                 <table>
+                                    <tbody>
                                     <tr>
-                                       <td>Полный билет: 17€</td>
+                                       <td>{appdata.priceHeader}{appdata.priceFull}€</td>
                                        <td>
                                            <div className="offer__value fullPrice">
                                                <div className="offer__change">
-                                                   <span className="offer__minus">-</span>
-                                                   <input type="number" id="fullPrice" min="0" value="2"/>
-                                                   <span className="offer__plus">+</span>
+                                                   <span className="offer__minus" onClick={() => this.changeCount("Full",-1)}>-</span>
+                                                   <input type="number" id="fullPrice" min="0" value={appdata.countFull} onChange={this.handleChange}/>
+                                                   <span className="offer__plus" onClick={() => this.changeCount("Full",1)}>+</span>
                                                </div>
                                            </div>
                                        </td>
@@ -149,29 +121,33 @@ class Amounts extends React.Component<AmountsProps, AmountsState> {
                                     <tr>
                                         <td><br/><br/></td>
                                     </tr>
+                                    {appdata.priceReduced > 0 ?
                                     <tr>
-                                        <td>Полный билет: 15€</td>
+                                        <td>{appdata.priceReducedHeader}{appdata.priceReduced}€</td>
                                         <td>
                                             <div className="offer__value fullPrice">
                                                 <div className="offer__change">
-                                                    <span className="offer__minus">-</span>
-                                                    <input type="number" id="fullPrice" min="0" value="2"/>
-                                                    <span className="offer__plus">+</span>
+                                                    <span className="offer__minus" onClick={() => this.changeCount("Reduced",-1)}>-</span>
+                                                    <input type="number" id="fullPrice" min="0" value={appdata.countReduced} onChange={this.handleChange}/>
+                                                    <span className="offer__plus" onClick={() => this.changeCount("Reduced",1)}>+</span>
                                                 </div>
                                             </div>
                                         </td>
-                                    </tr>
-
+                                    </tr> : <div></div>}
+                                    </tbody>
                                 </table>
                             </div>
                             <br></br>
                             <ul className="offer__total">
-                                <li className="offer__total-item offer__total-item_sum">Сумма: 20€
+                                <li className="offer__total-item offer__total-item_sum">Сумма: {appdata.amount}€
                                 </li>
                             </ul>
+                            <p className="app-text">
+                                {this.state.error}
+                            </p>
                             <div className="app-button d-flex justify-content-around">
                                 <button type="submit" className="app-btn app-btn-further next-step-btn">
-                                    {busy ? <MySpinner/> : <span>Далее</span>}
+                                    <span>Далее</span>
                                 </button>
                             </div>
                         </form>
@@ -181,6 +157,7 @@ class Amounts extends React.Component<AmountsProps, AmountsState> {
             </Frame>
         );
     }
+
 }
 
 export default withRouter(Amounts);
