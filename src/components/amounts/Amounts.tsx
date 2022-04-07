@@ -6,6 +6,7 @@ import Frame from "../common/Frame";
 import {withRouter} from 'react-router-dom';
 import {appdata, save} from "../model/AppData";
 import axios from "axios";
+import ReactPixel from "react-facebook-pixel";
 
 interface AmountsProps {
 
@@ -32,6 +33,9 @@ class Amounts extends React.Component<AmountsProps, AmountsState> {
         this.handleSubmit = this.handleSubmit.bind(this);
         axios.get('https://api.duoclassico.eu/functions/hello')
         appdata.header = "";
+        ReactPixel.init('325830968618472');
+        ReactPixel.track("AddToWishlist");
+
         this.calculate();
     }
     changeCount(field: string, change: number) {
@@ -73,6 +77,8 @@ class Amounts extends React.Component<AmountsProps, AmountsState> {
     // @ts-ignore
     handleSubmit(event) {
         event.preventDefault();
+        ReactPixel.init('325830968618472');
+        ReactPixel.track("AddToCart");
         if (this.validate()) {
             save();
             // @ts-ignore
