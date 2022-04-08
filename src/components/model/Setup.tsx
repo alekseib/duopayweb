@@ -80,6 +80,11 @@ export function parseParams(params:any)
     {
         appdata.eventType = "OFFLINE";
         appdata.productName = "Вячеслав Новиков. Франц Шуберт";
+    } else
+    if ("HOPNER20220515" === appdata.productCode)
+    {
+        appdata.eventType = "OFFLINE";
+        appdata.productName = "Музыка любви. Благотворительный концерт";
     }
     else
         appdata.errorMessage = "InvalidEventCode";

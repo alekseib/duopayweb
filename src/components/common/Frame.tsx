@@ -12,7 +12,7 @@ function Frame(props: { children: ReactNode }) {
                     <div className="col text-center">
                         <div className="offer">
                             <time className="Frame-header">{appdata.header}</time>
-                            <img src={image} alt=""/>
+                            <img src={image} alt="" className= "img1"/>
                             <div>
                                   {props.children}
                             </div>

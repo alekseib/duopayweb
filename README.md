@@ -1,15 +1,17 @@
-                                    <a href = "https://www.google.com">
-                                        <img src="https://bank.paysera.com/assets/image/payment_types/giro_pay.png" alt=""/>
-                                    </a>
+How to add new event.
+
+1. Create MiniPoster
+2. Create Ticket Template
+3. Add Event to Setup.ts
+4. Add enebt JPG to public/img
+5. Compose link and add to App.ts
+6. 
 
 
 
-Invalid key handling.
-
-https://d1upcx3emxp9ba.cloudfront.net/
 
 
-http://localhost:3000/start?productCode=SILVER1&key=7D748A500A611A399
+
 
 # Getting Started with Create React App
 
