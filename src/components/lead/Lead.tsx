@@ -1,6 +1,5 @@
 import React from 'react';
 import Footer from "../common/Footer";
-import './Lead.css';
 import Frame from "../common/Frame";
 // @ts-ignore
 import {withRouter} from 'react-router-dom';
