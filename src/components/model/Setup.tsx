@@ -99,6 +99,12 @@ export function parseParams(params:any)
     {
         appdata.countFull = 2;
     }
+    else
+    {
+        appdata.amount = appdata.priceFull;
+        appdata.count = 1;
+    }
+
     if ("" === appdata.errorMessage)
         save();
     else
