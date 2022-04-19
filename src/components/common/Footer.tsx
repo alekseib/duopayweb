@@ -22,11 +22,6 @@ function Footer() {
                     </a>
                 </li>
             </ul>
-            <a href="https://duoclassico.eu/" rel="nofollow noreferrer noopener"
-               target="_blank"
-               className="Footer-link">
-                duoclassico.eu
-            </a>
         </div>
     );
 }
