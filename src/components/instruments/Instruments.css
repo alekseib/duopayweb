@@ -181,3 +181,13 @@ label>span {
     border-radius: 137px;
     position: relative;
 }
+.app-btn4 {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    background-color:  #fcf;
+    max-width: 150px;
+    border-radius: 137px;
+    position: relative;
+}
+

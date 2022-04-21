@@ -48,6 +48,7 @@ export function load()
         appdata["country"] = state1["country"];
         appdata["description"] = state1["description"];
         appdata["redirectData"] = state1["redirectData"];
+        appdata["eventType"] = state1["eventType"];
 
     }
     catch (e)
