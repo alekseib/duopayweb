@@ -21,7 +21,8 @@ export const appdata = {
        "paymentInstrument":"",
        "orderId":"",
        "description":"",
-       "redirectData":""
+       "redirectData":"",
+       "customerPhone":""
 
 }
 export function save()

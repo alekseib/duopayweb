@@ -1,13 +1,14 @@
 import Frame from "../common/Frame";
 import React, {useState} from "react";
 import Footer from "../common/Footer";
-import {appdata} from "../model/AppData";
+import {appdata, save} from "../model/AppData";
 import ReactPixel from "react-facebook-pixel";
 import {MySpinner} from "../common/MySpinner";
+import axios from "axios";
 
-let busy = false;
 
 export function CashPage() {
+    const [busy, setBusy] = useState();
     const [phone, setPhone] = useState();
     const [phoneError, setPhoneError] = useState("");
     const [error, setError] = useState();
@@ -17,6 +18,7 @@ export function CashPage() {
         if (validate())
         {
             console.log("OK");
+            selectCash();
         }
     }
 
@@ -44,8 +46,39 @@ export function CashPage() {
     function telephoneCheck(str: any) {
         return (str.match(/\d/g) || []).length > 5;
     }
+    function selectCash() {
+        if (busy) return;
+        // @ts-ignore
+        setBusy(true);
+        // @ts-ignore
+        setError("");
+        ReactPixel.init('325830968618472');
+        ReactPixel.track('InitiateCheckout');
+        appdata.paymentMethod = "CASH";
+        appdata.paymentInstrument = "CASH";
+        // @ts-ignore
+        appdata.customerPhone = phone;
+        axios.post('https://api.duoclassico.eu/functions/init', appdata)
+            .then(response => {
+                if (response.status !== 200) {
+                    // @ts-ignore
+                    setError(response.statusText);
+                    return;
+                }
+                // @ts-ignore
+                appdata.orderId = response.data["orderId"];
+                appdata.redirectData = response.data["redirectData"];
+                save();
 
-
+            })
+            .catch((error) => {
+                return Promise.reject(error)
+            })
+            .finally(() => {
+                // @ts-ignore
+                setBusy(false);
+            });
+    }
 
     // @ts-ignore
     return (
