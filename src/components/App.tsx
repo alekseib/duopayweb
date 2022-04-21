@@ -14,6 +14,7 @@ import {ThankYouPageForRefresh} from "./refresh/ThankYouPageForRefresh";
 import {parseParams} from "./model/Setup";
 import Amounts from "./amounts/Amounts";
 import {CashPage} from "./instruments/CashPage";
+import {CashOKPage} from "./instruments/CashOKPage";
 
 
 function Home() {
@@ -78,7 +79,9 @@ function App() {
                     <Route path="/cash">
                         <CashPage/>
                     </Route>
-
+                    <Route path="/cashok">
+                        <CashOKPage/>
+                    </Route>
                     <Route path="/refresh">
                         <Refresh/>
                     </Route>

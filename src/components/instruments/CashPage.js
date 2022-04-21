@@ -5,15 +5,17 @@ import {appdata, save} from "../model/AppData";
 import ReactPixel from "react-facebook-pixel";
 import {MySpinner} from "../common/MySpinner";
 import axios from "axios";
+import {useHistory} from "react-router-dom";
 
 
 export function CashPage() {
+    const history = useHistory();
     const [busy, setBusy] = useState();
     const [phone, setPhone] = useState();
     const [phoneError, setPhoneError] = useState("");
     const [error, setError] = useState();
 
-    const handleSubmit= (e: any) => {
+    const handleSubmit= (e) => {
         e.preventDefault();
         if (validate())
         {
@@ -22,7 +24,7 @@ export function CashPage() {
         }
     }
 
-    const handlePhoneChange= (value: any) => {
+    const handlePhoneChange= (value) => {
            setPhone(value);
            // @ts-ignore
            setPhoneError("");
@@ -43,7 +45,7 @@ export function CashPage() {
         return true;
     }
 
-    function telephoneCheck(str: any) {
+    function telephoneCheck(str) {
         return (str.match(/\d/g) || []).length > 5;
     }
     function selectCash() {
@@ -69,7 +71,8 @@ export function CashPage() {
                 appdata.orderId = response.data["orderId"];
                 appdata.redirectData = response.data["redirectData"];
                 save();
-
+                // @ts-ignore
+                history.push("/cashok");
             })
             .catch((error) => {
                 return Promise.reject(error)
