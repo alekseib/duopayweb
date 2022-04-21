@@ -96,6 +96,13 @@ export function Instruments() {
                         {busy === "STRIPE"? <MySpinner/> : <span><img src="img/Cards.png" alt=""/></span>}
                     </button>
                 </div>
+                {"EE".includes(appdata.country)?
+                <div className="app-button d-flex justify-content-around">
+                    <button onClick={() => { history.push("/cash");}} className="app-btn4">
+                        <img src="img/Cash.jpg" alt=""/>
+                    </button>
+                </div>:<div></div>
+                }
                 <div className="app-button d-flex justify-content-around">
                     <button onClick={() => selectInstrument("PAYPAL","Paypal","/paypal", "PAYPAL")} className="app-btn2">
                         {busy === "PAYPAL"? <MySpinner/> : <span><img src="img/PayPal.png" alt=""/></span>}
@@ -106,7 +113,6 @@ export function Instruments() {
                         {busy === "GOOGLE"? <MySpinner/> : <span><img src="img/GoogleApple.png" alt=""/></span>}
                     </button>
                 </div>
-
             </Frame>
         </div>
     );
