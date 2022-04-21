@@ -98,7 +98,7 @@ export function Instruments() {
                 </div>
                 {"EE".includes(appdata.country)?
                 <div className="app-button d-flex justify-content-around">
-                    <button onClick={() => selectInstrument("CASH", "cash", "/cash", "NONE")} className="app-btn4">
+                    <button onClick={() => { history.push("/cash");}} className="app-btn4">
                         <img src="img/Cash.jpg" alt=""/>
                     </button>
                 </div>:<div></div>

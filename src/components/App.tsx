@@ -13,6 +13,7 @@ import Refresh from "./refresh/Refresh";
 import {ThankYouPageForRefresh} from "./refresh/ThankYouPageForRefresh";
 import {parseParams} from "./model/Setup";
 import Amounts from "./amounts/Amounts";
+import {CashPage} from "./instruments/CashPage";
 
 
 function Home() {
@@ -74,6 +75,10 @@ function App() {
                     <Route path="/ok">
                         <ThankYouPage/>
                     </Route>
+                    <Route path="/cash">
+                        <CashPage/>
+                    </Route>
+
                     <Route path="/refresh">
                         <Refresh/>
                     </Route>
