@@ -1,5 +1,4 @@
 import Frame from "../common/Frame";
-import React, {useState} from "react";
 import Footer from "../common/Footer";
 
 export function CashOKPage() {
