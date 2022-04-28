@@ -81,6 +81,13 @@ export function parseParams(params:any)
         appdata.eventType = "OFFLINE";
         appdata.productName = "Вячеслав Новиков. Франц Шуберт";
     } else
+    if ("20220521KANUTI" === appdata.productCode)
+    {
+        appdata.eventType = "OFFLINE";
+        appdata.productName = "Клуб Русского Романса. Весенний концерт";
+    }
+    else
+
     if ("HOPNER20220515" === appdata.productCode)
     {
         appdata.eventType = "OFFLINE";
