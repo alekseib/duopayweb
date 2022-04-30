@@ -62,7 +62,9 @@ class Amounts extends React.Component<AmountsProps, AmountsState> {
     calculate()
     {
         appdata.count = appdata.countFull + appdata.countReduced;
-        appdata.amount = appdata.countFull * appdata.priceFull + appdata.countReduced * appdata.priceReduced;
+        appdata.amount = appdata.countFull * appdata.priceFull;
+        if (appdata.countReduced !== 0)
+            appdata.amount = appdata.amount + appdata.countReduced * appdata.priceReduced;
 
     }
     handleChange(event: any) {
