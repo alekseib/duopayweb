@@ -8,7 +8,7 @@ import axios from "axios";
 import {useHistory} from "react-router-dom";
 
 
-export function CashPage() {
+export function HopnerAddPage () {
     const history = useHistory();
     const [busy, setBusy] = useState();
     const [phone, setPhone] = useState();
@@ -72,7 +72,7 @@ export function CashPage() {
                 appdata.redirectData = response.data["redirectData"];
                 save();
                 // @ts-ignore
-                history.push("/cashok");
+                history.push("/hopneraddok");
             })
             .catch((error) => {
                 return Promise.reject(error)
@@ -87,11 +87,19 @@ export function CashPage() {
     return (
         <div>
             <Frame>
+              <h2 className="offer-pay__title">
+
+                    Все билеты на этот концерт проданы!
+             </h2>
                 <h2 className="offer-pay__title">
-                    Пожалуйста, оставьте здесь ваш емайл, я свяжусь с вами и мы договоримся где и когда вы сможете получить билеты!
+                    Однако я сейчас ищу возможность сделать дополнительный концерт в ближайшее время!
                 </h2>
+
                 <div>
                     <form className="app-form" method="post" id="lead_form" onSubmit={(e) => handleSubmit(e)}>
+                        <h2 className="app-title">
+                            Пожалуйста, оставьте здесь свой номер своего телефона и я свяжусь с вами, когда детали станут известны!
+                        </h2>
                         <div>
                             <input
                                 type="text"
