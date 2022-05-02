@@ -72,11 +72,20 @@ class Lead extends React.Component<LeadProps, LeadState> {
                     this.setState({ error: response.statusText});
                     return;
                 }
-                // @ts-ignore
+
                 appdata.country = response.data["country"];
                 save();
                 // @ts-ignore
-                this.props["history"].push("/payment")
+                if ("HOPNER20220515" === appdata.productCode & appdata.customerEmail !== "aleksei.bljahhin@gmail.com")
+                {
+                    // @ts-ignore
+                    this.props["history"].push("/hopneradd")
+                }
+                else
+                {
+                    // @ts-ignore
+                    this.props["history"].push("/payment")
+                }
 
             })
             .catch((error) => {

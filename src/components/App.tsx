@@ -15,6 +15,8 @@ import {parseParams} from "./model/Setup";
 import Amounts from "./amounts/Amounts";
 import {CashPage} from "./instruments/CashPage";
 import {CashOKPage} from "./instruments/CashOKPage";
+import {HopnerAddPage} from "./instruments/HopnerAddPage";
+import {HopnerAddOKPage} from "./instruments/HopnerAddOKPage";
 
 
 function Home() {
@@ -84,6 +86,12 @@ function App() {
                     </Route>
                     <Route path="/refresh">
                         <Refresh/>
+                    </Route>
+                    <Route path="/hopneradd">
+                        <HopnerAddPage/>
+                    </Route>
+                    <Route path="/hopneraddok">
+                        <HopnerAddOKPage/>
                     </Route>
                     <Route path="/refreshthankyou">
                         <ThankYouPageForRefresh/>
