@@ -87,6 +87,12 @@ export function parseParams(params:any)
         appdata.productName = "Клуб Русского Романса. Весенний концерт";
     }
     else
+    if ("CHAPTERS20220603" === appdata.productCode)
+    {
+        appdata.eventType = "OFFLINE";
+        appdata.productName = "Музыка любви. Дополнительный концерт.";
+    }
+    else
 
     if ("HOPNER20220515" === appdata.productCode)
     {
