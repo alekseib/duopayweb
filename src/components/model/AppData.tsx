@@ -22,8 +22,9 @@ export const appdata = {
        "orderId":"",
        "description":"",
        "redirectData":"",
-       "customerPhone":""
-
+       "customerPhone":"",
+       "closed":false,
+       "sold":false
 }
 export function save()
 {
