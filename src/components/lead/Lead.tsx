@@ -76,10 +76,10 @@ class Lead extends React.Component<LeadProps, LeadState> {
                 appdata.country = response.data["country"];
                 save();
                 // @ts-ignore
-                if ("HOPNER20220515" === appdata.productCode & appdata.customerEmail !== "aleksei.bljahhin@gmail.com")
+                if (appdata.sold)
                 {
                     // @ts-ignore
-                    this.props["history"].push("/hopneradd")
+                    this.props["history"].push("/sold")
                 }
                 else
                 {

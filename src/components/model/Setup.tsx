@@ -98,6 +98,7 @@ export function parseParams(params:any)
     {
         appdata.eventType = "OFFLINE";
         appdata.productName = "Музыка любви. Благотворительный концерт";
+        appdata.sold = true;
     }
     else
         appdata.errorMessage = "InvalidEventCode";
