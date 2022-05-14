@@ -80,6 +80,7 @@ export function parseParams(params:any)
     {
         appdata.eventType = "OFFLINE";
         appdata.productName = "Вячеслав Новиков. Франц Шуберт";
+
     } else
     if ("20220521KANUTI" === appdata.productCode)
     {
@@ -92,6 +93,7 @@ export function parseParams(params:any)
     {
         appdata.eventType = "OFFLINE";
         appdata.productName = "Музыка любви. Дополнительный концерт.";
+        appdata.sold = true;
     }
     else
 
