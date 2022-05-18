@@ -92,7 +92,7 @@ export function parseParams(params:any)
     {
         appdata.eventType = "OFFLINE";
         appdata.productName = "Музыка любви. Дополнительный концерт.";
-        appdata.sold = true;
+        appdata.sold = false;
     }
     else
 
