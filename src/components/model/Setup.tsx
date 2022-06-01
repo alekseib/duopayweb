@@ -95,6 +95,12 @@ export function parseParams(params:any)
         appdata.sold = false;
     }
     else
+    if ("2022.08.01-BRAHMS" === appdata.productCode)
+    {
+        appdata.eventType = "OFFLINE";
+        appdata.productName = "Naily Saripova. Johannes Brahms";
+    }
+    else
 
     if ("HOPNER20220515" === appdata.productCode)
     {
