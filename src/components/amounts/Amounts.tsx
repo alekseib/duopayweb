@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Footer from "../common/Footer";
 import './Amounts.css';
 import Frame from "../common/Frame";
@@ -7,6 +7,7 @@ import {withRouter} from 'react-router-dom';
 import {appdata, save} from "../model/AppData";
 import axios from "axios";
 import ReactPixel from "react-facebook-pixel";
+import { withTranslation } from 'react-i18next';
 
 interface AmountsProps {
 
@@ -37,6 +38,8 @@ class Amounts extends React.Component<AmountsProps, AmountsState> {
         ReactPixel.track("AddToWishlist");
 
         this.calculate();
+
+
     }
     changeCount(field: string, change: number) {
         if ("Full" === field) {
@@ -89,10 +92,12 @@ class Amounts extends React.Component<AmountsProps, AmountsState> {
     }
 
     validate() {
+        // @ts-ignore
+        const { t } = this.props;
         this.calculate();
         if (appdata.count === 0) {
             this.setState({
-                error: "Пожалуйста выберите хотя бы один билет!"
+                error: t("PleaseSelectOneTicket")
             });
             return false;
         }
@@ -100,19 +105,21 @@ class Amounts extends React.Component<AmountsProps, AmountsState> {
     }
 
     render() {
+        // @ts-ignore
+        const { t } = this.props;
         return (
             <Frame>
                 <div>
                     <div className="calculate">
                         <form className="offer__form" method="post" id="lead_form" onSubmit={this.handleSubmit}>
                             <h2 className="app-title">
-                                Пожалуйста, выберите количество билетов.
+                                <p>{t('PleaseSelectNumberOfTickets')}</p>
                             </h2>
                             <div className="offer__label-wrap">
                                 <table>
                                     <tbody>
                                     <tr>
-                                       <td>{appdata.priceHeader}{appdata.priceFull}€</td>
+                                       <td>{t(appdata.priceHeader)}:{appdata.priceFull}€</td>
                                        <td>
                                            <div className="offer__value fullPrice">
                                                <div className="offer__change">
@@ -128,7 +135,7 @@ class Amounts extends React.Component<AmountsProps, AmountsState> {
                                     </tr>
                                     {appdata.priceReduced > 0 ?
                                     <tr>
-                                        <td>{appdata.priceReducedHeader}{appdata.priceReduced}€</td>
+                                        <td>{t(appdata.priceReducedHeader)}:{appdata.priceReduced}€</td>
                                         <td>
                                             <div className="offer__value fullPrice">
                                                 <div className="offer__change">
@@ -144,7 +151,7 @@ class Amounts extends React.Component<AmountsProps, AmountsState> {
                             </div>
                             <br></br>
                             <ul className="offer__total">
-                                <li className="offer__total-item offer__total-item_sum">Сумма: {appdata.amount}€
+                                <li className="offer__total-item offer__total-item_sum">{t("Amount")}:{appdata.amount}€
                                 </li>
                             </ul>
                             <p className="app-text">
@@ -152,7 +159,7 @@ class Amounts extends React.Component<AmountsProps, AmountsState> {
                             </p>
                             <div className="app-button d-flex justify-content-around">
                                 <button type="submit" className="app-btn app-btn-further next-step-btn">
-                                    <span>Далее</span>
+                                    <span>{t("NextButton")}</span>
                                 </button>
                             </div>
                         </form>
@@ -165,5 +172,7 @@ class Amounts extends React.Component<AmountsProps, AmountsState> {
 
 }
 
-export default withRouter(Amounts);
+export default withRouter(withTranslation()(Amounts));
+
+
 

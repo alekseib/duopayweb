@@ -6,9 +6,12 @@ import ReactPixel from "react-facebook-pixel";
 import {MySpinner} from "../common/MySpinner";
 import axios from "axios";
 import {useHistory} from "react-router-dom";
+import {useTranslation} from "react-i18next";
 
 
 export function SoldPage () {
+    const { t } = useTranslation();
+    const [lang, setLang] = useState('ru');
     const history = useHistory();
     const [busy, setBusy] = useState();
     const [phone, setPhone] = useState();
@@ -33,13 +36,13 @@ export function SoldPage () {
     {
         if (phone === undefined)
         { // @ts-ignore
-            setPhoneError("Обязательно!");
+            setPhoneError(t("Mandatory!"));
             return false;
         }
 
         if (!telephoneCheck(phone))
         { // @ts-ignore
-            setPhoneError("Не менее 5 цифр!");
+            setPhoneError(t("5DigitsMin!"));
             return false;
         }
         return true;
@@ -88,16 +91,16 @@ export function SoldPage () {
         <div>
             <Frame>
               <h2 className="offer-pay__title">
-                    Все билеты на этот концерт проданы!
+                  {t("AllTicketsSold")}
              </h2>
                 <h2 className="offer-pay__title">
-                    Однако кто-то из купивщих билеты может от них отказаться!
+                    {t("SomeOneCanReturnTickets")}
                 </h2>
 
                 <div>
                     <form className="app-form" method="post" id="lead_form" onSubmit={(e) => handleSubmit(e)}>
                         <h2 className="app-title">
-                            Пожалуйста, оставьте здесь свой номер своего телефона и я свяжусь с вами, если вдруг билеты освободятся!
+                            {t("PleaseLeavePhoneIWillCallYouIfTickets")}
                         </h2>
                         <div>
                             <input
@@ -114,7 +117,7 @@ export function SoldPage () {
                         </p>
                         <div className="app-button d-flex justify-content-around">
                             <button type="submit" className="app-btn app-btn-further next-step-btn">
-                                {busy ? <MySpinner/> : <span>Далее</span>}
+                                {busy ? <MySpinner/> : <span>{t("NextButton")}</span>}
                             </button>
                         </div>
                     </form>

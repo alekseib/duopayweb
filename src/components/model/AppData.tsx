@@ -24,7 +24,8 @@ export const appdata = {
        "redirectData":"",
        "customerPhone":"",
        "closed":false,
-       "sold":false
+       "sold":false,
+       "language":"ru"
 }
 export function save()
 {
@@ -51,6 +52,9 @@ export function load()
         appdata["description"] = state1["description"];
         appdata["redirectData"] = state1["redirectData"];
         appdata["eventType"] = state1["eventType"];
+        appdata["priceReducedHeader"] = state1["priceReducedHeader"];
+        appdata["priceHeader"] = state1["priceHeader"];
+        appdata["language"] = state1["language"];
 
     }
     catch (e)

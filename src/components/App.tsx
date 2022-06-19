@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import EmailPage from "./lead/Lead";
+import { useTranslation } from 'react-i18next'
 // @ts-ignore
 import {BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
@@ -18,10 +19,33 @@ import {CashOKPage} from "./instruments/CashOKPage";
 import {SoldPage} from "./instruments/SoldPage";
 import {ThankYouShortPage} from "./instruments/ThankYouShortPage";
 
+// Contains the value and text for the options
+const languages = [
+    { value: '', text: "Options" },
+    { value: 'en', text: "English" },
+    { value: 'hi', text: "Hindi" },
+    { value: 'bn', text: "Bengali" }
+]
+
 
 function Home() {
+    const { t } = useTranslation();
+    const [lang, setLang] = useState('ru');
+    // @ts-ignore
+    const handleChange = e => {
+        setLang(e.target.value);
+        let loc = "http://localhost:3000/home/";
+        window.location.replace(loc + "?lng=" + e.target.value);
+    }
     return (
         <div>
+
+            <select value={lang} onChange={handleChange}>
+                {languages.map(item => {
+                    return (<option key={item.value}
+                                    value={item.value}>{item.text}</option>);
+                })}
+            </select>
             <ul>
                 <li><a href="/amt?productCode=HOPNER20220515&key=7D748A1500A1600A399B1200B1300B8233456">HOPNER2022</a></li>
                 <li><a href="/amt?productCode=NOVIKOV2022&key=7D748A1500A1600A399B1200B1300B8233456">NOVIKOV2022</a></li>
@@ -55,6 +79,7 @@ function App() {
     }
     return (
         <div>
+
             <BrowserRouter>
                 <Switch>
                     <Route path="/home">
@@ -97,7 +122,6 @@ function App() {
                         <ThankYouPageForRefresh/>
                     </Route>
                     <Route path="/">
-                        <Tilda/>
                     </Route>
                 </Switch>
             </BrowserRouter>
