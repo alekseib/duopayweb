@@ -6,9 +6,12 @@ import ReactPixel from "react-facebook-pixel";
 import {MySpinner} from "../common/MySpinner";
 import axios from "axios";
 import {useHistory} from "react-router-dom";
+import {useTranslation} from "react-i18next";
 
 
 export function CashPage() {
+    const { t } = useTranslation();
+    const [lang, setLang] = useState('ru');
     const history = useHistory();
     const [busy, setBusy] = useState();
     const [phone, setPhone] = useState();
@@ -33,13 +36,13 @@ export function CashPage() {
     {
         if (phone === undefined)
         { // @ts-ignore
-            setPhoneError("Обязательно!");
+            setPhoneError(t("Mandatory!"));
             return false;
         }
 
         if (!telephoneCheck(phone))
         { // @ts-ignore
-            setPhoneError("Не менее 5 цифр!");
+            setPhoneError(t("5DigitsMin!"));
             return false;
         }
         return true;
@@ -88,7 +91,7 @@ export function CashPage() {
         <div>
             <Frame>
                 <h2 className="offer-pay__title">
-                    Пожалуйста, оставьте здесь ваш емайл, я свяжусь с вами и мы договоримся где и когда вы сможете получить билеты!
+                    {t("PleaseLeavePhoneIWillContactYou")}
                 </h2>
                 <div>
                     <form className="app-form" method="post" id="lead_form" onSubmit={(e) => handleSubmit(e)}>
@@ -107,7 +110,7 @@ export function CashPage() {
                         </p>
                         <div className="app-button d-flex justify-content-around">
                             <button type="submit" className="app-btn app-btn-further next-step-btn">
-                                {busy ? <MySpinner/> : <span>Далее</span>}
+                                {busy ? <MySpinner/> : <span>{t("NextButton")}</span>}
                             </button>
                         </div>
                     </form>

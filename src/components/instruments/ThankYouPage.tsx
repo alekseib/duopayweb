@@ -1,23 +1,26 @@
 import Frame from "../common/Frame";
-import React from "react";
+import React, {useState} from "react";
 import Footer from "../common/Footer";
 import {appdata} from "../model/AppData";
 import ReactPixel from "react-facebook-pixel";
+import {useTranslation} from "react-i18next";
 
 export function ThankYouPage() {
+    const { t } = useTranslation();
+    const [lang, setLang] = useState('ru');
     ReactPixel.init('325830968618472');
     ReactPixel.track( 'Purchase', {value: appdata.amount, currency: 'EUR'});
     return (
         <div>
             <Frame>
                 <h2 className="offer-pay__title">
-                    Ваш платеж успешно завершен! Спасибо за покупку!
+                    {t("YouPaymentOKThankYou!")}
                 </h2>
                 <br/>
-                <h2 className="app-title">Я послал вам билет и ссылку на запись на электронную почту!</h2>
+                <h2 className="app-title">{t("ISendTicketsToEmail!")}</h2>
                 <h2 className="app-title">{appdata.customerEmail}</h2>
                 <br/>
-                <h2 className="app-title">Приятного просмотра!</h2>
+                <h2 className="app-title">{t("HappyViewing!")}</h2>
                 <Footer></Footer>
             </Frame>
         </div>

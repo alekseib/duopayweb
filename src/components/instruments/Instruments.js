@@ -9,6 +9,7 @@ import ReactPixel from "react-facebook-pixel";
 import {MySpinner} from "../common/MySpinner";
 import Paysera from "../providers/paysera/paysera";
 import Montonio from "../providers/montonio/montonio";
+import {useTranslation} from "react-i18next";
 
 function useForceUpdate() {
     const [value, setValue] = useState(0); // integer state
@@ -23,7 +24,8 @@ export function Instruments() {
     const history = useHistory();
     const forceUpdate = useForceUpdate();
     load();
-
+    const { t } = useTranslation();
+    const [lang, setLang] = useState('ru');
 
     function selectCountry(val) {
         appdata.country = val;
@@ -77,7 +79,7 @@ export function Instruments() {
                     value={appdata.country}
                     onChange={(val) => selectCountry(val)}/>
                 <h2 className="offer-pay__title">
-                    Выберете способ оплаты.
+                    {t("SelectPaymentInstrument")}
                 </h2>
                 <div className="App">
                 </div>

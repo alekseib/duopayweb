@@ -1,16 +1,7 @@
 import {appdata, load, save} from "./AppData";
+import {useTranslation} from "react-i18next";
+import {useState} from "react";
 
-export function calcHeader()
-{
-    if(appdata.count === 1 || appdata.count === 21)
-        appdata.header = appdata.count + " билет. ";
-    else if(appdata.count === 2 || appdata.count === 3 || appdata.count === 4)
-            appdata.header = appdata.count + " билетa. ";
-    else
-        appdata.header = appdata.count + " билетов. ";
-    appdata.header = appdata.header + " " + appdata.amount + "€";
-
-}
 export function parseParams(params:any)
 {
     appdata.errorMessage = "";
@@ -30,11 +21,11 @@ export function parseParams(params:any)
             console.log("Errorr!!! PriceReduced")
             appdata.errorMessage = "InvalidKey";
         }
-        appdata.priceReducedHeader = "Льготный билет: "
+        appdata.priceReducedHeader = "ReducedTicket"
         if (appdata.priceReduced > 0)
-            appdata.priceHeader = "Полный билет:"
+            appdata.priceHeader = "FullTicket"
         else
-            appdata.priceHeader = "Билет:"
+            appdata.priceHeader = "Ticket"
     } catch (e)
     {
         appdata.errorMessage = "ParsingError";

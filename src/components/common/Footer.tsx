@@ -1,12 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import './Footer.css';
+import {useTranslation} from "react-i18next";
 
 function Footer() {
+    const { t } = useTranslation();
+    const [lang, setLang] = useState('ru');
     return (
         <div className="Footer-info">
             <p className="Footer-person">
-                Организатор: Алексей Бляхин
+                {t("organiserAlekseiBljahhin")}
             </p>
             <ul>
                 <li className="Footer-item">

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Footer from "../common/Footer";
 import Frame from "../common/Frame";
 // @ts-ignore
@@ -7,8 +7,8 @@ import {appdata, save} from "../model/AppData";
 import axios from "axios";
 import ReactPixel from "react-facebook-pixel";
 import {MySpinner} from "../common/MySpinner";
-import {calcHeader} from "../model/Setup";
-
+import {withTranslation} from 'react-i18next';
+import i18next from "i18next";
 interface LeadProps {
 
 }
@@ -20,6 +20,7 @@ interface LeadState {
 }
 
 let busy = false;
+
 
 class Lead extends React.Component<LeadProps, LeadState> {
 
@@ -35,7 +36,24 @@ class Lead extends React.Component<LeadProps, LeadState> {
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         axios.get('https://api.duoclassico.eu/functions/hello')
+        // @ts-ignore
+        const { t } = this.props;
+        function calcHeader() {
+            // @ts-ignore
+            if(appdata.count === 1 || appdata.count === 21)
+                appdata.header = appdata.count + " " + t("oneTicket") + ". ";
+            else if(appdata.count === 2 || appdata.count === 3 || appdata.count === 4)
+                appdata.header = appdata.count + " " + t("234Tickets") + ". ";
+            else
+                appdata.header = appdata.count + " " + t("manyTickets") + ". ";
+            appdata.header = appdata.header + " " + appdata.amount + "€";
+
+        }
         calcHeader();
+
+    }
+    calcHeader()
+    {
 
     }
 
@@ -66,6 +84,7 @@ class Lead extends React.Component<LeadProps, LeadState> {
         this.setState({ error: ""});
         if (busy) return;
         busy = true;
+        appdata.language = i18next.language;
         axios.post('https://api.duoclassico.eu/functions/lead', appdata)
             .then(response => {
                 if (response.status !== 200) {
@@ -98,6 +117,9 @@ class Lead extends React.Component<LeadProps, LeadState> {
     }
 
     validate() {
+        // @ts-ignore
+        const { t } = this.props;
+
         let input = this.state.input;
         let errors = {};
         let isValid = true;
@@ -105,13 +127,13 @@ class Lead extends React.Component<LeadProps, LeadState> {
         if (!input["name"]) {
             isValid = false;
             // @ts-ignore
-            errors["name"] = "Пожалуйста введите имя.";
+            errors["name"] = t("PleaseEnterName");
         }
 
         if (!input["email"]) {
             isValid = false;
             // @ts-ignore
-            errors["email"] = "Пожалуйста введите емайл.";
+            errors["email"] = t("PleaseEnterEMail");
         }
 
         if (typeof input["email"] !== "undefined") {
@@ -120,7 +142,7 @@ class Lead extends React.Component<LeadProps, LeadState> {
             if (!pattern.test(input["email"])) {
                 isValid = false;
                 // @ts-ignore
-                errors["email"] = "Пожалуйста введите емайл.";
+                errors["email"] = t("PleaseEnterEMail");
             }
         }
 
@@ -132,15 +154,17 @@ class Lead extends React.Component<LeadProps, LeadState> {
     }
 
     render() {
+        // @ts-ignore
+        const { t } = this.props;
         return (
             <Frame>
                 <div>
                     <div>
                         <form className="app-form" method="post" id="lead_form" onSubmit={this.handleSubmit}>
                             <h2 className="app-title">
-                                Пожалуйста, введите имя и емайл.
+                                {t("PleaseEnterNameAndEmail")}
                                 <br/>
-                                На этот емайл мы вышлем вам билет.
+                                {t("WeWillSendTicketOnThisEmail")}
                             </h2>
                             <div>
                                 <input
@@ -149,7 +173,7 @@ class Lead extends React.Component<LeadProps, LeadState> {
                                     value={this.state.input.name}
                                     onChange={this.handleChange}
                                     className="form-control"
-                                    placeholder="Имя"
+                                    placeholder={t("Name")}
                                     id="name"/>
                                 <div className="text-danger">{this.state.errors.name}</div>
                             </div>
@@ -160,7 +184,7 @@ class Lead extends React.Component<LeadProps, LeadState> {
                                     value={this.state.input.email}
                                     onChange={this.handleChange}
                                     className="form-control"
-                                    placeholder="E-mail"
+                                    placeholder={t("EMail")}
                                     id="email"/>
                                 <div className="text-danger">{this.state.errors.email}</div>
                             </div>
@@ -175,8 +199,8 @@ class Lead extends React.Component<LeadProps, LeadState> {
 
                                 <span className="fake"/>
                                 <p className="radio__text">
-                                    <a href="https://duoclassico.eu/conditions-ru" className="radio__link">
-                                        Согласен с правилами продажи билетов
+                                    <a href={t("urlOfConditions")} className="radio__link">
+                                        {t("AgreeWithConditions")}
                                     </a>
                                 </p>
                                 <div className="text-danger">{this.state.errors.agreeWithConditions}</div>
@@ -187,7 +211,7 @@ class Lead extends React.Component<LeadProps, LeadState> {
 
                             <div className="app-button d-flex justify-content-around">
                                 <button type="submit" className="app-btn app-btn-further next-step-btn">
-                                    {busy ? <MySpinner/> : <span>Далее</span>}
+                                    {busy ? <MySpinner/> : <span>{t("NextButton")}</span>}
                                 </button>
                             </div>
                         </form>
@@ -199,5 +223,5 @@ class Lead extends React.Component<LeadProps, LeadState> {
     }
 }
 
-export default withRouter(Lead);
+export default withRouter(withTranslation()(Lead));
 
