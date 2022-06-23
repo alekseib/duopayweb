@@ -30,8 +30,6 @@ const languages = [
 
 function Home() {
     // @ts-ignore
-    const { t } = useTranslation();
-    // @ts-ignore
     const [lang, setLang] = useState('ru');
     // @ts-ignore
     const handleChange = e => {
