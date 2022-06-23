@@ -1,7 +1,6 @@
 import Frame from "../common/Frame";
 import Footer from "../common/Footer";
 import {useTranslation} from "react-i18next";
-import {useState} from "react";
 
 export function ThankYouShortPage() {
     const { t } = useTranslation();

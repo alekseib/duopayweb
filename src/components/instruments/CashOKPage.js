@@ -1,11 +1,9 @@
 import Frame from "../common/Frame";
 import Footer from "../common/Footer";
 import {useTranslation} from "react-i18next";
-import {useState} from "react";
 
 export function CashOKPage() {
     const { t } = useTranslation();
-
     // @ts-ignore
     return (
         <div>

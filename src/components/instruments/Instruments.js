@@ -25,7 +25,6 @@ export function Instruments() {
     const forceUpdate = useForceUpdate();
     load();
     const { t } = useTranslation();
-    const [lang, setLang] = useState('ru');
 
     function selectCountry(val) {
         appdata.country = val;
