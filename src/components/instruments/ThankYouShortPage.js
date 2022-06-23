@@ -5,7 +5,6 @@ import {useState} from "react";
 
 export function ThankYouShortPage() {
     const { t } = useTranslation();
-    const [lang, setLang] = useState('ru');
     // @ts-ignore
     return (
         <div>

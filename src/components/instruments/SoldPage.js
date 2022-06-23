@@ -11,7 +11,6 @@ import {useTranslation} from "react-i18next";
 
 export function SoldPage () {
     const { t } = useTranslation();
-    const [lang, setLang] = useState('ru');
     const history = useHistory();
     const [busy, setBusy] = useState();
     const [phone, setPhone] = useState();

@@ -5,7 +5,6 @@ import {useTranslation} from "react-i18next";
 
 function Footer() {
     const { t } = useTranslation();
-    const [lang, setLang] = useState('ru');
     return (
         <div className="Footer-info">
             <p className="Footer-person">
