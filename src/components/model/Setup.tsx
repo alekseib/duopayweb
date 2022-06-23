@@ -1,6 +1,4 @@
 import {appdata, load, save} from "./AppData";
-import {useTranslation} from "react-i18next";
-import {useState} from "react";
 
 export function parseParams(params:any)
 {

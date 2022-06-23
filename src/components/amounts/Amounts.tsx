@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Footer from "../common/Footer";
 import './Amounts.css';
 import Frame from "../common/Frame";

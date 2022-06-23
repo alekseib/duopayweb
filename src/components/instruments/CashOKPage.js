@@ -5,7 +5,6 @@ import {useState} from "react";
 
 export function CashOKPage() {
     const { t } = useTranslation();
-    const [lang, setLang] = useState('ru');
 
     // @ts-ignore
     return (

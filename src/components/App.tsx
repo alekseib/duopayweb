@@ -29,7 +29,9 @@ const languages = [
 
 
 function Home() {
+    // @ts-ignore
     const { t } = useTranslation();
+    // @ts-ignore
     const [lang, setLang] = useState('ru');
     // @ts-ignore
     const handleChange = e => {
@@ -59,11 +61,6 @@ function Home() {
             </ul>
         </div>
     );
-}
-
-function Tilda() {
-    window.open("https://duoclassico.eu", "_self")
-    return null;
 }
 
 function App() {

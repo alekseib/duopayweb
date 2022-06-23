@@ -7,7 +7,6 @@ import {useTranslation} from "react-i18next";
 
 export function ThankYouPage() {
     const { t } = useTranslation();
-    const [lang, setLang] = useState('ru');
     ReactPixel.init('325830968618472');
     ReactPixel.track( 'Purchase', {value: appdata.amount, currency: 'EUR'});
     return (
