@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import EmailPage from "./lead/Lead";
-import { useTranslation } from 'react-i18next'
 // @ts-ignore
 import {BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
