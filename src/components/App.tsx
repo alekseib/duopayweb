@@ -19,6 +19,7 @@ import {ThankYouShortPage} from "./instruments/ThankYouShortPage";
 
 function Home() {
     return (
+
         <div>
             <ul>
                 <li><a href="/amt?productCode=2022.08.13-VAANA&key=7D748A2000A2111A399B1500B1611B8233456&lng=et">2022.08.13-VAANA-EE</a></li>
