@@ -5,7 +5,6 @@ import {BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 import queryString from "query-string"
 import Instruments from "./instruments/Instruments";
-import {appdata, save} from "./model/AppData";
 import {ThankYouPage} from "./instruments/ThankYouPage";
 import PayPal from "./providers/paypal/PayPal";
 import Stripe from "./providers/stripe/Stripe";
@@ -17,8 +16,6 @@ import {CashPage} from "./instruments/CashPage";
 import {CashOKPage} from "./instruments/CashOKPage";
 import {SoldPage} from "./instruments/SoldPage";
 import {ThankYouShortPage} from "./instruments/ThankYouShortPage";
-import axios from "axios";
-import {ok} from "assert";
 
 function Home() {
     // @ts-ignore

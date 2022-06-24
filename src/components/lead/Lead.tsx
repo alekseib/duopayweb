@@ -9,7 +9,6 @@ import ReactPixel from "react-facebook-pixel";
 import {MySpinner} from "../common/MySpinner";
 import {withTranslation} from 'react-i18next';
 import i18next from "i18next";
-import app from "../App";
 interface LeadProps {
 
 }
