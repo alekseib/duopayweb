@@ -9,6 +9,7 @@ import ReactPixel from "react-facebook-pixel";
 import {MySpinner} from "../common/MySpinner";
 import {withTranslation} from 'react-i18next';
 import i18next from "i18next";
+import app from "../App";
 interface LeadProps {
 
 }
@@ -41,22 +42,17 @@ class Lead extends React.Component<LeadProps, LeadState> {
         function calcHeader() {
             // @ts-ignore
             if(appdata.count === 1 || appdata.count === 21)
-                appdata.header = appdata.count + " " + t("oneTicket") + ". ";
+                appdata.header = appdata.count + " " + t("oneTicket") + " ";
             else if(appdata.count === 2 || appdata.count === 3 || appdata.count === 4)
-                appdata.header = appdata.count + " " + t("234Tickets") + ". ";
+                appdata.header = appdata.count + " " + t("234Tickets") + " ";
             else
-                appdata.header = appdata.count + " " + t("manyTickets") + ". ";
+                appdata.header = appdata.count + " " + t("manyTickets") + " ";
             appdata.header = appdata.header + " " + appdata.amount + "€";
-
+            console.log("HEADER OK")
         }
         calcHeader();
 
     }
-    calcHeader()
-    {
-
-    }
-
     handleChange(event: any) {
         let input = this.state.input;
         input[event.target.name] = event.target.value;
