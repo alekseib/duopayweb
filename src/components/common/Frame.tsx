@@ -4,7 +4,7 @@ import './Frame.css';
 import {appdata} from "../model/AppData";
 
 function Frame(props: { children: ReactNode }) {
-    let image = "img/events/" + appdata.productCode + ".JPG";
+    let image = "https://duopaysetup.s3.eu-west-1.amazonaws.com/" + appdata.productCode + "/MiniPoster/Slide1.JPG";
     return (
         <header className="Frame" id="header">
             <div className="container">
