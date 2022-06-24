@@ -18,14 +18,6 @@ import {SoldPage} from "./instruments/SoldPage";
 import {ThankYouShortPage} from "./instruments/ThankYouShortPage";
 
 function Home() {
-    // @ts-ignore
-    const [lang, setLang] = useState('ru');
-    // @ts-ignore
-    const handleChange = e => {
-        setLang(e.target.value);
-        let loc = "http://localhost:3000/home/";
-        window.location.replace(loc + "?lng=" + e.target.value);
-    }
     return (
         <div>
             <ul>
