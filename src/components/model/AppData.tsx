@@ -25,7 +25,8 @@ export const appdata = {
        "customerPhone":"",
        "closed":false,
        "sold":false,
-       "language":"ru"
+       "language":"",
+       "config":{}
 }
 export function save()
 {

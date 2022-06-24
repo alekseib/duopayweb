@@ -19,7 +19,7 @@ export function ThankYouPage() {
                 <h2 className="app-title">{t("ISendTicketsToEmail!")}</h2>
                 <h2 className="app-title">{appdata.customerEmail}</h2>
                 <br/>
-                <h2 className="app-title">{t("HappyViewing!")}</h2>
+                <h2 className="app-title">{t("SeeYouOnConcert!")}</h2>
                 <Footer></Footer>
             </Frame>
         </div>
